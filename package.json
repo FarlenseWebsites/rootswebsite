@@ -1,0 +1,28 @@
+{
+  "name": "roots-foundation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.17.0",
+    "next": "14.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.17",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^4.3.0",
+    "typescript": "6.0.3"
+  }
+}

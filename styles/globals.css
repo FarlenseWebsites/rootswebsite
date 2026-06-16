@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --roots-beige: #FEF9F1;
+  --roots-text: #4A4749;
+  --roots-primary: #09569a;
+  --roots-agriculture: #75bc20;
+  --roots-education: #febc20;
+  --roots-health: #8353ec;
+  --roots-sports: #ef7f3a;
+  --roots-skilled: #dc3b83;
+  --roots-footer-gray: #f8f2eb;
+}
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+
+  --color-roots-beige: var(--roots-beige);
+  --color-roots-text: var(--roots-text);
+  --color-roots-primary: var(--roots-primary);
+  --color-roots-agriculture: var(--roots-agriculture);
+  --color-roots-education: var(--roots-education);
+  --color-roots-health: var(--roots-health);
+  --color-roots-sports: var(--roots-sports);
+  --color-roots-skilled: var(--roots-skilled);
+  --color-roots-footer-gray: var(--roots-footer-gray);
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee-left 22s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
