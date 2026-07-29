@@ -2,6 +2,8 @@ import '../styles/globals.css'
 import Navbar from './components/layout/navbar'
 import Footer from './components/layout/footer'
 
+export const runtime = 'edge'
+
 export const metadata = {
   title: 'Roots Foundation',
   description: 'Building structured, on-ground programs that address real needs and deliver sustained outcomes.',
