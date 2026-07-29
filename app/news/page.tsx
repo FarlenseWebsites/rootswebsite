@@ -1,0 +1,594 @@
+'use client'
+
+import React, { useRef } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { ChevronLeft, ChevronRight, ThumbsUp, MessageSquare, Share2, ArrowRight } from 'lucide-react'
+
+// --- Interface Definitions ---
+
+interface NewsletterItem {
+  id: number
+  title: string
+  issue: string
+  date: string
+  isSpecial?: boolean
+  specialTitle?: string
+  accentColor: string // CSS color class for border/accents
+  images: string[] // 4 images for collage or 1 for special
+}
+
+interface LinkedInPostItem {
+  id: number
+  text: string
+  image: string
+  likes: number
+  comments: number
+  shares: number
+  date: string
+}
+
+interface NewsArticleItem {
+  id: number
+  publisher: string
+  logoStyle: string // CSS style for publisher text
+  logoBg?: string // Optional background style for publisher
+  title: string
+  date: string
+  excerpt: string
+  image: string
+}
+
+// --- Mock Data ---
+
+const newsletters: NewsletterItem[] = [
+  {
+    id: 1,
+    title: 'Roots से',
+    issue: 'Q1 2026 Issue',
+    date: 'Jan - Mar 2026',
+    accentColor: 'bg-roots-primary',
+    images: ['/images/img-1.jpg', '/images/img-2.jpg', '/images/img-3.jpg', '/images/img-4.jpg']
+  },
+  {
+    id: 2,
+    title: 'Roots से',
+    issue: 'Q4 2025 Issue',
+    date: 'Oct - Dec 2025',
+    accentColor: 'bg-roots-agriculture',
+    images: ['/images/img-4.jpg', '/images/img-5.jpg', '/storychange/img1.jpg', '/storychange/img2.jpg']
+  },
+  {
+    id: 3,
+    title: 'Sports Lab',
+    issue: 'Performance Report 2025',
+    date: 'Annual Review',
+    isSpecial: true,
+    specialTitle: 'Sports Lab',
+    accentColor: 'bg-roots-sports',
+    images: ['/images/img-2.jpg']
+  },
+  {
+    id: 4,
+    title: 'Roots से',
+    issue: 'Q3 2025 Issue',
+    date: 'Jul - Sep 2025',
+    accentColor: 'bg-roots-education',
+    images: ['/storychange/img3.jpg', '/storychange/img4.jpg', '/storychange/img5.jpg', '/about/mustard.jpg']
+  },
+  {
+    id: 5,
+    title: 'Roots से',
+    issue: 'Annual Report 2024',
+    date: 'Full Year Review',
+    accentColor: 'bg-roots-skilled',
+    images: ['/images/img-1.jpg', '/images/img-3.jpg', '/images/img-5.jpg', '/about/hands.jpg']
+  }
+]
+
+const linkedinPosts: LinkedInPostItem[] = [
+  {
+    id: 1,
+    text: 'Our grassroots sports programs continue to expand, offering children from rural areas access to professional coaching, sports equipment, and competitive tournaments. Witnessing their smiles as they lift the trophy is why we do what we do. #SportsForAll #GrassrootsImpact #PhysicalLiteracy',
+    image: '/images/img-2.jpg',
+    likes: 342,
+    comments: 18,
+    shares: 9,
+    date: '2d ago'
+  },
+  {
+    id: 2,
+    text: 'REDUCING CROP RESIDUE BURNING: Working with farmers in Punjab and Haryana to implement sustainable straw management solutions. Together, we can improve air quality, enrich soil health, and secure agriculture futures. #SustainableAgri #ClimateAction #FarmersFirst',
+    image: '/storychange/burning.jpg',
+    likes: 512,
+    comments: 29,
+    shares: 14,
+    date: '4d ago'
+  },
+  {
+    id: 3,
+    text: 'ACCESS TO MECHANISATION AT SCALE: Empowering smallholder farmers by establishing Custom Hiring Centers for high-capacity machinery. This increases farm productivity while lowering operating costs. #RuralDevelopment #AgriTech #EmpoweringFarmers',
+    image: '/about/mustard.jpg',
+    likes: 254,
+    comments: 12,
+    shares: 6,
+    date: '1w ago'
+  },
+  {
+    id: 4,
+    text: 'Understanding how children learn, before we teach. Our teacher training and pedagogical development programs are ensuring primary school classrooms are engaging, inclusive, and outcome-oriented. #QualityEducation #TeacherMentorship #ClassroomInnovation',
+    image: '/images/img-3.jpg',
+    likes: 412,
+    comments: 22,
+    shares: 11,
+    date: '1w ago'
+  },
+  {
+    id: 5,
+    text: 'Sports for All Initiative: Creating safe play spaces and integrating physical education into the daily school curriculum. Physical fitness is a cornerstone of overall childhood development. #SportsLab #ActiveSchools #HealthyGrowth',
+    image: '/storychange/img3.jpg',
+    likes: 298,
+    comments: 9,
+    shares: 7,
+    date: '2w ago'
+  }
+]
+
+const newsArticles: NewsArticleItem[] = [
+  {
+    id: 1,
+    publisher: 'CSR TIMES',
+    logoStyle: 'text-red-600 font-extrabold tracking-tighter text-lg font-sans',
+    logoBg: 'bg-red-50 border border-red-200/50 px-2 py-0.5 rounded',
+    title: 'Roots Foundation collaborates with Acuity Group to expand digital classrooms in Maharashtra.',
+    date: 'June 18, 2026',
+    excerpt: 'By integrating interactive smart boards and providing regular teacher training, the initiative aims to bridge the digital divide in rural communities.',
+    image: '/images/img-3.jpg'
+  },
+  {
+    id: 2,
+    publisher: 'THE TIMES OF INDIA',
+    logoStyle: 'text-gray-900 font-serif font-black tracking-widest text-xs uppercase',
+    title: 'Ground Report: How organic farming is reviving soil health in 500+ Rajasthan villages.',
+    date: 'May 24, 2026',
+    excerpt: 'Farmers report a significant drop in chemical input costs and a steady rise in crop yields after adopting modern organic techniques.',
+    image: '/images/img-1.jpg'
+  },
+  {
+    id: 3,
+    publisher: 'NGOBOX',
+    logoStyle: 'text-[#75bc20] font-black tracking-normal text-base font-sans',
+    logoBg: 'bg-green-50/50 px-2.5 py-0.5 rounded border border-green-200/30',
+    title: 'Roots Foundation receives regional award for excellence in vocational skill training for women.',
+    date: 'April 12, 2026',
+    excerpt: 'Over 200 women graduated from tailoring and craftsmanship programs, with direct linkages to local market selling networks.',
+    image: '/images/img-5.jpg'
+  },
+  {
+    id: 4,
+    publisher: 'दैनिक जागरण / DAINIK JAGRAN',
+    logoStyle: 'text-[#ef7f3a] font-bold text-sm',
+    title: 'खेलों से संवर रहा ग्रामीण बच्चों का भविष्य: स्पोर्ट्स लैब पहल की नई उड़ान',
+    date: 'March 05, 2026',
+    excerpt: 'स्कूली बच्चों को खेल सामग्री और पेशेवर कोचिंग देकर उनमें शारीरिक साक्षरता और खेल भावना को बढ़ावा दिया जा रहा है।',
+    image: '/storychange/img3.jpg'
+  },
+  {
+    id: 5,
+    publisher: 'THE FINANCIAL EXPRESS',
+    logoStyle: 'text-gray-800 font-serif italic font-bold tracking-tight text-sm',
+    title: 'Corporate Partnerships: Driving sustainable rural development through accountability.',
+    date: 'February 15, 2026',
+    excerpt: 'A study on the CSR initiatives executed by Roots Foundation shows high retention rates in schools and better income stability for farmers.',
+    image: '/storychange/img1.jpg'
+  }
+]
+
+const galleryImages = [
+  { id: 1, src: '/images/img-1.jpg', alt: 'Agriculture program crop monitoring', colSpan: 'sm:col-span-3' },
+  { id: 2, src: '/storychange/img1.jpg', alt: 'Community gathering in village', colSpan: 'sm:col-span-3' },
+  { id: 3, src: '/storychange/img3.jpg', alt: 'Girls hockey team training on field', colSpan: 'sm:col-span-3' },
+  { id: 4, src: '/about/mustard.jpg', alt: 'Bags of harvested mustard crops', colSpan: 'sm:col-span-3' },
+  { id: 5, src: '/images/img-3.jpg', alt: 'Children using tablets in smart classroom', colSpan: 'sm:col-span-5' },
+  { id: 6, src: '/storychange/img2.jpg', alt: 'Students raising hands during interactive class', colSpan: 'sm:col-span-3' },
+  { id: 7, src: '/about/img27.jpg', alt: 'Girls studying inside modern library room', colSpan: 'sm:col-span-4' },
+  { id: 8, src: '/images/img-2.jpg', alt: 'Boys soccer team celebrating trophy win', colSpan: 'sm:col-span-3' },
+  { id: 9, src: '/images/img-5.jpg', alt: 'Woman working at tailoring workshop sewing machine', colSpan: 'sm:col-span-3' },
+  { id: 10, src: '/storychange/img4.jpg', alt: 'School boys sitting at desk reading books', colSpan: 'sm:col-span-3' },
+  { id: 11, src: '/storychange/img5.jpg', alt: 'Students holding Sports Lab footprint banner', colSpan: 'sm:col-span-3' }
+]
+
+export default function NewsPage() {
+  const newslettersRef = useRef<HTMLDivElement>(null)
+  const linkedinRef = useRef<HTMLDivElement>(null)
+  const newsRef = useRef<HTMLDivElement>(null)
+
+  const handleScroll = (ref: React.RefObject<HTMLDivElement>, direction: 'left' | 'right') => {
+    if (ref.current) {
+      const { scrollLeft } = ref.current
+      const offset = direction === 'left' ? -310 : 310
+      ref.current.scrollTo({ left: scrollLeft + offset, behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <div className="bg-roots-beige min-h-screen text-roots-text pb-16">
+      {/* 1. Header Section */}
+      <section className="py-16 px-6 max-w-7xl mx-auto text-left border-gray-200/40">
+        <motion.h1
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl sm:text-5xl font-bold text-roots-text mb-4 font-sans"
+        >
+          News and Insights
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+          className="text-lg sm:text-xl text-roots-text/70 font-light mb-4"
+        >
+          Capturing Impact Through Updates and Perspectives
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-base sm:text-lg text-roots-text/80 font-normal"
+        >
+          Documenting outcomes with <span className="font-bold text-roots-text">clarity and accountability.</span>
+        </motion.p>
+      </section>
+
+      {/* 2. Newsletters Section */}
+      <section className="py-12 px-6 max-w-7xl mx-auto relative group">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-roots-text">Newsletters</h2>
+            <p className="text-sm text-roots-text/70 mt-1">
+              A curated view of our work, insights, and ongoing impact
+            </p>
+          </div>
+          {/* Scroll Buttons */}
+          <div className="flex gap-2 mt-4 md:mt-0 select-none">
+            <button
+              onClick={() => handleScroll(newslettersRef, 'left')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => handleScroll(newslettersRef, 'right')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal Slider */}
+        <div
+          ref={newslettersRef}
+          className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {newsletters.map((newsletter) => (
+            <Link
+              key={newsletter.id}
+              href={`/news/newsletter/${newsletter.id}`}
+              className="flex-shrink-0 snap-start block"
+            >
+              <motion.div
+                className="w-[240px] h-[340px] bg-white shadow-md hover:shadow-xl rounded-lg p-3 flex flex-col justify-between select-none relative transition-all duration-300 hover:-translate-y-1.5"
+                whileHover={{ scale: 1.01 }}
+              >
+                {/* Simulated Newsletter Cover */}
+                <div className="flex-1 flex flex-col justify-between">
+                  {/* Header */}
+                  <div className="text-center border-b border-gray-100 pb-1.5 mb-1.5">
+                    <p className="text-[7px] text-roots-text/50 tracking-widest uppercase font-semibold">
+                      Roots Foundation Newsletter
+                    </p>
+                    <h3 className="text-xl font-bold tracking-tight text-roots-primary mt-0.5">
+                      {newsletter.isSpecial ? newsletter.specialTitle : (
+                        <span>
+                          Roots <span className="text-roots-education font-serif italic">से</span>
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-[6px] text-roots-text/60 tracking-wider font-medium uppercase mt-0.5">
+                      A Footprint Initiative
+                    </p>
+                  </div>
+
+                  {/* Body Image Grid */}
+                  <div className="flex-1 relative bg-gray-50 rounded overflow-hidden p-0.5">
+                    {newsletter.isSpecial ? (
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={newsletter.images[0]}
+                          alt={newsletter.title}
+                          fill
+                          className="object-cover rounded"
+                          sizes="240px"
+                        />
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-2 gap-0.5 h-full w-full">
+                        {newsletter.images.map((img, i) => (
+                          <div key={i} className="relative w-full h-full bg-gray-100">
+                            <Image
+                              src={img}
+                              alt="newsletter thumb"
+                              fill
+                              className="object-cover"
+                              sizes="120px"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Footer metadata */}
+                  <div className="mt-3 pt-2 border-t border-gray-100 flex items-center justify-between text-left">
+                    <div>
+                      <p className="text-[10px] font-bold text-roots-text leading-tight">
+                        {newsletter.issue}
+                      </p>
+                      <p className="text-[9px] text-roots-text/60">
+                        {newsletter.date}
+                      </p>
+                    </div>
+                    {/* Read Indicator */}
+                    <div className="w-5 h-5 rounded-full bg-roots-beige flex items-center justify-center text-roots-primary hover:bg-roots-primary hover:text-white transition-colors">
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Bottom Bar */}
+                <div className={`absolute bottom-0 left-0 right-0 h-1 ${newsletter.accentColor} rounded-b-lg`} />
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. LinkedIn Posts Section */}
+      <section className="py-12 px-6 max-w-7xl mx-auto relative group">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-roots-text">LinkedIn Posts</h2>
+            <p className="text-sm text-roots-text/70 mt-1">
+              Live updates and insights from our work on the ground
+            </p>
+          </div>
+          {/* Scroll Buttons */}
+          <div className="flex gap-2 mt-4 md:mt-0 select-none">
+            <button
+              onClick={() => handleScroll(linkedinRef, 'left')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => handleScroll(linkedinRef, 'right')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal Slider */}
+        <div
+          ref={linkedinRef}
+          className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {linkedinPosts.map((post) => (
+            <Link
+              key={post.id}
+              href={`/news/linkedin/${post.id}`}
+              className="flex-shrink-0 snap-start block"
+            >
+              <motion.div
+                className="w-[280px] h-[390px] bg-white border border-gray-200/85 shadow-md hover:shadow-xl rounded-lg overflow-hidden flex flex-col justify-between text-left transition-all duration-300 hover:-translate-y-1.5"
+                whileHover={{ scale: 1.01 }}
+              >
+                {/* Header */}
+                <div className="p-3 flex items-center justify-between border-b border-gray-100">
+                  <div className="flex items-center gap-2">
+                    <div className="relative w-8 h-8 rounded-full border border-gray-100 overflow-hidden bg-gray-50 flex items-center justify-center">
+                      <Image
+                        src="/logos/rootslogo.png"
+                        alt="Roots logo"
+                        fill
+                        className="object-contain p-1"
+                        sizes="32px"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-roots-text leading-tight">
+                        Roots Foundation
+                      </p>
+                      <p className="text-[10px] text-gray-400">
+                        {post.date} • Edited
+                      </p>
+                    </div>
+                  </div>
+                  {/* LinkedIn blue badge */}
+                  <svg className="w-4 h-4 text-roots-primary fill-roots-primary" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </div>
+
+                {/* Text excerpt */}
+                <div className="px-3 pt-2 flex-1 overflow-hidden">
+                  <p className="text-[11px] sm:text-[12px] text-roots-text leading-relaxed line-clamp-3 font-normal">
+                    {post.text}
+                  </p>
+                </div>
+
+                {/* Main image */}
+                <div className="relative w-full h-[180px] bg-gray-50 border-y border-gray-100">
+                  <Image
+                    src={post.image}
+                    alt="LinkedIn Post visual"
+                    fill
+                    className="object-cover"
+                    sizes="280px"
+                  />
+                </div>
+
+                {/* Engagement metrics */}
+                <div className="p-3 bg-gray-50/50 flex items-center justify-between border-t border-gray-100 text-[10px] sm:text-xs text-gray-500 font-semibold select-none">
+                  <div className="flex items-center gap-1">
+                    <ThumbsUp className="w-3.5 h-3.5 text-roots-primary" />
+                    <span>{post.likes}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1">
+                      <MessageSquare className="w-3.5 h-3.5" />
+                      <span>{post.comments}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Share2 className="w-3.5 h-3.5" />
+                      <span>{post.shares}</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 4. News Section */}
+      <section className="py-12 px-6 max-w-7xl mx-auto relative group ">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-roots-text">News</h2>
+            <p className="text-sm text-roots-text/70 mt-1">
+              Media coverage and articles documenting our work and impact
+            </p>
+          </div>
+          {/* Scroll Buttons */}
+          <div className="flex gap-2 mt-4 md:mt-0 select-none">
+            <button
+              onClick={() => handleScroll(newsRef, 'left')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => handleScroll(newsRef, 'right')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal Slider */}
+        <div
+          ref={newsRef}
+          className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {newsArticles.map((article) => (
+            <Link
+              key={article.id}
+              href={`/news/article/${article.id}`}
+              className="flex-shrink-0 snap-start block"
+            >
+              <motion.div
+                className="w-[280px] h-[390px] bg-white border border-gray-200/85 shadow-md hover:shadow-xl rounded-lg overflow-hidden flex flex-col justify-between text-left transition-all duration-300 hover:-translate-y-1.5"
+                whileHover={{ scale: 1.01 }}
+              >
+                {/* Publisher Logo Box */}
+                <div className="p-3 bg-gray-50/30 border-b border-gray-100 h-[48px] flex items-center">
+                  <span className={`${article.logoBg || ''} ${article.logoStyle}`}>
+                    {article.publisher}
+                  </span>
+                </div>
+
+                {/* Excerpt image */}
+                <div className="relative w-full h-[150px] bg-gray-50 border-b border-gray-100">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                    sizes="280px"
+                  />
+                </div>
+
+                {/* Body Text */}
+                <div className="p-3 flex-1 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] text-roots-primary font-bold uppercase tracking-wider block mb-1">
+                      {article.date}
+                    </span>
+                    <h3 className="text-[12px] sm:text-[13px] font-bold text-roots-text leading-snug mb-1.5 line-clamp-3 group-hover:text-roots-primary transition-colors">
+                      {article.title}
+                    </h3>
+                    <p className="text-[11px] text-roots-text/85 line-clamp-3 leading-normal">
+                      {article.excerpt}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center gap-1 text-[11px] font-bold text-roots-primary mt-2">
+                    <span>Read Full Story</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Gallery Section */}
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="mb-10 text-left">
+          <h2 className="text-3xl font-bold text-roots-text font-sans">Gallery</h2>
+          <p className="text-sm text-roots-text/70 mt-1">
+            A visual glimpse into our work and impact
+          </p>
+        </div>
+
+        {/* 11-Image Custom Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-12 gap-4">
+          {galleryImages.map((image) => (
+            <motion.div
+              key={image.id}
+              className={`${image.colSpan} relative h-[220px] rounded-lg overflow-hidden border border-gray-200/50 shadow-sm group cursor-pointer`}
+              whileHover={{ scale: 1.015 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-w-768px) 100vw, 30vw"
+              />
+              {/* Overlay on hover */}
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-xs font-semibold text-white leading-normal">
+                  {image.alt}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

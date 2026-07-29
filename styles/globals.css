@@ -14,7 +14,7 @@
 }
 
 @theme {
-  --font-sans: "Poppins", sans-serif;
+  --font-sans: "Poppins";
 
   --color-roots-beige: var(--roots-beige);
   --color-roots-text: var(--roots-text);

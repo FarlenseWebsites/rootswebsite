@@ -27,8 +27,8 @@ function AnimatedTrack({ src, isReady = true, delay = 1.3, customClass }: { src:
         alt="track"
         width={800}
         height={200}
-        // Force the image to inherit the height of its wrapper so h-[10vh] works properly
-        className="h-full w-full object-cover" 
+        // Render image from edge-to-edge preserving exact aspect ratio without cropping
+        className="w-full h-auto object-contain" 
         sizes="(min-width: 1536px) 18vw, (min-width: 1280px) 22vw, (min-width: 768px) 28vw, 72vw"
       />
     </motion.div>
@@ -53,7 +53,7 @@ export default function TrackOverlay({
         alt="track"
         width={800}
         height={200}
-        className="h-full w-full object-cover"
+        className="w-full h-auto object-contain"
         sizes="(min-width: 1536px) 18vw, (min-width: 1280px) 22vw, (min-width: 768px) 28vw, 72vw"
       />
     </div>

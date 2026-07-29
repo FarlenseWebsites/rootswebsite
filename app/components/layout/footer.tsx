@@ -24,9 +24,9 @@ export default function Footer() {
   const [email, setEmail] = useState('')
 
   return (
-    <footer className="bg-roots-footer-gray border-t">
-      <div className="max-w-7xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-roots-footer-gray">
+      <div className="max-w-7xl mx-auto px-10 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {/* Column 1 – Newsletter + Address */}
           <div className="flex flex-col gap-6">
@@ -63,7 +63,7 @@ export default function Footer() {
 
             <div className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#09569a] mt-0.5 shrink-0" />
-              <p className="text-sm text-[#4A4749] leading-relaxed">
+              <p className="text-xs text-[#4A4749] leading-relaxed">
                 UNITECH BUSINESS PARK, Sector 17-B,<br />
                 Block F, South City I, Sector 41,<br />
                 Gurugram, Haryana 122003

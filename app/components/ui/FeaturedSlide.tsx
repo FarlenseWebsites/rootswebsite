@@ -60,26 +60,26 @@ export default function FeaturedSlide({ slide, isReady = false }: FeaturedSlideP
         />
       </motion.div>
 
-      <div className="absolute inset-y-0 left-[15%] md:left-[20%] z-10 flex pointer-events-none w-[25%] sm:w-[35%] md:w-[50%]">
+      <div className="absolute inset-y-0 left-[10%] sm:left-[15%] md:left-[20%] z-10 flex pointer-events-none w-[80%] sm:w-[70%] md:w-[50%]">
         
         <motion.div
-          className="flex h-full w-full flex-col pt-34 bg-[#0AA7E4]/95 px-4 pointer-events-auto  backdrop-blur-sm"
+          className="flex h-full w-full flex-col pt-8 sm:pt-16 md:pt-24 lg:pt-34 bg-[#0AA7E4]/95 px-4 sm:px-6 pointer-events-auto  backdrop-blur-sm"
           animate={panelControls}
           initial={{ y: '-100%' }}
         >
-          <motion.div animate={textControls} initial={{ opacity: 0, y: 20 }} className="space-y-4 text-left">
+          <motion.div animate={textControls} initial={{ opacity: 0, y: 20 }} className="space-y-2 sm:space-y-4 text-left">
             
-            <p className=" font-light  leading-snug text-white text-sm">
+            <p className="font-light leading-snug text-white text-xs sm:text-sm">
               {'What happens when a'} <br/>
               <span className="font-bold">{ 'girl who loves running '}</span>
               {'is'}
             </p>
             
-            <h2 className="text-[2.5rem] font-black uppercase leading-[1.05] tracking-tight text-white pb-4 ">
+            <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-[2.5rem] font-black uppercase leading-[1.1] tracking-tight text-white pb-2 sm:pb-4">
               {<>GIVEN A <br/> CHANCE</>}
             </h2>
             
-            <p className="text-[13px] font-light text-white sm:text-sm md:text-base pt-4">
+            <p className="text-[11px] sm:text-xs md:text-sm font-light text-white pt-2 sm:pt-4">
               to run on a <span className="font-bold">track?</span>
             </p>
 

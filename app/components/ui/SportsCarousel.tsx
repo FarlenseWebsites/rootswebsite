@@ -61,7 +61,7 @@ export default function SportsCarousel() {
     : (activeIndex >= 3 ? (activeIndex - 2) * itemWidth : 0)
 
   return (
-    <div className="w-full aspect-[21/10] overflow-hidden bg-roots-beige flex items-center">
+    <div className="w-full aspect-[12/10] sm:aspect-[16/10] md:aspect-[21/10] overflow-hidden bg-roots-beige flex items-center">
       <motion.div
         className="flex h-full"
         animate={{ x: -shiftAmount }}
@@ -74,7 +74,7 @@ export default function SportsCarousel() {
             <motion.div
               key={index}
               ref={index === 0 ? itemRef : null}
-              className="relative h-full aspect-[4/5] flex-shrink-0 bg-[#F4ECE0] overflow-hidden"
+              className="relative h-full aspect-[4/5] shrink-0 min-w-0 bg-[#F4ECE0] overflow-hidden"
               initial={{ opacity: 0, x: 50 }}
               animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
               transition={{ duration: isVisible ? 0.3 : 0.6, ease: 'easeOut' }}
