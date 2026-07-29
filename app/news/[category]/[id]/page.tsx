@@ -1,21 +1,19 @@
 'use client'
 
-export const runtime = 'edge'
-
-import React from 'react'
+import React, { use } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowLeft, BookOpen, Share2, ThumbsUp, Calendar, Heart, FileText, Globe, Award } from 'lucide-react'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string
     id: string
-  }
+  }>
 }
 
 export default function DetailPlaceholderPage({ params }: PageProps) {
-  const { category, id } = params
+  const { category, id } = use(params)
   
   // Format category name for presentation
   const getCategoryTitle = (cat: string) => {
