@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.16",
+    "@types/node": "^26.1.2",
     "@types/react": "19.2.17",
     "postcss": "^8.4.0",
     "tailwindcss": "^4.3.0",
