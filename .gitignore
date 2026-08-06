@@ -39,9 +39,7 @@ pnpm-debug.log*
 # Vercel
 .vercel/
 
-# Cloudflare / OpenNext
-.open-next/
-.wrangler/
+
 
 # Misc
 *.pem
