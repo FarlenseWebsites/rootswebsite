@@ -50,7 +50,7 @@ export default function CoreValues() {
         <div className="lg:col-span-2">
           <div className="relative w-full h-[50vh] md:h-[40vw] overflow-hidden">
             <Image
-              src="/about/mustard.jpg"
+              src="/about/coreimg.png"
               alt="Mustard Field"
               fill
               className="object-cover"

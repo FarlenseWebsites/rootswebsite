@@ -32,45 +32,51 @@ const LocationIcon = ({ color }: { color: string }) => (
 
 export default function FootprintMap() {
   return (
-  <section className="py-16 px-10 font-sans">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+    <section className="relative py-10 px-10 overflow-hidden bg-roots-beige">
+      
+      {/* Background horizontal stripe - Fixed height (non-responsive) */}
+      <div className="absolute left-0 right-0 top-[60%] h-32 bg-roots-primary z-0" />
 
-    {/* Left */}
-    <div className="lg:col-span-2">
-      <h2 className="inline-block text-3xl font-medium text-roots-text">
-        Our Presence
-      </h2>
+      {/* Changed to 3 columns to give the map a wider footprint */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-0 items-start relative z-10">
 
-      <p className="mt-4 text-[#4A4749]">
-        We work across India in sectors
-      </p>
+        {/* Left: Legend (1 column out of 3) */}
+        <div className="lg:col-span-1">
+          <h2 className="inline-block text-3xl font-medium text-roots-text">
+            Our Presence
+          </h2>
 
-      <div className="mt-8 grid grid-cols-2 lg:grid-cols-1 gap-x-6 gap-y-5">
-        {SECTORS.map((sector, index) => (
-          <div key={index} className="flex items-start gap-4">
-            <LocationIcon color={sector.color} />
+          <p className="mt-4 text-roots-text text-sm leading-[1.4]">
+            We work across India in sectors
+          </p>
 
-            <span className="text-sm font-medium text-[#4A4749] whitespace-pre-line leading-[1.4]">
-              {sector.label}
-            </span>
+          <div className="mt-8 grid grid-cols-2 lg:grid-cols-1 gap-x-2 gap-y-5">
+            {SECTORS.map((sector, index) => (
+              <div key={index} className="flex items-start gap-4">
+                <LocationIcon color={sector.color} />
+
+                <span className="text-sm font-medium text-[#4A4749] whitespace-pre-line leading-[1.4]">
+                  {sector.label}
+                </span>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
 
-    {/* Right */}
-    <div className="lg:col-span-3">
-      <div className="relative w-full h-[70vw] sm:h-[55vw] lg:h-[42vw]">
-        <Image
-          src="/about/map.png"
-          alt="Map of India showing our presence across sectors"
-          fill
-          priority
-          className="object-contain"
-        />
-      </div>
-    </div>
+        {/* Right: Map (2 columns out of 3 for wider space) */}
+        <div className="lg:col-span-2">
+          <div className="relative w-full h-[70vw] sm:h-[55vw] lg:h-[55vw]">
+            <Image
+              src="/about/map.svg"
+              alt="Map of India showing our presence across sectors"
+              fill
+              priority
+              className="object-contain drop-shadow-xl"
+            />
+          </div>
+        </div>
 
-  </div>
-</section>
-)}
+      </div>
+    </section>
+  )
+}

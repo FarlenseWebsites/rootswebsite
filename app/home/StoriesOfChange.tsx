@@ -19,7 +19,7 @@ const stories: StoryItem[] = [
     title: 'From Abandoned Fields to Thriving Farms:',
     subtitle: 'Sustainable Agriculture Success',
     image: '/storychange/img1.jpg',
-    textColorClass: 'text-roots-text',
+    textColorClass: 'text-roots-agriculture',
     borderClass: 'border-roots-agriculture',
   },
   {
@@ -27,7 +27,7 @@ const stories: StoryItem[] = [
     title: 'The power of sports:',
     subtitle: 'How Ajay Found His Calling',
     image: '/storychange/img2.jpg',
-    textColorClass: 'text-roots-text',
+    textColorClass: 'text-roots-sports',
     borderClass: 'border-roots-sports',
   },
   {
@@ -35,23 +35,15 @@ const stories: StoryItem[] = [
     title: 'From Fields to Classrooms:',
     subtitle: "Rekha's Journey to Education",
     image: '/storychange/img3.jpg',
-    textColorClass: 'text-roots-text',
+    textColorClass: 'text-roots-education',
     borderClass: 'border-roots-education',
-  },
-  {
-    id: 4,
-    title: 'Access to health and hygiene:',
-    subtitle: "Aradhna's journey to live a healthy life",
-    image: '/storychange/img4.jpg',
-    textColorClass: 'text-roots-text',
-    borderClass: 'border-roots-health',
   },
   {
     id: 5,
     title: 'Skilled Hands, Empowered Lives:',
     subtitle: "Sunita's Rise as an Entrepreneur",
     image: '/storychange/img5.jpg',
-    textColorClass: 'text-roots-text',
+    textColorClass: 'text-roots-skilled',
     borderClass: 'border-roots-skilled',
   },
 ]
@@ -60,15 +52,15 @@ export default function StoriesOfChange() {
   return (
     <section className="bg-roots-beige py-16 px-6">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-roots-primary mb-2">
+        <h2 className="text-3xl md:text-4xl font-semibold text-roots-primary mb-2">
           Stories of Change
         </h2>
-        <p className="text-roots-text/80 font-medium mb-10 text-sm sm:text-base">
+        <p className="text-roots-text/80 font-light mb-10 text-sm sm:text-base">
           Real people, real experiences, real change
         </p>
 
         {/* Stories Grid/Carousel Container */}
-        <div className="flex gap-5 overflow-x-auto pb-6 scrollbar-thin md:grid md:grid-cols-5 md:overflow-x-visible md:pb-0">
+        <div className="flex gap-5 overflow-x-auto pb-6 scrollbar-thin md:grid md:grid-cols-4 md:overflow-x-visible md:pb-0">
           {stories.map((story) => (
             <motion.div
               key={story.id}
@@ -77,7 +69,7 @@ export default function StoriesOfChange() {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
             >
               {/* Image with title overlaid */}
-              <div className="relative h-[220px] w-full overflow-hidden bg-black">
+              <div className="relative h-[300px] w-full overflow-hidden bg-black">
                 <Image
                   src={story.image}
                   alt={story.title}
@@ -94,13 +86,13 @@ export default function StoriesOfChange() {
 
               {/* Text Body */}
               <div className=" bg-roots-beige p-4 flex-1 flex flex-col justify-between">
-                <p className="text-roots-text font-medium text-sm mb-4">
+                <p className="text-roots-text font-light text-sm mb-4">
                   {story.subtitle}
                 </p>
 
                 <div className="flex items-center gap-1">
                   <span
-                    className={`text-xs font-semibold underline underline-offset-4 decoration-1 cursor-pointer ${story.textColorClass}`}
+                    className={`text-xs font-medium underline underline-offset-4 decoration-1 cursor-pointer ${story.textColorClass}`}
                   >
                     Read Case Study
                   </span>

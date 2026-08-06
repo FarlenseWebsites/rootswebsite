@@ -21,13 +21,16 @@ export interface ProgramItem {
 export interface SectionSwitcherProps {
   items: ProgramItem[]
   accentColor?: string
+  locationcolor?: string
   title?: string
   description?: string
 }
 
+
 export default function SectionSwitcher({
   items = [],
   accentColor = '#75bc20',
+  locationcolor = '',
   title = 'Programs',
   description
 }: SectionSwitcherProps) {
@@ -137,7 +140,7 @@ export default function SectionSwitcher({
                         <span
                           key={idx}
                           className="text-xs px-4 py-2.5 text-white"
-                          style={{ backgroundColor: '#7AA547' }}
+                          style={{ backgroundColor: locationcolor }}
                         >
                           {tag}
                         </span>

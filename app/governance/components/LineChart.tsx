@@ -7,7 +7,7 @@ export default function LineChart() {
   return (
     <div className="w-full flex justify-center bg-transparent select-none">
       <Image
-        src="/governance/linegraph.svg"
+        src="/governance/table.png"
         alt="Overall Projects' Value"
         width={1250}
         height={703}

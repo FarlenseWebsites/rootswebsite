@@ -1,5 +1,6 @@
 import React from 'react'
-import { focusAreas, gridCells } from './data'
+import { focusAreas, gridCells, focusAreaImages } from './data'
+import Image from 'next/image'
 
 export default function FocusAreasSection() {
   return (
@@ -12,12 +13,22 @@ export default function FocusAreasSection() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {gridCells.map((cell, i) =>
-          cell.type === 'box' ? (
-            <div key={i} className="bg-[#afafaf]  min-h-[220px]" />
+          cell.type === 'image' ? (
+            // Wrapped in a relative container with h-full and w-full
+            <div key={i} className="relative w-full h-full min-h-[220px] bg-[#afafaf] overflow-hidden">
+              <Image 
+                src={focusAreaImages[cell.idx as number]} 
+                alt={`Focus Area ${cell.idx}`} 
+                fill 
+                className="object-cover" 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           ) : (
             <div
               key={i}
-              className="bg-[#FEF9F1] text-center border border-[#7aa547] p-8 flex flex-col justify-between min-h-[220px]"
+              // Added h-full to ensure the text box stretches to fill the grid row exactly like the image
+              className="bg-[#FEF9F1] text-center border border-[#7aa547] p-8 flex flex-col justify-between h-full min-h-[220px]"
             >
               <div>
                 <h3 className="text-lg font-bold text-roots-text mb-3">

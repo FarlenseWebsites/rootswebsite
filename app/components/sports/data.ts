@@ -1,0 +1,358 @@
+import { ProgramItem } from '../sectionswitcher/SectionSwitcher'
+
+export interface FocusArea {
+  title: string
+  description: string
+}
+
+export interface GridCell {
+  type: 'image' | 'text'
+  idx?: number
+}
+
+export interface HeroStat {
+  value: string
+  label: string
+}
+
+export const heroStats: HeroStat[] = [
+  {
+    value: '10,000+ Children',
+    label: 'Engaged through grassroots sports programmes, school initiatives, leagues and athlete development pathways'
+  },
+  {
+    value: '5,000 Students',
+    label: 'Reached through scouting initiatives across 450+ schools and 6 blocks under Project Utkarsh'
+  },
+  {
+    value: '181 Students',
+    label: 'Engaged across three schools under Sports for All, with progression into state and national-level competitions'
+  }
+]
+
+export const focusAreas: FocusArea[] = [
+  { title: 'Talent Scouting and Identification', description: 'Identifying sporting potential through schools and community assessments.' },
+  { title: 'Grassroots Sports Participation', description: 'Expanding regular access to sport, fitness, and play.' },
+  { title: 'Athlete Development Pathways', description: 'Supporting athletes through coaching, progression planning, and exposure.' },
+  { title: 'Centres of Excellence and Residential Training', description: 'Providing advanced training environments for selected young athletes.' },
+  { title: 'School and Community Sports Ecosystems', description: 'Strengthening infrastructure, coaching, and participation at the local level.' },
+  { title: 'Fitness, Nutrition, and Mentorship', description: 'Supporting performance through nutrition, conditioning, guidance, and care.' }
+]
+
+// 12-cell checkerboard: gray image at even index, text card at odd index
+export const focusAreaImages: string[] = [
+  '/sports/focus/img1.png',
+  '/sports/focus/img2.png',
+  '/sports/focus/img3.png',
+  '/sports/focus/img4.png',
+  '/sports/focus/img5.png',
+  '/sports/focus/img6.png',
+]
+// 12-cell checkerboard: gray box at even index, text card at odd index
+export const gridCells: GridCell[] = [
+  { type: 'image',idx:0 },
+  { type: 'text', idx: 0 }, // Market Linkages
+  { type: 'image',idx:1 },
+  { type: 'text', idx: 1 }, // Natural Resource Conservation
+  { type: 'image',idx:2 },
+  { type: 'text', idx: 2 }, // Technology Adoption
+  { type: 'image',idx:3 },
+  { type: 'text', idx: 3 }, // Climate-Smart Agriculture
+  { type: 'image',idx:4 },
+  { type: 'text', idx: 4 }, // Capacity Building
+  { type: 'image',idx:5 },
+  { type: 'text', idx: 5 }, // Women-Led Rural Enterprise
+
+]
+
+export const sportsprograms: ProgramItem[] = [
+  {
+    id: "sports-lab",
+    name: "Sports Lab",
+    title: "SportsLab",
+    description: [
+      "A grassroots sports and fitness development platform working across Punjab, Haryana, and Maharashtra.",
+      "The programme integrates school fitness modules, talent identification, Centres of Excellence, residential training pathways, career counselling, and digital monitoring.",
+      "It is designed to build a structured sports ecosystem for children and young athletes.",
+      "Sports Lab has enabled 30,000+ student engagements, 100+ government school touchpoints, and 14,000+ evening training sessions."
+    ],
+    tags: [
+      "States: Punjab, Haryana, Maharashtra",
+      "30,000+ student engagements",
+      "100+ government school touchpoints"
+    ],
+    images: [
+      { src: "/sports/sportslab/1.png", alt: "Sports Lab orientation", caption: "Students participating in Sports Lab activities" },
+      { src: "/sports/sportslab/2.png", alt: "Volleyball coaching", caption: "Volleyball coaching session" },
+      { src: "/sports/sportslab/3.png", alt: "Cricket nets", caption: "Cricket practice session" },
+      { src: "/sports/sportslab/4.png", alt: "Football players", caption: "Football training with young athletes" },
+      { src: "/sports/sportslab/5.png", alt: "Girls football team", caption: "Girls football development programme" },
+      { src: "/sports/sportslab/6.png", alt: "School awareness", caption: "Sports education in government schools" },
+      { src: "/sports/sportslab/7.png", alt: "Sports Lab beneficiaries", caption: "Students benefitting from Sports Lab" }
+    ]
+  },
+
+  {
+    id: "sehatgiri",
+    name: "Sehatgiri",
+    title: "Sehatgiri",
+    description: [
+      "A community wellness programme implemented in Gurugram, Haryana, in partnership with HDB Financial Services.",
+      "The initiative promotes fitness, preventive healthcare, and healthier everyday habits among urban communities.",
+      "Activities include yoga, Zumba, medical check-ups, nutrition awareness, mobility sessions, mindfulness, self-defence, and life-skills workshops.",
+      "Sehatgiri brings wellness into parks, residential communities, institutions, and other public spaces."
+    ],
+    tags: [
+      "Locations: Punjab, Haryana",
+      "Community Wellness Programme",
+      "Soon Expanding to More States"
+    ],
+    images: [
+      { src: "/sports/sehatgiri/1.png", alt: "Community event", caption: "Community wellness programme" },
+      { src: "/sports/sehatgiri/2.png", alt: "Awareness session", caption: "Health awareness workshop" },
+      { src: "/sports/sehatgiri/3.png", alt: "Medical checkup", caption: "Preventive healthcare session" },
+      { src: "/sports/sehatgiri/4.png", alt: "Fitness activity", caption: "Outdoor mobility exercises" },
+      { src: "/sports/sehatgiri/5.png", alt: "Sports exercise", caption: "Community fitness engagement" },
+      { src: "/sports/sehatgiri/6.png", alt: "Yoga session", caption: "Yoga and mindfulness activity" },
+      { src: "/sports/sehatgiri/7.png", alt: "Group wellness", caption: "Residents participating in wellness programme" }
+    ]
+  },
+
+  {
+    id: "vision-football-academy",
+    name: "Vision Football Academy",
+    title: "Vision Football Academy",
+    description: [
+      "A specialised football training initiative working across Haryana, Rajasthan, and Jharkhand.",
+      "The academy supports young footballers through expert coaching, exposure opportunities, dietary guidance, and rehabilitation support.",
+      "It focuses on building long-term pathways for children with sporting potential.",
+      "Over four years, the academy has trained 1,000+ children and supported 20+ players to reach the national level."
+    ],
+    tags: [
+      "States: Haryana, Rajasthan, Jharkhand",
+      "1,000+ Children Trained",
+      "20+ National-Level Players"
+    ],
+    images: [
+      { src: "/sports/vfa/1.png", alt: "Football huddle", caption: "Players preparing before training" },
+      { src: "/sports/vfa/2.png", alt: "Victory celebration", caption: "Young footballers celebrating success" },
+      { src: "/sports/vfa/3.png", alt: "Football coaching", caption: "Professional football coaching" },
+      { src: "/sports/vfa/4.png", alt: "Tournament", caption: "Players participating in competition" },
+      { src: "/sports/vfa/5.png", alt: "Match action", caption: "Competitive football match" },
+      { src: "/sports/vfa/6.png", alt: "Football academy", caption: "Vision Football Academy event" },
+      { src: "/sports/vfa/7.png", alt: "Youth football", caption: "Grassroots football development" }
+    ]
+  },
+
+  {
+    id: "psca",
+    name: "PSCA",
+    title: "Pradeep Sahu Cricket Academy (PSCA)",
+    description: [
+      "A structured cricket training programme for young players across Haryana, Rajasthan, and Jharkhand.",
+      "The academy provides coaching, practice infrastructure, and specialised guidance for children from the age of seven.",
+      "It works with both boys and girls, creating access to quality cricket training at the grassroots.",
+      "More than 50 players have progressed to state-level and higher competitive platforms."
+    ],
+    tags: [
+      "States: Haryana, Rajasthan, Jharkhand",
+      "50+ Players Progressed to State Level",
+      "Grassroots Cricket Development"
+    ],
+    images: [
+      { src: "/sports/psca/1.png", alt: "Cricket player", caption: "Young cricketer during training" },
+      { src: "/sports/psca/2.png", alt: "Batting practice", caption: "Batting practice session" },
+      { src: "/sports/psca/3.png", alt: "Academy camp", caption: "Players attending cricket camp" },
+      { src: "/sports/psca/4.png", alt: "Coaching", caption: "Professional coaching session" },
+      { src: "/sports/psca/5.png", alt: "Batting drill", caption: "Technical batting practice" },
+      { src: "/sports/psca/6.png", alt: "Net practice", caption: "Cricket nets training" },
+      { src: "/sports/psca/7.png", alt: "Team photograph", caption: "PSCA players and coaches" }
+    ]
+  },
+    {
+    id: "sports-for-all",
+    name: "Sports For All (SFA)",
+    title: "Sports For All (SFA)",
+    description: [
+      "A school-based sports development programme implemented in Rajasthan and Uttar Pradesh.",
+      "The initiative strengthens sports infrastructure, training modules, equipment access, and coaching support in government schools.",
+      "It helps students explore and develop their sporting potential within the school ecosystem.",
+      "The programme has upgraded sports infrastructure across 3 schools and supports participation in 6 different sports."
+    ],
+    tags: [
+      "States: Rajasthan and Uttar Pradesh",
+      "3 Schools Upgraded",
+      "6 Sports Supported"
+    ],
+    images: [
+      { src: "/sports/sfa/1.png", alt: "School cricket activity", caption: "Students participating in cricket training" },
+      { src: "/sports/sfa/2.png", alt: "School sports session", caption: "Sports activities in government schools" },
+      { src: "/sports/sfa/3.png", alt: "Kho-Kho practice", caption: "Students practising traditional sports" },
+      { src: "/sports/sfa/4.png", alt: "Outdoor fitness equipment", caption: "Children using sports infrastructure" },
+      { src: "/sports/sfa/5.png", alt: "Athletics activity", caption: "Athletic training session" },
+      { src: "/sports/sfa/6.png", alt: "Physical education", caption: "Physical education programme in schools" },
+      { src: "/sports/sfa/7.png", alt: "Sports coaching", caption: "Coaching support for young athletes" }
+    ]
+  },
+
+  {
+    id: "games-forest",
+    name: "Games Forest",
+    title: "Games Forest",
+    description: [
+      "A sports infrastructure initiative based in Haryana, serving children and athletes across Delhi NCR.",
+      "Spread over five acres, Games Forest provides facilities, equipment, and coaching for cricket, football, volleyball, kho-kho, kabaddi, table tennis, and physiotherapy.",
+      "It supports access to quality training spaces for grassroots and competitive sport.",
+      "The facility has provided 1,500+ memberships for sportspersons and supported more than 20 athletes who have competed at the international level."
+    ],
+    tags: [
+      "State: Haryana",
+      "1,500+ Memberships",
+      "20+ International Athletes Supported"
+    ],
+    images: [
+      { src: "/sports/games-forest/1.png", alt: "Team huddle", caption: "Athletes preparing before competition" },
+      { src: "/sports/games-forest/2.png", alt: "Volleyball court", caption: "Competitive volleyball match" },
+      { src: "/sports/games-forest/3.png", alt: "Award ceremony", caption: "Recognition of tournament winners" },
+      { src: "/sports/games-forest/4.png", alt: "Football session", caption: "Football training on campus" },
+      { src: "/sports/games-forest/5.png", alt: "Tug of war", caption: "Community sports activities" },
+      { src: "/sports/games-forest/6.png", alt: "Sports festival", caption: "Outdoor sports festival" },
+      { src: "/sports/games-forest/7.png", alt: "Athletes training", caption: "Grassroots athletes using the Games Forest facility" }
+    ]
+  },
+
+  {
+    id: "veer-champions-league",
+    name: "Veer Champion League (VCL)",
+    title: "Veer Champions League (VCL)",
+    description: [
+      "An incentive-linked sports initiative for school students in Haryana.",
+      "The programme uses football and kabaddi to encourage attendance, school retention, confidence, and physical development among students.",
+      "Alongside regular matches, it includes rewards linked to attendance and grades, as well as life-skills and financial literacy sessions.",
+      "VCL has already reached over 170 students and is being expanded to support more than 1,000 students across Classes 7 and 8."
+    ],
+    tags: [
+      "State: Haryana",
+      "170+ Students Reached",
+      "Scaling to 1,000+ Students"
+    ],
+    images: [
+      { src: "/sports/vcl/1.png", alt: "Prize winners", caption: "Students receiving awards" },
+      { src: "/sports/vcl/2.png", alt: "Kabaddi coaching", caption: "Kabaddi coaching session" },
+      { src: "/sports/vcl/3.png", alt: "Football team", caption: "Football participants after training" },
+      { src: "/sports/vcl/4.png", alt: "Kabaddi match", caption: "Competitive kabaddi match" },
+      { src: "/sports/vcl/5.png", alt: "Football practice", caption: "Football drills for school students" },
+      { src: "/sports/vcl/6.png", alt: "Team activity", caption: "Students participating in team-building exercises" },
+      { src: "/sports/vcl/7.png", alt: "Kabaddi tournament", caption: "Grassroots kabaddi competition" }
+    ]
+  },
+
+  {
+    id: "utkarsh",
+    name: "Utkarsh",
+    title: "Utkarsh",
+    description: [
+      "A Centre of Excellence for Sports located in Khunti, Jharkhand.",
+      "The programme identifies talented young athletes in football, athletics, and hockey through structured scouting and training.",
+      "Participants receive coaching, equipment, residential facilities, nutrition support, mental conditioning, and career guidance.",
+      "Utkarsh currently supports 100 students between the ages of 12 and 16, with more than 35 athletes representing at state and national competitions."
+    ],
+    tags: [
+      "State: Jharkhand",
+      "100 Students Enrolled",
+      "35+ State and National Players"
+    ],
+    images: [
+      { src: "/sports/utkarsh/1.png", alt: "Football coaching", caption: "Morning football coaching session" },
+      { src: "/sports/utkarsh/2.png", alt: "Skill training", caption: "Individual football skill development" },
+      { src: "/sports/utkarsh/3.png", alt: "Match practice", caption: "Small-sided football training" },
+      { src: "/sports/utkarsh/4.png", alt: "Athletics training", caption: "Speed and agility drills" },
+      { src: "/sports/utkarsh/5.png", alt: "Fitness session", caption: "Strength and conditioning programme" },
+      { src: "/sports/utkarsh/6.png", alt: "Academy group", caption: "Utkarsh athletes and coaching staff" },
+      { src: "/sports/utkarsh/7.png", alt: "Hockey player", caption: "Athlete during hockey practice" }
+    ]
+  },
+    {
+    id: "feeding-india-partnership",
+    name: "Feeding India Partnership",
+    title: "Feeding India Partnership",
+    description: [
+      "A nutrition-support partnership integrated into Roots Foundation's sports and education programmes.",
+      "The initiative provides regular nutritious meals to young athletes and children, helping reduce nutrition-related barriers to participation and performance.",
+      "The programme is supported through digital monitoring, beneficiary verification, quality checks, and nutrition awareness sessions.",
+      "Approximately 356 children and young athletes received nutritious meals daily during the reporting period."
+    ],
+    tags: [
+      "Nutrition Support Programme",
+      "356 Children Benefited Daily",
+      "Sports & Education Partnership"
+    ],
+    images: [
+      { src: "/sports/feeding-india/1.png", alt: "Nutrition awareness", caption: "Nutrition awareness session with children" },
+      { src: "/sports/feeding-india/2.png", alt: "Meal distribution", caption: "Volunteers distributing nutritious meals" },
+      { src: "/sports/feeding-india/3.png", alt: "Children eating", caption: "Young athletes receiving healthy meals" },
+      { src: "/sports/feeding-india/4.png", alt: "Nutrition programme", caption: "Daily nutrition support for beneficiaries" },
+      { src: "/sports/feeding-india/5.png", alt: "Community meal", caption: "Children participating in nutrition initiative" },
+      { src: "/sports/feeding-india/6.png", alt: "Group activity", caption: "Community engagement through nutrition programme" },
+      { src: "/sports/feeding-india/7.png", alt: "Fruit distribution", caption: "Distribution of fresh fruits to young athletes" }
+    ]
+  },
+
+  {
+    id: "aai-grassroots-sports-fitness",
+    name: "AAI Grassroots Sports and Fitness Promotion Programme",
+    title: "AAI Grassroots Sports and Fitness Promotion Programme",
+    description: [
+      "A grassroots sports and fitness initiative implemented in Baghpat district, Uttar Pradesh, with support from the Airports Authority of India.",
+      "The programme covers 20 government schools across 10 villages and establishes 10 community-based Sports Training Centres.",
+      "It offers structured coaching in kabaddi, football, basketball, and kho-kho, alongside school fitness sessions and community tournaments.",
+      "The initiative aims to directly benefit more than 2,500 children and youth."
+    ],
+    tags: [
+      "State: Uttar Pradesh",
+      "District: Baghpat",
+      "20 Government Schools",
+      "10 Sports Training Centres",
+      "2,500+ Children and Youth"
+    ],
+    images: [
+      { src: "/sports/aai/1.png", alt: "School sports event", caption: "School fitness and sports programme" },
+      { src: "/sports/aai/2.png", alt: "Coach briefing players", caption: "Coach interacting with young athletes" },
+      { src: "/sports/aai/3.png", alt: "Football match", caption: "Football coaching and match practice" },
+      { src: "/sports/aai/4.png", alt: "Athletics training", caption: "Track and field fitness session" },
+      { src: "/sports/aai/5.png", alt: "Children group", caption: "Participants at grassroots sports camp" },
+      { src: "/sports/aai/6.png", alt: "Football team", caption: "Community sports training centre" },
+      { src: "/sports/aai/7.png", alt: "School awareness rally", caption: "Students promoting sports and fitness" }
+    ]
+  },
+
+  {
+    id: "mcl-grassroots-sports-development",
+    name: "MCL Grassroots Sports Development Programme",
+    title: "MCL Grassroots Sports Development Programme",
+    description: [
+      "A grassroots sports development programme implemented in Mayurbhanj district, Odisha, in partnership with Mahanadi Coalfields Limited.",
+      "The programme covers Baripada, Thakurmunda, and Moroda blocks, combining school fitness, community training, and advanced coaching pathways.",
+      "It establishes fitness programmes in 30 government schools, 12 Sports Training Centres across 48 villages, and 2 Centres of Excellence.",
+      "Through assessments, scouting, coaching, competitions, and career guidance, it builds pathways from rural talent to district, state, and national opportunities."
+    ],
+    tags: [
+      "State: Odisha",
+      "District: Mayurbhanj",
+      "30 Government Schools",
+      "12 Sports Training Centres",
+      "48 Villages",
+      "2 Centres of Excellence"
+    ],
+    images: [
+      { src: "/sports/mcl/1.png", alt: "Children playing", caption: "Grassroots sports activity in villages" },
+      { src: "/sports/mcl/2.png", alt: "Ball training", caption: "Skill development session" },
+      { src: "/sports/mcl/3.png", alt: "Youth football group", caption: "Young athletes participating in training" },
+      { src: "/sports/mcl/4.png", alt: "Volleyball game", caption: "Village sports competition" },
+      { src: "/sports/mcl/5.png", alt: "Community coaching", caption: "Coaches guiding participants during practice" },
+      { src: "/sports/mcl/6.png", alt: "Football field", caption: "Community football programme" },
+      { src: "/sports/mcl/7.png", alt: "Group photograph", caption: "Participants after grassroots sports training" }
+    ]
+  }
+];
+ 

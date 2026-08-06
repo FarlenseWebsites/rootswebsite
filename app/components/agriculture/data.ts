@@ -6,7 +6,7 @@ export interface FocusArea {
 }
 
 export interface GridCell {
-  type: 'box' | 'text'
+  type: 'image' | 'text'
   idx?: number
 }
 
@@ -31,27 +31,42 @@ export const heroStats: HeroStat[] = [
 ]
 
 export const focusAreas: FocusArea[] = [
-  { title: 'Market Linkages & Livelihood Enhancement', description: 'Connecting farmers to industries, FPOs, and CHCs to create value from crop residue.' },
-  { title: 'Natural Resource Conservation', description: 'Conserving water, improving soil health, and reducing stubble burning through sustainable farm practices.' },
-  { title: 'Technology Adoption and Mechanisation', description: 'Improving access to farm machinery through OEM partnerships and rental-based service models.' },
-  { title: 'Climate-Smart Agriculture', description: 'Reducing emissions, saving water, and supporting more sustainable agricultural systems.' },
-  { title: 'Capacity Building and Behaviour Change', description: 'Building farmer confidence through demonstrations, training, field engagement, and IEC campaigns.' },
-  { title: 'Women-Led Rural Enterprise', description: 'Supporting SHGs to upcycle paddy residue into products and income opportunities.' }
+  { title: 'Market Linkages & Livelihood Enhancement',
+     description: 'Connecting farmers to industries, FPOs, and CHCs to create value from crop residue.' },
+  { title: 'Natural Resource Conservation',
+     description: 'Conserving water, improving soil health, and reducing stubble burning through sustainable farm practices.' },
+  { title: 'Technology Adoption and Mechanisation', 
+    description: 'Improving access to farm machinery through OEM partnerships and rental-based service models.' },
+  { title: 'Climate-Smart Agriculture', 
+    description: 'Reducing emissions, saving water, and supporting more sustainable agricultural systems.' },
+  { title: 'Capacity Building and Behaviour Change', 
+    description: 'Building farmer confidence through demonstrations, training, field engagement, and IEC campaigns.' },
+  { title: 'Women-Led Rural Enterprise', 
+    description: 'Supporting SHGs to upcycle paddy residue into products and income opportunities.' }
+]
+
+export const focusAreaImages: string[] = [
+  '/agri/focus/img1.png',   
+  '/agri/focus/img2.png',   
+  '/agri/focus/img3.png',   
+  '/agri/focus/img4.png',   
+  '/agri/focus/img5.png',   
+  '/agri/focus/img6.png',   
 ]
 
 // 12-cell checkerboard: gray box at even index, text card at odd index
 export const gridCells: GridCell[] = [
-  { type: 'box' },
+  { type: 'image',idx:0 },
   { type: 'text', idx: 0 }, // Market Linkages
-  { type: 'box' },
+  { type: 'image',idx:1 },
   { type: 'text', idx: 1 }, // Natural Resource Conservation
-  { type: 'box' },
+  { type: 'image',idx:2 },
   { type: 'text', idx: 2 }, // Technology Adoption
-  { type: 'box' },
+  { type: 'image',idx:3 },
   { type: 'text', idx: 3 }, // Climate-Smart Agriculture
-  { type: 'box' },
+  { type: 'image',idx:4 },
   { type: 'text', idx: 4 }, // Capacity Building
-  { type: 'box' },
+  { type: 'image',idx:5 },
   { type: 'text', idx: 5 }, // Women-Led Rural Enterprise
 
 ]
@@ -70,13 +85,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['State: Haryana', 'Districts: Jind, Fatehabad, Hisar and Sonipat', 'Coverage: 120 villages'],
     images: [
-      { src: '/agri/manfire.jpg', alt: 'Stubble Burning Action Photo', caption: 'Field demonstration on stubble burning prevention' },
-      { src: '/agri/carane.jpg', alt: 'CRM Machinery Equipment', caption: 'Custom hiring center crop residue machinery' },
-      { src: '/agri/school.jpg', alt: 'Chemical Safety Worker', caption: 'Safety protocol demonstration for farmers' },
-      { src: '/agri/wall.jpg', alt: 'Tractor Operations', caption: 'Tractor mulcher operating in paddy field' },
-      { src: '/agri/man.jpg', alt: 'Farmer Training in Field', caption: 'Farmer receiving zero-till guidance' },
-      { src: '/agri/school.jpg', alt: 'Village Youth Outreach', caption: 'School and community awareness rally' },
-      { src: '/agri/fire.jpg', alt: 'Stubble Fire Monitoring', caption: 'Active field monitoring and fire mitigation' }
+      { src: '/agri/haryana/1.png', alt: 'Stubble Burning Action Photo', caption: 'Field demonstration on stubble burning prevention' },
+      { src: '/agri/haryana/2.png', alt: 'CRM Machinery Equipment', caption: 'Custom hiring center crop residue machinery' },
+      { src: '/agri/haryana/3.png', alt: 'Chemical Safety Worker', caption: 'Safety protocol demonstration for farmers' },
+      { src: '/agri/haryana/4.png', alt: 'Tractor Operations', caption: 'Tractor mulcher operating in paddy field' },
+      { src: '/agri/haryana/5.png', alt: 'Farmer Training in Field', caption: 'Farmer receiving zero-till guidance' },
+      { src: '/agri/haryana/6.png', alt: 'Village Youth Outreach', caption: 'School and community awareness rally' },
+      { src: '/agri/haryana/7.png', alt: 'Stubble Fire Monitoring', caption: 'Active field monitoring and fire mitigation' }
     ]
   },
   {
@@ -91,13 +106,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['State: Rajasthan', 'District: Kota, Block: Digod', 'Estimated 80% reduction in wheat field burning'],
     images: [
-      { src: '/agri/carane.jpg', alt: 'Grain Crop Machinery', caption: 'Modern harvesting equipment in action' },
-      { src: '/agri/man.jpg', alt: 'Farmer Field Guidance', caption: 'Agronomist advising farmer on bio-inputs' },
-      { src: '/agri/wall.jpg', alt: 'Bio-Fertilizer Unit', caption: 'Village bio-input production hub' },
-      { src: '/agri/school.jpg', alt: 'Community Session', caption: 'Farmers attending soil testing workshop' },
-      { src: '/agri/fire.jpg', alt: 'Field Inspection', caption: 'Soil carbon and organic matter inspection' },
-      { src: '/agri/manfire.jpg', alt: 'Demonstration Plot', caption: 'Zero-budget farming demonstration plot' },
-      { src: '/agri/hero.jpg', alt: 'Green Harvest Field', caption: 'Healthy wheat and grain field' }
+      { src: '/agri/kota/1.png', alt: 'Grain Crop Machinery', caption: 'Modern harvesting equipment in action' },
+      { src: '/agri/kota/2.png', alt: 'Farmer Field Guidance', caption: 'Agronomist advising farmer on bio-inputs' },
+      { src: '/agri/kota/3.png', alt: 'Bio-Fertilizer Unit', caption: 'Village bio-input production hub' },
+      { src: '/agri/kota/4.png', alt: 'Community Session', caption: 'Farmers attending soil testing workshop' },
+      { src: '/agri/kota/5.png', alt: 'Field Inspection', caption: 'Soil carbon and organic matter inspection' },
+      { src: '/agri/kota/6.png', alt: 'Demonstration Plot', caption: 'Zero-budget farming demonstration plot' },
+      { src: '/agri/kota/7.png', alt: 'Green Harvest Field', caption: 'Healthy wheat and grain field' }
     ]
   },
   {
@@ -112,13 +127,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['States: Haryana, Punjab, Uttar Pradesh, and Uttarakhand', '₹55+ lakh revenue generated by farmer-entrepreneurs'],
     images: [
-      { src: '/agri/school.jpg', alt: 'Water Committee Meeting', caption: 'Village water user committee meeting' },
-      { src: '/agri/wall.jpg', alt: 'Solar Water Pump', caption: 'Solar pump installation in farm pond' },
-      { src: '/agri/manfire.jpg', alt: 'Drip Line Layout', caption: 'Drip irrigation installed in mustard field' },
-      { src: '/agri/carane.jpg', alt: 'Heavy Machinery Dredging', caption: 'Farm pond excavation and desilting' },
-      { src: '/agri/man.jpg', alt: 'Farmer Inspection', caption: 'Checking drip emitter water distribution' },
-      { src: '/agri/fire.jpg', alt: 'Rainwater Harvesting', caption: 'Restored community pond after monsoons' },
-      { src: '/agri/hero.jpg', alt: 'Irrigated Crops', caption: 'High-yield crop growth post drip installation' }
+      { src: '/agri/Sahyog/1.png', alt: 'Water Committee Meeting', caption: 'Village water user committee meeting' },
+      { src: '/agri/Sahyog/2.png', alt: 'Solar Water Pump', caption: 'Solar pump installation in farm pond' },
+      { src: '/agri/Sahyog/3.png', alt: 'Drip Line Layout', caption: 'Drip irrigation installed in mustard field' },
+      { src: '/agri/Sahyog/4.png', alt: 'Heavy Machinery Dredging', caption: 'Farm pond excavation and desilting' },
+      { src: '/agri/Sahyog/5.png', alt: 'Farmer Inspection', caption: 'Checking drip emitter water distribution' },
+      { src: '/agri/Sahyog/6.png', alt: 'Rainwater Harvesting', caption: 'Restored community pond after monsoons' },
+      { src: '/agri/Sahyog/7.png', alt: 'Irrigated Crops', caption: 'High-yield crop growth post drip installation' }
     ]
   },
   {
@@ -133,13 +148,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['State: Jharkhand', 'District: Chatra, Blocks: Tandwa and Simariya', '30% water savings recorded on the model farm'],
     images: [
-      { src: '/agri/man.jpg', alt: 'Digital Crop Advisor', caption: 'Agritech advisor inspecting seed trials' },
-      { src: '/agri/carane.jpg', alt: 'IoT Sensor Station', caption: 'On-farm micro-weather and soil moisture station' },
-      { src: '/agri/school.jpg', alt: 'Youth Training', caption: 'Training youth on digital diagnostic equipment' },
-      { src: '/agri/wall.jpg', alt: 'Trial Crop Plot', caption: 'Evaluating drought-tolerant millet varieties' },
-      { src: '/agri/hero.jpg', alt: 'Resilient Farm Plot', caption: 'Climate-smart trial field' },
-      { src: '/agri/fire.jpg', alt: 'Field Evaluation', caption: 'Pest resistance and yield evaluation' },
-      { src: '/agri/manfire.jpg', alt: 'Participatory Breeding', caption: 'Farmer group selecting high-performance seeds' }
+      { src: '/agri/harit/1.png', alt: 'Digital Crop Advisor', caption: 'Agritech advisor inspecting seed trials' },
+      { src: '/agri/harit/2.png', alt: 'IoT Sensor Station', caption: 'On-farm micro-weather and soil moisture station' },
+      { src: '/agri/harit/3.png', alt: 'Youth Training', caption: 'Training youth on digital diagnostic equipment' },
+      { src: '/agri/harit/4.png', alt: 'Trial Crop Plot', caption: 'Evaluating drought-tolerant millet varieties' },
+      { src: '/agri/harit/5.png', alt: 'Resilient Farm Plot', caption: 'Climate-smart trial field' },
+      { src: '/agri/harit/6.png', alt: 'Field Evaluation', caption: 'Pest resistance and yield evaluation' },
+      { src: '/agri/harit/7.png', alt: 'Participatory Breeding', caption: 'Farmer group selecting high-performance seeds' }
     ]
   },
   {
@@ -154,13 +169,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['State: Haryana', 'District: Jind', '30 SHG women trained in parali handicraft production'],
     images: [
-      { src: '/agri/wall.jpg', alt: 'Horticulture Orchard', caption: 'High-density guava and lemon plantation' },
-      { src: '/agri/school.jpg', alt: 'Women Farmer Enterprise', caption: 'Women enterprise group harvesting vegetables' },
-      { src: '/agri/man.jpg', alt: 'Agroforestry Sapling', caption: 'Planting timber saplings along field borders' },
-      { src: '/agri/carane.jpg', alt: 'Compost Unit Setup', caption: 'Installing household vermicompost unit' },
-      { src: '/agri/manfire.jpg', alt: 'Livestock Integration', caption: 'Poultry and organic input integration' },
-      { src: '/agri/fire.jpg', alt: 'Inter-cropping Plot', caption: 'Inter-cropping pulses with fruit trees' },
-      { src: '/agri/hero.jpg', alt: 'Diversified Farm', caption: 'Model diversified smallholder farm' }
+      { src: '/agri/samriddhi/1.png', alt: 'Horticulture Orchard', caption: 'High-density guava and lemon plantation' },
+      { src: '/agri/samriddhi/2.png', alt: 'Women Farmer Enterprise', caption: 'Women enterprise group harvesting vegetables' },
+      { src: '/agri/samriddhi/3.png', alt: 'Agroforestry Sapling', caption: 'Planting timber saplings along field borders' },
+      { src: '/agri/samriddhi/4.png', alt: 'Compost Unit Setup', caption: 'Installing household vermicompost unit' },
+      { src: '/agri/samriddhi/5.png', alt: 'Livestock Integration', caption: 'Poultry and organic input integration' },
+      { src: '/agri/samriddhi/6.png', alt: 'Inter-cropping Plot', caption: 'Inter-cropping pulses with fruit trees' },
+      { src: '/agri/samriddhi/7.png', alt: 'Diversified Farm', caption: 'Model diversified smallholder farm' }
     ]
   },
   {
@@ -175,13 +190,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['States: Haryana and Karnataka', '4,343 farmers reached through one-day sensitisation sessions'],
     images: [
-      { src: '/agri/carane.jpg', alt: 'Agri Machinery Operations', caption: 'Mechanized farm equipment practical training' },
-      { src: '/agri/school.jpg', alt: 'Technical Classroom', caption: 'Residential classroom session on agronomy' },
-      { src: '/agri/man.jpg', alt: 'Tractor Repair Workshop', caption: 'Tractor maintenance and repair drill' },
-      { src: '/agri/wall.jpg', alt: 'Certification Ceremony', caption: 'Graduates receiving agri-technician certificates' },
-      { src: '/agri/manfire.jpg', alt: 'Drone Flight Demo', caption: 'Agri-drone spraying demonstration' },
-      { src: '/agri/fire.jpg', alt: 'Field Practical Session', caption: 'Field safety protocols and operating drills' },
-      { src: '/agri/hero.jpg', alt: 'Certified Agri-preneurs', caption: 'Certified young farmers leading custom hiring centers' }
+      { src: '/agri/training/1.png', alt: 'Agri Machinery Operations', caption: 'Mechanized farm equipment practical training' },
+      { src: '/agri/training/2.png', alt: 'Technical Classroom', caption: 'Residential classroom session on agronomy' },
+      { src: '/agri/training/3.png', alt: 'Tractor Repair Workshop', caption: 'Tractor maintenance and repair drill' },
+      { src: '/agri/training/4.png', alt: 'Certification Ceremony', caption: 'Graduates receiving agri-technician certificates' },
+      { src: '/agri/training/5.png', alt: 'Drone Flight Demo', caption: 'Agri-drone spraying demonstration' },
+      { src: '/agri/training/6.png', alt: 'Field Practical Session', caption: 'Field safety protocols and operating drills' },
+      { src: '/agri/training/7.png', alt: 'Certified Agri-preneurs', caption: 'Certified young farmers leading custom hiring centers' }
     ]
   }
 ]

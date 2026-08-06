@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { motion, Variants } from 'framer-motion'
 
 // Import custom chart components
 import DonutChart from './components/DonutChart'
@@ -109,63 +108,28 @@ const legendItems = [
   { name: 'Others', color: '#4A4749' },
 ]
 
-
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-}
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut',
-    },
-  },
-}
-
 export default function GovernancePage() {
   return (
     <div className="bg-[#FEF9F1] min-h-screen pb-16">
       {/* 1. Page Header */}
-      <section className="pt-16 pb-6 px-6 max-w-7xl mx-auto text-left">
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl"
-        >
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[#1a1a1a] mb-3">
+      <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 max-w-7xl mx-auto text-left">
+        <div className="max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a1a1a] mb-3">
             Governance
           </h1>
-          <p className="text-lg sm:text-xl text-[#4A4749]/80 font-light leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-[#4A4749]/80 font-light leading-relaxed">
             Turning Grassroots Potential Into Lasting Change
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* 2. Frameworks Grid Section */}
-      <section className="py-8 px-6 max-w-7xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
+      <section className="py-8 px-4 sm:px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {frameworks.map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              variants={cardVariants}
-              className="flex gap-5 items-start group"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start group"
             >
               <div className="shrink-0">
                 <Image
@@ -173,93 +137,73 @@ export default function GovernancePage() {
                   alt={item.title}
                   width={64}
                   height={64}
-                  className="object-contain w-16 h-16"
+                  className="object-contain w-12 h-12 sm:w-16 sm:h-16"
                 />
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-[#09569a] mb-2 leading-tight">
+                <h3 className="text-base sm:text-lg font-bold text-[#09569a] mb-2 leading-tight">
                   {item.title}
                 </h3>
                 <p className="text-sm text-[#4A4749]/80 leading-relaxed font-light">
                   {item.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </section>
 
-      {/* Spacer / Divider */}
-      <div className="max-w-7xl mx-auto px-6 py-6">
-        <div className="border-t border-gray-200/50" />
-      </div>
-
       {/* 3. Financials Section */}
-      <section className="py-8 px-6 max-w-7xl mx-auto space-y-12">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-2">
-            Financials
+      <section className="py-8 px-4 sm:px-6 max-w-7xl mx-auto space-y-8 sm:space-y-12">
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-roots-text mb-2">
+            Financial Snapshot
           </h2>
-          <h3 className="text-lg font-bold text-[#1a1a1a] mb-6">
-            % Contribution for each thematic area to the overall T/O
-          </h3>
-        </motion.div>
+        </div>
 
-        {/* Thematic Allocation Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-          className=" rounded-xl border border-gray-200 shadow-sm overflow-hidden"
-        >
-          {/* Charts Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-            <DonutChart title="FY 2025 - 26" data={donutData2526} />
-            <DonutChart title="FY 2024 - 25" data={donutData2425} />
-            <DonutChart title="FY 2023 - 24" data={donutData2324} />
+        {/* Line Chart */}
+        <div className="w-full overflow-x-auto min-h-[100px]">
+          <div className="min-w-[600px] w-full">
+            <LineChart />
           </div>
-        </motion.div>
+        </div>
+        
+        <div>
+          <h2 className="text-xl sm:text-2xl font-light text-roots-text mb-2">
+            % Contribution for each thematic area to the overall T/O
+          </h2>
+        </div>
+        
+        {/* Thematic Allocation Box */}
+        <div className="rounded-xl border border-gray-200 shadow-sm overflow-hidden bg-white/50">
+          {/* Charts Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div className="p-4 sm:p-6">
+              <DonutChart title="FY 2025 - 26" data={donutData2526} />
+            </div>
+            <div className="p-4 sm:p-6">
+              <DonutChart title="FY 2024 - 25" data={donutData2425} />
+            </div>
+            <div className="p-4 sm:p-6 md:col-span-2 lg:col-span-1 border-t md:border-t-0 lg:border-t-0">
+              <DonutChart title="FY 2023 - 24" data={donutData2324} />
+            </div>
+          </div>
+        </div>
 
         {/* Unified Legend */}
         <div className="pt-2">
-          <div className="flex flex-wrap gap-x-6 gap-y-3 justify-center text-xs font-semibold">
+          <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-3 text-xs sm:text-sm font-semibold">
             {legendItems.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2 text-[#4A4749]">
                 <span
-                  className="w-5 h-5 "
+                  className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rounded-sm"
                   style={{ backgroundColor: item.color }}
                 />
-                {item.name}
+                <span className="leading-tight">{item.name}</span>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Line Chart */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <LineChart />
-        </motion.div>
-
-        {/* Stacked Bar Chart */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-        >
-          <StackedBarChart />
-        </motion.div>
       </section>
     </div>
   )

@@ -13,7 +13,7 @@ const impactSubLinks = [
   },
   {
     label: 'Sports & Physical Literacy',
-    href: '/sports',
+    href: '/impact/sports',
   },
   {
     label: 'Education & Readiness',
@@ -25,10 +25,33 @@ const impactSubLinks = [
   },
 ]
 
+const newsSubLinks = [
+  {
+    label: 'Newsletters Archive',
+    href: '/news/newsletter',
+  },
+  {
+    label: 'Official Reports',
+    href: '/news/reports',
+  },
+  {
+    label: 'News & Media Articles',
+    href: '/news/article',
+  },
+  {
+    label: 'Visual Gallery',
+    href: '/news/gallery',
+  },
+  {
+    label: 'LinkedIn Feed',
+    href: '/news/linkedin',
+  },
+]
+
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Impact Hub', href: '/impact', hasDropdown: true },
+  { label: 'Impact Hub', href: '/impact/agriculture', hasDropdown: true, dropdownType: 'impact' },
   { label: 'Governance', href: '/governance' },
   { label: 'News and Insights', href: '/news' },
 ]
@@ -36,25 +59,25 @@ const navLinks = [
 const Navbar = () => {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<'impact' | null>(null)
   const [mobileImpactOpen, setMobileImpactOpen] = useState(false)
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Auto-close menu when route changes
   useEffect(() => {
     setIsOpen(false)
-    setDropdownOpen(false)
+    setActiveDropdown(null)
     setMobileImpactOpen(false)
   }, [pathname])
 
   const handleMouseEnter = () => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current)
-    setDropdownOpen(true)
+    setActiveDropdown('impact')
   }
 
   const handleMouseLeave = () => {
     dropdownTimeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false)
+      setActiveDropdown(null)
     }, 150)
   }
 
@@ -74,12 +97,14 @@ const Navbar = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => {
-            const isImpact = link.hasDropdown
-            const isActive = isImpact
+            const hasDropdown = link.hasDropdown
+            const isActive = link.href === '/impact'
               ? pathname.startsWith('/impact') || pathname === '/sports'
               : pathname === link.href
 
-            if (isImpact) {
+            if (hasDropdown) {
+              const isDropdownOpen = activeDropdown === 'impact'
+
               return (
                 <li
                   key={link.href}
@@ -99,20 +124,19 @@ const Navbar = () => {
                       {link.label}
                       <ChevronDown
                         className={`w-4 h-4 transition-transform duration-200 ${
-                          dropdownOpen ? 'rotate-180 text-roots-primary' : ''
+                          isDropdownOpen ? 'rotate-180 text-roots-primary' : ''
                         }`}
                       />
                     </Link>
                   </div>
 
                   {/* Dropdown Menu */}
-                  {dropdownOpen && (
+                  {isDropdownOpen && (
                     <div
                       className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-3 z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >
-                      
                       {impactSubLinks.map((sub) => {
                         const isSubActive = pathname === sub.href
                         return (
@@ -121,7 +145,7 @@ const Navbar = () => {
                             href={sub.href}
                             className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-colors ${
                               isSubActive
-                                ? 'bg-gray-50 font-semibold'
+                                ? 'bg-gray-50 font-semibold text-roots-primary'
                                 : 'hover:bg-gray-50/80 text-roots-text hover:text-roots-primary'
                             }`}
                           >
@@ -182,7 +206,7 @@ const Navbar = () => {
                       <Link
                         href={link.href}
                         className={`text-base transition-colors ${
-                          pathname.startsWith('/impact')
+                          pathname.startsWith(link.href)
                             ? 'text-roots-primary font-bold border-l-4 border-roots-primary pl-3'
                             : 'text-roots-text font-medium hover:text-roots-primary pl-4'
                         }`}
@@ -205,7 +229,6 @@ const Navbar = () => {
                     {mobileImpactOpen && (
                       <div className="flex flex-col gap-2 pl-6 pt-2 pb-1 border-l-2 border-roots-primary/20 ml-4">
                         {impactSubLinks.map((sub) => {
-                          
                           return (
                             <Link
                               key={sub.href}
@@ -256,4 +279,5 @@ const Navbar = () => {
 }
 
 export default Navbar
+
 

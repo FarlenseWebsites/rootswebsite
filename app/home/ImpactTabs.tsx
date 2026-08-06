@@ -26,7 +26,7 @@ const tabs: TabData[] = [
       'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
     statValue: '10,00,000 +',
     statLabel: 'Farmers trained in good practices',
-    image: '/home/agri.jpg',
+    image: '/home/agri.png',
     color: 'var(--roots-agriculture)',
     href: '/impact/agriculture',
   },
@@ -75,10 +75,10 @@ export default function ImpactTabs() {
   return (
     <section className=" py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-[var(--roots-text)] mb-8">
-          <span style={{ color:"#FF383C" }} >
-            Engineering real change,
-          </span>{' '}
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-[var(--roots-text)] mb-8">
+         
+           Engineering real change,
+         
           rooted in measurable impact.
         </h2>
 
@@ -95,7 +95,7 @@ export default function ImpactTabs() {
                   backgroundColor: isActive ? tab.color : '#f8f2eb',
                   color: isActive ? '#f8f2eb' : '#374151',
                 }}
-                className="px-4 py-2 rounded-sm border text-xs sm:text-sm font-semibold transition-colors duration-300 cursor-pointer"
+                className="px-4 py-2 rounded-sm border text-xs sm:text-sm font-regular transition-colors duration-300 cursor-pointer"
               >
                 {tab.tabTitle}
               </button>
@@ -121,7 +121,7 @@ export default function ImpactTabs() {
               <div className="flex flex-col justify-between h-full">
                 <h3
                   style={{ color: activeTab.color }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight mb-6 transition-colors duration-500"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 transition-colors duration-500"
                 >
                   {activeTab.title}
                 </h3>

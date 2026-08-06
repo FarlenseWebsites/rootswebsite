@@ -48,7 +48,7 @@ export default function Awards() {
     <section className="bg-roots-beige py-10">
       <div className="max-w-7xl mx-auto text-center">
         <div className="flex items-center justify-center gap-2 mb-10 ">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-regular text-roots-text">
             Awards & Recognitions
           </h2>
         </div>
