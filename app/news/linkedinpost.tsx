@@ -47,7 +47,7 @@ const scrollPosts = [...posts, ...posts]
 
 export default function LinkedInPosts() {
   return (
-    <section className="bg-[#FEF9F1] py-20 overflow-hidden">
+    <section className="bg-[#FEF9F1] py-20 overflow-hidden max-w-7xl">
       <style>{`
         @keyframes scroll-posts {
           0% { transform: translateX(0); }
@@ -76,7 +76,7 @@ export default function LinkedInPosts() {
         Auto-scrolling Single Row Section:
         Breaks out of the max-width container so it scrolls edge-to-edge
       */}
-      <div className="w-full overflow-hidden relative flex items-center mb-12">
+      <div className="max-w-7xl overflow-hidden relative flex items-center mb-12">
         {/* The hover class pauses the animation so users can click links easily */}
         <div className="flex whitespace-nowrap min-w-max items-center gap-6 animate-scroll-posts hover:[animation-play-state:paused] px-6">
           {scrollPosts.map((post, index) => (

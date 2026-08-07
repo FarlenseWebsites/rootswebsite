@@ -44,11 +44,12 @@ export default function CoreValues() {
         </p>
       </div>
 
-      {/* Content */}
+    {/* Content */}
       <div className="grid lg:grid-cols-5 items-start">
         {/* Left Image (40%) */}
         <div className="lg:col-span-2">
-          <div className="relative w-full h-[50vh] md:h-[40vw] overflow-hidden">
+          {/* Added the missing h- before [30vh] */}
+          <div className="relative w-full h-[40vh] md:h-[40vw] lg:h-[40vh] overflow-hidden">
             <Image
               src="/about/coreimg.png"
               alt="Mustard Field"

@@ -7,10 +7,10 @@ import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const slides = [
-  '/home/agribanner.jpg',
-  '/home/sportsbanner.jpg',
-  '/home/edubanner.jpg',
-  '/home/skillsbanner.jpg',
+  '/home/agribanner1.png',
+  '/home/sportsbanner1.png',
+  '/home/edubanner1.png',
+  '/home/skillsbanner1.png',
 ]
 
 export default function HeroBanner() {
@@ -48,7 +48,7 @@ export default function HeroBanner() {
   )
 
   return (
-    <div className="group w-full relative aspect-[21/9] overflow-hidden bg-roots-beige">
+    <div className="group  relative aspect-[21/9] overflow-hidden bg-roots-beige">
       {/* Embla Viewport */}
       <div className="overflow-hidden w-full h-full" ref={emblaRef}>
         <div className="flex h-full">

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function JoyOfSharingBanner() {
   return (
-    <section className="relative w-full h-[70vh] md:h-[60vh] lg:h-[40vw] overflow-hidden">
+    <section className="relative  mx-auto h-[70vh] md:h-[40vh] lg:h-[40vh] overflow-hidden">
       {/* Background Image */}
       <Image
         src="/about/hands.jpg"
