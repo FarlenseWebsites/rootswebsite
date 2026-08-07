@@ -38,16 +38,16 @@ export default function NewsPage() {
       </section>
 
       {/* 2. Newsletters Section */}
-      <NewslettersSection />
+      {/* <NewslettersSection /> */}
 
       {/* 3. Reports & Publications Section */}
-      <ReportsSection />
+      {/* <ReportsSection /> */}
 
       {/* 4. LinkedIn Posts Section */}
       <LinkedInPostsSection />
 
       {/* 5. News & Media Articles Section */}
-      <NewsArticlesSection />
+      {/* <NewsArticlesSection /> */}
 
       {/* 6. Gallery Section */}
       <GallerySection />

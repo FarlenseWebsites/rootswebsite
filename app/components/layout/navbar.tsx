@@ -8,19 +8,19 @@ import { Menu, X, ChevronDown} from 'lucide-react'
 
 const impactSubLinks = [
   {
-    label: 'Agriculture and Environment',
+    label: 'Agriculture',
     href: '/impact/agriculture',
   },
   {
-    label: 'Sports & Physical Literacy',
+    label: 'Sports',
     href: '/impact/sports',
   },
   {
-    label: 'Education & Readiness',
+    label: 'Education',
     href: '/impact/education',
   },
   {
-    label: 'Skills & Development',
+    label: 'Skills',
     href: '/impact/skills',
   },
 ]

@@ -26,23 +26,26 @@ export default function Footer() {
   return (
     <footer className="bg-roots-footer-gray">
       <div className="max-w-7xl mx-auto px-10 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        
+        {/* Logo Section - Placed outside the grid so nothing sits horizontally next to it */}
+        <div className="mb-10">
+          <Link href="/" className="inline-block">
+            <Image
+              src="/logos/rootslogo.png"
+              alt="Roots Foundation"
+              width={110}
+              height={55}
+              className="object-contain"
+            />
+          </Link>
+        </div>
 
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Column 1 – Newsletter + Address */}
           <div className="flex flex-col gap-6">
-            <Link href="/" className="inline-block">
-              <Image
-                src="/logos/rootslogo.png"
-                alt="Roots Foundation"
-                width={110}
-                height={55}
-                className="object-contain"
-              />
-            </Link>
-
             <div>
               <p className="text-sm text-[#4A4749] mb-3 leading-snug">
-                Sign up to recieve newsletter
+                Sign up to receive newsletter
               </p>
               <div className="flex border border-[#09569a] rounded overflow-hidden">
                 <input
@@ -72,7 +75,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2 – Quick Links */}
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-sm font-bold text-[#1a1a1a] mb-5">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
@@ -89,7 +92,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3 – Impact Verticals */}
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-sm font-bold text-[#1a1a1a] mb-5">Impact Verticals</h3>
             <ul className="flex flex-col gap-3">
               {impactVerticals.map((item) => (
@@ -106,7 +109,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4 – Partner With Us */}
-          <div>
+          <div className="flex flex-col">
             <h3 className="text-sm font-bold text-[#1a1a1a] mb-4">Partner With Us</h3>
             <p className="text-sm text-[#4A4749] leading-relaxed mb-6">
               Partner with us to build structured, on-ground programs that address real needs and deliver sustained outcomes.

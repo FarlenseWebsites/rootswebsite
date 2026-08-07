@@ -13,32 +13,32 @@ export const posts: LinkedInPostItem[] = [
   {
     id: 1,
     image: '/linkedin/l1.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_rootsfoundation-sportsfordevelopment-communitysports-activity-7466481701062381568-7Bvo/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
   {
     id: 2,
     image: '/linkedin/l2.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_talent-scouting-begins-long-before-training-activity-7480243777224318976-fmfm/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
   {
     id: 3,
     image: '/linkedin/l3.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_a-playing-ground-can-become-one-of-a-village-activity-7485301595384246272-MyIn/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
   {
     id: 4,
     image: '/linkedin/l4.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_rootsfoundation-projectleap-stellantis-activity-7484930092041707520-wveF/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
   {
     id: 5,
     image: '/linkedin/l5.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_rootsfoundation-communitydevelopment-education-activity-7482428695425503233-u0ju/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
   {
     id: 6,
     image: '/linkedin/l6.png',
-    url: 'https://www.linkedin.com/company/roots-foundation-india',
+    url: 'https://www.linkedin.com/posts/roots-foundation-india_worldruraldevelopmentday-rootsfoundation-activity-7479836644624461824-cn2t/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADV54xwBAKGln4cEt_bbsvjnhRpmzvgoHPw',
   },
 ]
 
@@ -108,7 +108,7 @@ export default function LinkedInPosts() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-center">
           <a
-            href="https://www.linkedin.com/company/roots-foundation-india"
+            href="https://www.linkedin.com/company/roots-foundation-india/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-10 py-3 bg-[#0d559d] text-white text-base font-medium transition-opacity hover:opacity-90"
