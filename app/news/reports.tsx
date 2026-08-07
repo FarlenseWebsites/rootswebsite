@@ -8,59 +8,29 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 interface ReportItem {
   id: number
   title: string
-  category: string
-  year: string
+  image: string
   pdfUrl: string
-  coverImage: string
-  accentColor: string
 }
 
 const reports: ReportItem[] = [
   {
     id: 1,
     title: 'Roots Foundation Annual Report 2025-2026',
-    category: 'Annual Report',
-    year: '2025-2026',
-    pdfUrl: '/pdfs/reports/annual-report-2025-2026.pdf',
-    coverImage: '/about/img27.jpg',
-    accentColor: 'bg-roots-primary'
+    image: '/reports/1.png',
+    pdfUrl: '/reports/1.pdf',
   },
   {
     id: 2,
     title: 'Roots Impact Assessment Report 2025',
-    category: 'Impact Study',
-    year: '2025',
-    pdfUrl: '/pdfs/reports/impact-assessment-report-2025.pdf',
-    coverImage: '/images/img-1.jpg',
-    accentColor: 'bg-roots-agriculture'
+    image: '/reports/2.png',
+    pdfUrl: '/reports/2.pdf',
   },
   {
     id: 3,
     title: 'Agriculture & Sustainability Study',
-    category: 'Sector Study',
-    year: '2025',
-    pdfUrl: '/pdfs/reports/agriculture-sustainability-report.pdf',
-    coverImage: '/about/mustard.jpg',
-    accentColor: 'bg-roots-agriculture'
+    image: '/reports/3.png',
+    pdfUrl: '/reports/3.pdf',
   },
-  {
-    id: 4,
-    title: 'Education Readiness Program Outcomes',
-    category: 'Program Review',
-    year: '2025',
-    pdfUrl: '/pdfs/reports/education-readiness-report.pdf',
-    coverImage: '/images/img-3.jpg',
-    accentColor: 'bg-roots-education'
-  },
-  {
-    id: 5,
-    title: 'Grassroots Sports Progress Report',
-    category: 'Sports Review',
-    year: '2024-2025',
-    pdfUrl: '/pdfs/reports/sports-development-report.pdf',
-    coverImage: '/storychange/img3.jpg',
-    accentColor: 'bg-roots-sports'
-  }
 ]
 
 export default function ReportsSection() {
@@ -78,9 +48,9 @@ export default function ReportsSection() {
     <section className="py-12 px-6 max-w-7xl mx-auto relative group">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-roots-text">Reports & Publications</h2>
-          <p className="text-sm text-roots-text/70 mt-1">
-            Click any report thumbnail to open the PDF document directly.
+          <h2 className="text-2xl sm:text-3xl font-medium text-roots-text">Annual Reports</h2>
+          <p className="text-sm text-roots-text font-light  mt-2">
+           A curated view of our work, insights, and ongoing impact.
           </p>
         </div>
 
@@ -102,7 +72,7 @@ export default function ReportsSection() {
         </div>
       </div>
 
-      {/* Horizontal Slider - Collage/Thumbnail Cards */}
+      {/* Horizontal Slider - Thumbnail Cards */}
       <div
         ref={reportsRef}
         className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -116,32 +86,16 @@ export default function ReportsSection() {
             className="flex-shrink-0 snap-start block group"
           >
             <motion.div
-              className="w-[260px] h-[340px] bg-white border border-gray-200/85 shadow-md hover:shadow-xl rounded-xl overflow-hidden flex flex-col justify-between text-left transition-all duration-300 hover:-translate-y-1.5"
+              className="relative w-[260px] h-[340px] overflow-hidden transition-all duration-300 hover:-translate-y-1.5"
               whileHover={{ scale: 1.01 }}
             >
-              <div className="relative w-full h-[210px] bg-gray-100 overflow-hidden">
-                <Image
-                  src={report.coverImage}
-                  alt={report.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="260px"
-                />
-                <span className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-[10px] font-semibold text-white px-2 py-0.5 rounded-full">
-                  {report.year}
-                </span>
-              </div>
-
-              <div className="p-4 flex-1 flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-roots-primary block mb-1">
-                    {report.category}
-                  </span>
-                  <h3 className="text-xs font-bold text-roots-text leading-snug line-clamp-3 group-hover:text-roots-primary transition-colors">
-                    {report.title}
-                  </h3>
-                </div>
-              </div>
+              <Image
+                src={report.image}
+                alt={report.title}
+                fill
+                className="object-fit group-hover:scale-105 transition-transform duration-500"
+                sizes="260px"
+              />
             </motion.div>
           </a>
         ))}

@@ -1,7 +1,9 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 export interface LinkedInPostItem {
   id: number
@@ -42,69 +44,76 @@ export const posts: LinkedInPostItem[] = [
   },
 ]
 
-// Duplicate the array to create a seamless infinite loop
-const scrollPosts = [...posts, ...posts]
-
 export default function LinkedInPosts() {
+  const postsRef = useRef<HTMLDivElement>(null)
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (postsRef.current) {
+      const { scrollLeft } = postsRef.current
+      const offset = direction === 'left' ? -380 : 380
+      postsRef.current.scrollTo({ left: scrollLeft + offset, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="bg-[#FEF9F1] py-20 overflow-hidden">
-      <style>{`
-        @keyframes scroll-posts {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        
-        .animate-scroll-posts {
-          /* Adjust the '35s' to make it scroll faster or slower */
-          animation: scroll-posts 35s linear infinite;
-        }
-      `}</style>
+    <section className="bg-[#FEF9F1] py-12 px-6">
+      <div className="max-w-7xl mx-auto relative group">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8">
+          <div>
+            <h2 className="text-2xl sm:text-3xl font-medium text-roots-text">
+              LinkedIn Posts
+            </h2>
+            <p className="text-sm text-roots-text font-light mt-1">
+              Live updates and insights from our work on the ground
+            </p>
+          </div>
 
-      {/* Header Container */}
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-800 mb-2">
-            LinkedIn Posts
-          </h2>
-          <p className="text-lg text-gray-500 font-light">
-            Live updates and insights from our work on the ground
-          </p>
+          <div className="flex gap-2 mt-4 md:mt-0 select-none">
+            <button
+              onClick={() => handleScroll('left')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => handleScroll('right')}
+              className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
-      </div>
 
-      {/* 
-        Auto-scrolling Single Row Section:
-        Breaks out of the max-width container so it scrolls edge-to-edge
-      */}
-      <div className="w-full overflow-hidden relative flex items-center mb-12">
-        {/* The hover class pauses the animation so users can click links easily */}
-        <div className="flex whitespace-nowrap min-w-max items-center gap-6 animate-scroll-posts hover:[animation-play-state:paused] px-6">
-          {scrollPosts.map((post, index) => (
+        <div
+          ref={postsRef}
+          className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          {posts.map((post) => (
             <a
-              // Using index combined with ID since we have duplicated the array
-              key={`${post.id}-${index}`}
+              key={post.id}
               href={post.url}
               target="_blank"
               rel="noopener noreferrer"
-              // Fixed width ensures all posts are the same size across the row
-              className="block shrink-0 w-[280px] md:w-[380px] group"
+              className="flex-shrink-0 snap-start block group"
             >
-              {/* Image Container with Hover Blue Border */}
-              <div className="relative w-full aspect-[16/9] overflow-hidden bg-gray-100 border-[3px] border-transparent transition-colors duration-300 group-hover:border-[#0f5ca8]">
+              <motion.div
+                className="relative w-[280px] md:w-[380px] aspect-[16/9] overflow-hidden transition-all duration-300 hover:-translate-y-1.5"
+                whileHover={{ scale: 1.01 }}
+              >
                 <Image
                   src={post.image}
                   alt={`LinkedIn post ${post.id}`}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-w-768px) 280px, 380px"
                 />
-              </div>
+              </motion.div>
             </a>
           ))}
         </div>
       </div>
-
-      {/* Button Container */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-center">
           <a

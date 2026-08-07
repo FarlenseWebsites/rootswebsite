@@ -12,42 +12,32 @@ export default function NewsPage() {
     <div className="bg-roots-beige min-h-screen text-roots-text pb-20">
       {/* 1. Header Section */}
       <section className="py-16 px-6 max-w-7xl mx-auto text-left">
-        <motion.h1
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl sm:text-5xl font-bold text-roots-text mb-4 font-sans"
+        <h1
+         
+          className="text-3xl sm:text-4xl font-bold text-roots-text mb-4 font-sans"
         >
           News and Insights
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.1 }}
-          className="text-lg sm:text-xl text-roots-text/70 font-light mb-2"
+        </h1>
+        <p
+          
+          className="text-lg sm:text-xl text-roots-text font-light "
         >
           Capturing Impact Through Updates and Perspectives
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-base sm:text-lg text-roots-text/80 font-normal"
-        >
-          Documenting outcomes with <span className="font-bold text-roots-text">clarity and accountability.</span>
-        </motion.p>
+        </p>
+       
       </section>
 
       {/* 2. Newsletters Section */}
-      {/* <NewslettersSection /> */}
+      <NewslettersSection />
 
       {/* 3. Reports & Publications Section */}
-      {/* <ReportsSection /> */}
+      <ReportsSection />
 
       {/* 4. LinkedIn Posts Section */}
       <LinkedInPostsSection />
 
       {/* 5. News & Media Articles Section */}
-      {/* <NewsArticlesSection /> */}
+      <NewsArticlesSection />
 
       {/* 6. Gallery Section */}
       <GallerySection />
