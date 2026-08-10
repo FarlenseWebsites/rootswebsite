@@ -10,6 +10,11 @@ import FocusAreasSection2 from '../../components/skills/FocusAreasSection2'
 import ProgramsSection2 from '../../components/skills/ProgramsSection2'
 import CommunityImpactSection from '../../components/skills/details2'
 import SkillingImpactSection from '../../components/skills/details'
+import VerticalFilmSection2 from '../../components/skills/VerticalFilmSection2'
+
+
+import CaseStories1 from '../../components/skills/CaseStories1';
+import CaseStories2 from '../../components/skills/CaseStories2';
 
 export default function skillsImpactPage() {
   return (
@@ -25,8 +30,12 @@ export default function skillsImpactPage() {
       {/* 3. PROGRAMS SECTION */}
       <ProgramsSection />
 
+      <CaseStories1 />
+
       {/* 4. HERO SECTION 2*/}
       <HeroSection2 />
+
+       <VerticalFilmSection2 />
 
       
       <CommunityImpactSection />
@@ -36,6 +45,8 @@ export default function skillsImpactPage() {
 
       {/* 6. PROGRAMS SECTION2 */}
       <ProgramsSection2 />
+
+      <CaseStories2 />
 
       {/* 4. VERTICAL FILM SECTION */}
       <VerticalFilmSection />
