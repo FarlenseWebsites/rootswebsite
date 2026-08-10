@@ -8,12 +8,16 @@ import VerticalFilmSection from '../../components/skills/VerticalFilmSection'
 import HeroSection2 from '../../components/skills/HeroSection2'
 import FocusAreasSection2 from '../../components/skills/FocusAreasSection2'
 import ProgramsSection2 from '../../components/skills/ProgramsSection2'
+import CommunityImpactSection from '../../components/skills/details2'
+import SkillingImpactSection from '../../components/skills/details'
 
 export default function skillsImpactPage() {
   return (
     <div className="bg-roots-beige min-h-screen text-left">
       {/* 1. HERO SECTION */}
       <HeroSection />
+
+      <SkillingImpactSection />
 
       {/* 2. OUR FOCUS AREAS SECTION */}
       <FocusAreasSection />
@@ -23,6 +27,9 @@ export default function skillsImpactPage() {
 
       {/* 4. HERO SECTION 2*/}
       <HeroSection2 />
+
+      
+      <CommunityImpactSection />
 
       {/* 5. OUR FOCUS AREAS SECTION2 */}
       <FocusAreasSection2 />

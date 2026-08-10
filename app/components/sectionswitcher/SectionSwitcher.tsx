@@ -51,11 +51,11 @@ export default function SectionSwitcher({
     <div className="w-full">
       {title && (
         <div className="mb-8 text-left">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2a2a2a] tracking-tight mb-2">
+          <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight mb-2">
             {title}
           </h2>
           {description && (
-            <p className="text-base text-[#4A4749]/80 max-w-3xl leading-relaxed">
+            <p className="text-base text-root-text font-light max-w-3xl leading-relaxed">
               {description}
             </p>
           )}
@@ -78,7 +78,7 @@ export default function SectionSwitcher({
                     className={`w-full text-left px-4 py-3.5 transition-colors duration-200 flex items-center justify-between group cursor-pointer ${
                       isSelected
                         ? 'bg-[#FEF9F1] border font-semibold'
-                        : 'hover:bg-gray-50 border border-transparent text-[#4A4749]'
+                        : 'hover:bg-gray-50 border border-transparent text-root-text'
                     }`}
                     style={{
                       borderColor: isSelected ? accentColor : 'transparent',
@@ -112,7 +112,7 @@ export default function SectionSwitcher({
               <div>
                 {/* Active Program Header */}
                 <div className="border-b border-gray-100 pb-5 mb-6">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a]">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-root-text">
                     {activeItem.title}
                   </h3>
                   {activeItem.subtitle && (
