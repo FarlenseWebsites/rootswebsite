@@ -83,7 +83,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-roots-beige sticky top-0 z-50 shadow-sm border-b border-gray-200/20">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-10 h-20 flex items-center justify-between">
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logos/rootslogo.png"

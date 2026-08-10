@@ -20,9 +20,9 @@ export default function HeroSection() {
 
       {/* Text Content Container */}
       {/* z-10 keeps it above the image, mx-auto and max-w-7xl constrain it nicely on wide screens */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto p-5 md:p-15 ">
+      <div className="relative z-10 w-full max-w-7xl p-[clamp(1.25rem,3vw,3rem)] ">
         <div className="w-[clamp(16rem,40vw,32rem)] pb-10"> 
-          <h1 className="text-[clamp(1.25rem,4vw,3.75rem)] font-bold text-white leading-[1.15]  mb-6 tracking-wide">
+          <h1 className="text-[clamp(1.5rem,4vw,3.75rem)] font-bold text-white leading-[1.15] mb-[clamp(0.75rem,2vw,1.5rem)] tracking-wide">
             Skill Development
           </h1>
           <p className="text-[clamp(0.775rem,1.5vw,1.125rem)] text-white leading-relaxed font-light ">

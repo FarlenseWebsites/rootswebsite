@@ -19,7 +19,7 @@ export default function HeroSection() {
 
       {/* Text Content Container */}
       {/* p-[clamp(1.25rem,4vw,4rem)] scales padding fluidly from 20px on mobile to 64px on large screens */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto p-[clamp(1.25rem,4vw,4rem)]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto p-[clamp(1.25rem,3vw,3rem)]">
         
         {/* We can also make the container width fluid, ensuring natural text wrapping */}
         <div className="w-[clamp(16rem,40vw,32rem)] pb-10"> 
