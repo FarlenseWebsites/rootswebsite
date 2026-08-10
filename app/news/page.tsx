@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import NewslettersSection from './newsletter'
 import ReportsSection from './reports'
 import LinkedInPostsSection from './linkedinpost'
@@ -9,9 +8,9 @@ import GallerySection from './gallery'
 
 export default function NewsPage() {
   return (
-    <div className="bg-roots-beige min-h-screen text-roots-text pb-20">
+    <div className="bg-roots-beige max-w-7xl text-roots-text p-10">
       {/* 1. Header Section */}
-      <section className="py-16 px-6 max-w-7xl mx-auto text-left">
+      <section className="p-10 max-w-7xl mx-auto text-left">
         <h1
          
           className="text-3xl sm:text-4xl font-bold text-roots-text mb-4 font-sans"

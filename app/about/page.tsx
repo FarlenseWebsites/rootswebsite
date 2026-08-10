@@ -16,7 +16,7 @@ import Sustainablegoals from './components/sustainablegoals'
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#FEF9F1] min-h-screen text-[#4A4749] pb-16 font-sans">
+    <div className="bg-roots-beige min-h-screen text-[#4A4749] pb-16 ">
       {/* 1. Hero Introduction */}
       <HeroSection />
 

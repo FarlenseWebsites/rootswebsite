@@ -8,8 +8,8 @@ export default function HeroSection() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/sports/hero2.png"
-          alt="Sports  Hero"
+          src="/skills/hero2.png"
+          alt="skills  Hero"
           fill
           priority
           className="object-cover"
