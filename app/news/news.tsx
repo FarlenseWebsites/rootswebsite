@@ -60,16 +60,16 @@ export default function NewsArticlesSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto p-10">
+    <section className="max-w-7xl mx-auto py-15 px-10 text-roots-text">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold">
+            <h2 className="text-3xl md:text-4xl font-medium ">
               News
             </h2>
 
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-roots-text text-lg font-light">
               Media coverage and articles documenting our work and impact
             </p>
           </div>
@@ -115,14 +115,15 @@ export default function NewsArticlesSection() {
                   overflow-hidden
                   transition-transform
                   duration-300
-                  hover:scale-105
+                  hover:border-b
+                  hover:border-roots-text
                 "
               >
                 <Image
                   src={article.image}
                   alt={article.title}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="280px"
                 />
               </div>

@@ -59,22 +59,22 @@ export default function LinkedInPosts() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto p-10">
+    <section className="max-w-7xl mx-auto py-15 px-10 text-roots-text">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold">
+            <h2 className="text-3xl md:text-4xl font-medium">
               LinkedIn Posts
             </h2>
 
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2  text-lg text-roots-text font-light">
               Live updates and insights from our work on the ground
             </p>
           </div>
 
           {/* Navigation buttons */}
-          <div className="flex gap-2 mt-4 md:mt-0 select-none">
+          <div className="flex gap-2 mt-4 md:mt-5 select-none">
             <button
               onClick={() => handleScroll('left')}
               className="p-2 rounded-full border border-gray-200 bg-white hover:bg-roots-primary hover:text-white transition-all shadow-sm cursor-pointer"
@@ -114,14 +114,15 @@ export default function LinkedInPosts() {
                   overflow-hidden
                   transition-transform
                   duration-300
-                  hover:scale-105
+                  hover:border-b
+                  hover:border-roots-text
                 "
               >
                 <Image
                   src={post.image}
                   alt={`LinkedIn post ${post.id}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 280px, 380px"
                 />
               </div>

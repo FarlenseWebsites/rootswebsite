@@ -48,16 +48,16 @@ export default function ReportsSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto p-10">
+    <section className="max-w-7xl mx-auto py-15 px-10">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold">
+            <h2 className="text-3xl md:text-4xl font-medium">
               Annual Reports
             </h2>
 
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-roots-text font-light text-lg">
               A curated view of our work, insights, and ongoing impact.
             </p>
           </div>
@@ -103,14 +103,15 @@ export default function ReportsSection() {
                   overflow-hidden
                   transition-transform
                   duration-300
-                  hover:scale-105
+                  hover:border-b
+                  hover:border-roots-text
                 "
               >
                 <Image
                   src={report.image}
                   alt={report.title}
                   fill
-                  className="object-cover"
+                  className="object-fit"
                   sizes="260px"
                 />
               </div>
