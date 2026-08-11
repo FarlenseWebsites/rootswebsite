@@ -113,10 +113,14 @@ export default function TeamSection() {
 
   return (
     <section className="max-w-7xl mx-auto px-10 py-5 sm:py-1 md:py-10">
-      <h2 className="text-4xl font-medium text-roots-text mb-10">
+      <h2 className="text-4xl font-medium text-roots-text mb-2">
         Team
       </h2>
+      <p className="text-roots-text font-light mb-5"  >The people behind the work</p>
+      <p className=" text-black mb-16 text-lg font-light tracking-wide">Roots Foundation is built on the belief that the right team makes the difference between a programme that runs and one that lasts. Across our organisation, no two people share the same background, discipline, or lived experience. 
 
+      <br/> <br/>
+      That diversity shows up in how we design programmes, how we solve problems in the field, and how we stay honest about what is working and what isn't.</p>
       {/* Founders */}
       <div className="mb-16">
         <h3 className="text-2xl mb-8 font-light">

@@ -49,13 +49,13 @@ export default function Testimonials() {
   const currentTestimonial = testimonialData[currentIndex]
 
   return (
-    <section className="bg-[#faf1ec] py-10 px-6">
+    <section className="bg-[#faf1ec] py-15 px-6">
       {/* 
         FIX 1: Changed parent wrapper to max-w-6xl mx-auto. 
         Now the heading and the box share the exact same left edge, 
         and the mx-auto creates an identical gap on the right and left of the screen. 
       */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto p-10">
         
         {/* Heading */}
         <div className="mb-10">

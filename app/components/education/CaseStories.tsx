@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 export default function CaseStories() {
   return (
-    <section className="w-full max-w-7xl p-10">
+    <section className="w-full max-w-7xl p-10 mx-auto">
       <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
         Case Stories
       </h2>
 
       {/* Scrollable container */}
-      <div className="overflow-x-auto hide-scrollbar mt-15 w-full">
+      <div className="overflow-x-auto  mt-15 w-full">
         
         {/* 
           1. 'max-w-none' prevents the image from shrinking to fit the screen.

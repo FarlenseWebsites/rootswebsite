@@ -2,11 +2,10 @@
 
 import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 
 export default function JoyOfSharingBanner() {
   return (
-    <section className="relative  mx-auto h-[70vh] md:h-[40vh] lg:h-[40vh] overflow-hidden">
+    <section className="relative w-full min-h-[40vh] md:min-h-[50vh] lg:min-h-[40vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <Image
         src="/about/hands.jpg"
@@ -14,40 +13,33 @@ export default function JoyOfSharingBanner() {
         fill
         sizes="100vw"
         priority
-        className="object-cover"
-        
+        className="object-cover object-center"
       />
-      {/* Dark Overlay for readability */}
       
+      {/* Dark Overlay for readability */}
+      <div className="absolute inset-0 bg-black/10 z-10" />
 
       {/* Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto mt-10 px-6 w-full text-white grid grid-cols-1 md:grid-cols-2 gap-8 ">
+      <div className="relative z-20 max-w-7xl mx-auto p-10 w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start justify-start text-white">
+        
         {/* Left text */}
         <div>
-          
-         <h2 className="text-4xl sm:text-xl md:text-3xl leading-tight font-normal">
-          Celebrating the <span className="font-bold">Joy of<br />Sharing</span>
-        </h2>
+          <h2 className="text-4xl md:text-5xl leading-tight font-light">
+            Celebrating the <br className="hidden sm:block" />
+            <span className="font-bold italic">Joy of Sharing</span>
+          </h2>
         </div>
 
-        {/* Right metrics */}
-        <div className="space-y-10 ">
-          <p className="text-white/80 font-light text-sm sm:text-base leading-relaxed md:mt-15">
+        {/* Right content */}
+        <div>
+          <p className="text-roots-beige font-light text-sm sm:text-base md:text-lg leading-relaxed">
             The joy of sharing goes beyond traditional implementation of programs.
             We actively co-funding projects when required to ensure change happens.
             This unique approach reflects our deep commitment and ownership mindset, 
             ensuring that every initiative we undertake is not just executed but sustained with accountability.      
           </p>
-
-         
-            <div className="text-5xl font-extrabold text-white flex items-center gap-1">
-              100 +
-            </div>
-            <p className="text-sm  tracking-wider text-white mt-1">
-                 Projects supported through collaboration  
-             </p>
-          
         </div>
+        
       </div>
     </section>
   )

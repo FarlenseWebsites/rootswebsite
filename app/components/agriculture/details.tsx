@@ -46,8 +46,8 @@ const AgricultureImpactSection = () => {
   const gridItems = agricultureData.filter(item => item.type === 'card');
 
   return (
-    <section className=" p-8 md:p-10  w-full">
-      <div className="max-w-7xl mx-auto flex flex-col gap-6">
+    <section className=" p-8 md:p-10 max-w-7xl py-15 mx-auto">
+      <div className=" flex flex-col gap-6">
         
         {/* TOP BANNER */}
         {bannerItem && (

@@ -37,10 +37,10 @@ const tabs: TabData[] = [
     description:
       'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
     statValue: '85,000 +',
-    statLabel: 'Farmers trained in good practices',
-    image: '/home/sports.jpg',
+    statLabel: 'Children and youth engaged in sports and physical literacy programs',
+    image: '/home/sports.png',
     color: 'var(--roots-sports)',
-    href: '/sports',
+    href: '/impact/sports',
   },
   {
     id: 'education',
@@ -49,7 +49,7 @@ const tabs: TabData[] = [
     description:
       'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
     statValue: '60,000 +',
-    statLabel: 'Farmers trained in good practices',
+    statLabel: 'Children and youth in schools with access to learning support and life skills',
     image: '/home/edu.jpg',
     color: 'var(--roots-education)',
     href: '/impact/education',
@@ -61,7 +61,7 @@ const tabs: TabData[] = [
     description:
       'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
     statValue: '75,000 +',
-    statLabel: 'Farmers trained in good practices',
+    statLabel: 'Youth and women upskilled in market aligned vocations',
     image: '/home/skills.jpg',
     color: 'var(--roots-skilled)',
     href: '/impact/skills',
@@ -73,8 +73,8 @@ export default function ImpactTabs() {
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0]
 
   return (
-    <section className=" py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
+    <section className="py-15  max-w-7xl mx-auto">
+      <div className="text-center p-10">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-[var(--roots-text)] mb-8">
          
            Engineering real change,

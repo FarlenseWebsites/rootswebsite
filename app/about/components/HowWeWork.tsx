@@ -10,7 +10,7 @@ interface TimelineItem {
 const items: TimelineItem[] = [
   {
     title: 'The Launchpad',
-    subtitle: 'Insights to Imapct',
+    subtitle: 'Insights to Impact',
   },
   {
     title: 'The Catalyst/ Fulcrum',
@@ -24,32 +24,36 @@ const items: TimelineItem[] = [
 
 export default function HowWeWork() {
   return (
-    <section className="py-16">
-      <div className="max-w-7xl mx-auto px-10">
+    <section className="py-15 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-medium tracking-tight text-roots-text mb-12 text-center">
           How We Work
         </h2>
       </div>
 
       {/* Full-width blue section */}
-      <div className="bg-roots-primary text-white py-15">
-        <div className="max-w-7xl mx-auto px-10">
-
+      <div className="bg-roots-primary text-white py-20 w-full overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           {/* Desktop */}
           <div className="hidden md:block relative">
-            {/* Timeline line */}
-            <div className="absolute top-4 left-[12%] right-[12%] h-[2px] bg-white" />
+            {/* 
+              Changed to left-0 and right-0 so the line spans the ENTIRE width 
+              of the 7xl container without getting cut off!
+            */}
+            <div className="absolute top-4 left-0 right-0 h-[2px] bg-white z-0" />
 
-            <div className="grid grid-cols-3 gap-10 relative z-10">
+            {/* justify-between pushes the items to the far edges of the 7xl container */}
+            <div className="flex justify-between relative z-10">
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center text-center"
+                  className="flex flex-col items-center text-center w-48 lg:w-64"
                 >
-                  {/* Circle */}
+                  {/* Circle (bg-white perfectly hides the line passing underneath) */}
                   <div className="relative mb-6">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-[roots-primary]" />
+                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-[0_0_0_4px_theme(colors.roots-primary)]">
+                      <div className="w-3 h-3 rounded-full bg-roots-primary" />
                     </div>
                   </div>
 
@@ -66,22 +70,22 @@ export default function HowWeWork() {
           </div>
 
           {/* Mobile */}
-          <div className="md:hidden relative ml-4">
-            {/* Vertical line */}
-            <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-white" />
+          <div className="md:hidden relative">
+            {/* Extended the vertical line to top-0 and bottom-0 so it doesn't get cut */}
+            <div className="absolute left-[15px] top-0 bottom-0 w-[2px] bg-white z-0" />
 
             <div className="space-y-10">
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className="relative flex items-start gap-6"
+                  className="relative flex items-start gap-6 z-10"
                 >
                   {/* Circle */}
-                  <div className="relative z-10 flex-shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                    <div className="w-3 h-3 rounded-full bg-[roots-primary]" />
+                  <div className="relative flex-shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center">
+                    <div className="w-3 h-3 rounded-full bg-roots-primary" />
                   </div>
 
-                  <div className="pt-1">
+                  <div className="pt-1 bg-roots-primary">
                     <h3 className="text-base font-bold mb-1">
                       {item.title}
                     </h3>
@@ -93,8 +97,8 @@ export default function HowWeWork() {
                 </div>
               ))}
             </div>
-
           </div>
+
         </div>
       </div>
     </section>

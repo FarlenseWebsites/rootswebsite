@@ -31,7 +31,7 @@ const values = [
 
 export default function CoreValues() {
   return (
-    <section className="max-w-7xl mx-auto px-10 py-20">
+    <section className="max-w-7xl mx-auto px-6 md:px-10 py-20">
       {/* Heading */}
       <div className="mb-12">
         <h2 className="text-4xl font-semibold text-roots-text">
@@ -44,19 +44,20 @@ export default function CoreValues() {
         </p>
       </div>
 
-    {/* Content */}
-      <div className="grid lg:grid-cols-5 items-start">
+      {/* Content */}
+      {/* Changed items-start to items-stretch to make columns equal height */}
+      {/* Added a gap for mobile when items are stacked */}
+      <div className="grid lg:grid-cols-5 items-stretch gap-10 lg:gap-0">
+        
         {/* Left Image (40%) */}
-        <div className="lg:col-span-2">
-          {/* Added the missing h- before [30vh] */}
-          <div className="relative w-full h-[40vh] md:h-[40vw] lg:h-[40vh] overflow-hidden">
-            <Image
-              src="/about/coreimg.png"
-              alt="Mustard Field"
-              fill
-              className="object-cover"
-            />
-          </div>
+        {/* Applied relative directly to the column, gave it a fixed height for mobile and h-auto for desktop so it stretches */}
+        <div className="lg:col-span-2 relative w-full h-[300px] sm:h-[400px] lg:h-auto overflow-hidden rounded-xl lg:rounded-none">
+          <Image
+            src="/about/coreimg.png"
+            alt="Mustard Field"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Right Values (60%) */}
