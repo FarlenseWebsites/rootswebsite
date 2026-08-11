@@ -169,13 +169,13 @@ export const agriculturePrograms: ProgramItem[] = [
     ],
     tags: ['State: Haryana', 'District: Jind', '30 SHG women trained in parali handicraft production'],
     images: [
-      { src: '/agri/samriddhi/1.png', alt: 'Horticulture Orchard', caption: 'High-density guava and lemon plantation' },
-      { src: '/agri/samriddhi/2.png', alt: 'Women Farmer Enterprise', caption: 'Women enterprise group harvesting vegetables' },
-      { src: '/agri/samriddhi/3.png', alt: 'Agroforestry Sapling', caption: 'Planting timber saplings along field borders' },
-      { src: '/agri/samriddhi/4.png', alt: 'Compost Unit Setup', caption: 'Installing household vermicompost unit' },
-      { src: '/agri/samriddhi/5.png', alt: 'Livestock Integration', caption: 'Poultry and organic input integration' },
-      { src: '/agri/samriddhi/6.png', alt: 'Inter-cropping Plot', caption: 'Inter-cropping pulses with fruit trees' },
-      { src: '/agri/samriddhi/7.png', alt: 'Diversified Farm', caption: 'Model diversified smallholder farm' }
+      { src: '/agri/Samriddhi/1.png', alt: 'Horticulture Orchard', caption: 'High-density guava and lemon plantation' },
+      { src: '/agri/Samriddhi/2.png', alt: 'Women Farmer Enterprise', caption: 'Women enterprise group harvesting vegetables' },
+      { src: '/agri/Samriddhi/3.png', alt: 'Agroforestry Sapling', caption: 'Planting timber saplings along field borders' },
+      { src: '/agri/Samriddhi/4.png', alt: 'Compost Unit Setup', caption: 'Installing household vermicompost unit' },
+      { src: '/agri/Samriddhi/5.png', alt: 'Livestock Integration', caption: 'Poultry and organic input integration' },
+      { src: '/agri/Samriddhi/6.png', alt: 'Inter-cropping Plot', caption: 'Inter-cropping pulses with fruit trees' },
+      { src: '/agri/Samriddhi/7.png', alt: 'Diversified Farm', caption: 'Model diversified smallholder farm' }
     ]
   },
   {
