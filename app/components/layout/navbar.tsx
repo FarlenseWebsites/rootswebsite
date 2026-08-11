@@ -8,19 +8,19 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const impactSubLinks = [
   {
-    label: 'Agriculture',
+    label: 'Agriculture and Enviroment',
     href: '/impact/agriculture',
   },
   {
-    label: 'Sports',
+    label: 'Sports and Physical Literacy',
     href: '/impact/sports',
   },
   {
-    label: 'Education',
+    label: 'Education and Career',
     href: '/impact/education',
   },
   {
-    label: 'Skills',
+    label: 'Skills and Community ',
     href: '/impact/skills',
   },
 ]
@@ -143,7 +143,7 @@ const Navbar = () => {
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className={`flex items-center gap-3 px-4 py-2.5 text-md transition-colors ${
+                            className={`flex items-center bg-roots-beige gap-3 px-4 py-2.5 text-md transition-colors ${
                               isSubActive
                                 ? 'bg-gray-50 font-bold text-roots-primary'
                                 : 'font-light hover:bg-gray-50/80 text-roots-text hover:text-roots-primary'
@@ -179,7 +179,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <Link
           href="/partner"
-          className="hidden md:inline-flex items-center px-5 py-2.5 bg-roots-primary text-white text-md font-bold rounded hover:opacity-90 transition-opacity"
+          className="hidden md:inline-flex items-center px-5 py-2.5 bg-roots-primary text-white text-md font-light hover:opacity-90 transition-opacity"
         >
           Partner With Us
         </Link>

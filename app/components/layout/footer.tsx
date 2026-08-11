@@ -116,7 +116,7 @@ export default function Footer() {
             </p>
             <Link
               href="/partner"
-              className="inline-flex items-center justify-center w-full px-5 py-3 bg-[#09569a] text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center w-full px-5 py-3 bg-[#09569a] text-white text-sm font-medium  hover:opacity-90 transition-opacity"
             >
               Partner With Us
             </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/roots-foundation-india/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#4A4749] hover:text-[#09569a] transition-colors"
@@ -144,7 +144,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/rootsfoundation.india?igsh=MTNldnlrajAxcjBpdA=="
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#4A4749] hover:text-[#09569a] transition-colors"
@@ -157,7 +157,7 @@ export default function Footer() {
           </div>
 
           <a
-            href="mailto:contact@rootsfoundation.in"
+            href="contact@rootsfoundation.in"
             className="flex items-center gap-2 text-sm text-[#09569a] hover:underline"
           >
             <Mail className="w-4 h-4" />

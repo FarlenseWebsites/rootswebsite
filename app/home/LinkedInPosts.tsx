@@ -114,7 +114,7 @@ export default function LinkedInPosts() {
                   overflow-hidden
                   transition-transform
                   duration-300
-                  hover:border-2
+                  hover:border-b
                   hover:border-roots-text
                 "
               >
