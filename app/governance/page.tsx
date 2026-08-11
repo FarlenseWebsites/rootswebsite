@@ -170,7 +170,7 @@ export default function GovernancePage() {
         
         <div>
           <h2 className="text-xl sm:text-2xl font-light text-roots-text mb-2">
-            % Contribution for each thematic area to the overall T/O
+            Percentage Contribution for each thematic area to the overall T/O
           </h2>
         </div>
         

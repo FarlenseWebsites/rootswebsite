@@ -16,11 +16,11 @@ const impactSubLinks = [
     href: '/impact/sports',
   },
   {
-    label: 'Education and Career',
+    label: 'Education and Career Readiness',
     href: '/impact/education',
   },
   {
-    label: 'Skills and Community ',
+    label: 'Skills and Community Development',
     href: '/impact/skills',
   },
 ]
@@ -51,7 +51,7 @@ const newsSubLinks = [
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Impact Hub', href: '/impact/agriculture', hasDropdown: true, dropdownType: 'impact' },
+  { label: 'Impact Verticals', href: '/impact/agriculture', hasDropdown: true, dropdownType: 'impact' },
   { label: 'Governance', href: '/governance' },
   { label: 'News and Insights', href: '/news' },
 ]
@@ -113,10 +113,15 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="flex items-center gap-1 cursor-pointer">
-                    <Link
-                      href={link.href}
-                      className={`text-md transition-colors flex items-center gap-1.5 ${
-                        isActive
+                    {/* FIX: Changed from <Link> to <button> to prevent navigation on click */}
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setActiveDropdown(isDropdownOpen ? null : 'impact')
+                      }}
+                      className={`text-md transition-colors flex items-center gap-1.5 focus:outline-none ${
+                        isActive || pathname.startsWith('/impact')
                           ? 'text-roots-primary font-bold'
                           : 'text-roots-text font-light hover:text-roots-primary'
                       }`}
@@ -127,13 +132,13 @@ const Navbar = () => {
                           isDropdownOpen ? 'rotate-180 text-roots-primary' : ''
                         }`}
                       />
-                    </Link>
+                    </button>
                   </div>
 
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
                     <div
-                      className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-gray-100 py-3 z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
+                      className="absolute top-full left-0 w-max min-w-[280px] bg-roots-beige rounded-xl shadow-xl border border-gray-100 py-3 z-50 transition-all duration-200 animate-in fade-in slide-in-from-top-2"
                       onMouseEnter={handleMouseEnter}
                       onMouseLeave={handleMouseLeave}
                     >
@@ -143,13 +148,13 @@ const Navbar = () => {
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className={`flex items-center bg-roots-beige gap-3 px-4 py-2.5 text-md transition-colors ${
+                            className={`flex items-center gap-3 px-4 py-2.5 text-md transition-colors ${
                               isSubActive
-                                ? 'bg-gray-50 font-bold text-roots-primary'
-                                : 'font-light hover:bg-gray-50/80 text-roots-text hover:text-roots-primary'
+                                ? 'bg-black/5 font-bold text-roots-primary'
+                                : 'font-light hover:bg-black/5 text-roots-text hover:text-roots-primary'
                             }`}
                           >
-                            <span className="truncate">{sub.label}</span>
+                            <span className="whitespace-nowrap">{sub.label}</span>
                           </Link>
                         )
                       })}
@@ -202,28 +207,31 @@ const Navbar = () => {
               if (link.hasDropdown) {
                 return (
                   <li key={link.href} className="flex flex-col">
-                    <div className="flex items-center justify-between py-1.5">
-                      <Link
-                        href={link.href}
+                    {/* FIX: Combined the text and chevron into a single <button> so clicking anywhere toggles the dropdown */}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setMobileImpactOpen(!mobileImpactOpen)
+                      }}
+                      className="flex items-center justify-between py-1.5 w-full text-left focus:outline-none"
+                    >
+                      <span
                         className={`text-base transition-colors ${
-                          pathname.startsWith(link.href)
+                          pathname.startsWith('/impact')
                             ? 'text-roots-primary font-bold border-l-4 border-roots-primary pl-3'
                             : 'text-roots-text font-light hover:text-roots-primary pl-4'
                         }`}
                       >
                         {link.label}
-                      </Link>
-                      <button
-                        onClick={() => setMobileImpactOpen(!mobileImpactOpen)}
-                        className="p-1 text-roots-text hover:text-roots-primary focus:outline-none"
-                      >
+                      </span>
+                      <div className="p-1 text-roots-text hover:text-roots-primary">
                         <ChevronDown
                           className={`w-5 h-5 transition-transform duration-200 ${
                             mobileImpactOpen ? 'rotate-180 text-roots-primary' : ''
                           }`}
                         />
-                      </button>
-                    </div>
+                      </div>
+                    </button>
 
                     {/* Mobile Submenu */}
                     {mobileImpactOpen && (
@@ -268,7 +276,7 @@ const Navbar = () => {
           </ul>
           <Link
             href="/partner"
-            className="inline-flex w-full items-center justify-center py-3 bg-roots-primary text-white text-base font-light  hover:opacity-90 transition-opacity "
+            className="inline-flex w-full items-center justify-center py-3 bg-roots-primary text-white text-base font-light hover:opacity-90 transition-opacity"
           >
             Partner With Us
           </Link>

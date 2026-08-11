@@ -17,7 +17,7 @@ const impactVerticals = [
   { label: 'Agriculture and Environment', href: '/impact/agriculture' },
   { label: 'Sports and Physical Literacy', href: '/impact/sports' },
   { label: 'Education and Career Readiness', href: '/impact/education' },
-  { label: 'Skill and Community Development', href: '/impact/skills' },
+  { label: 'Skills and Community Development', href: '/impact/skills' },
 ]
 
 export default function Footer() {
@@ -156,13 +156,12 @@ export default function Footer() {
             </a>
           </div>
 
-          <a
-            href="contact@rootsfoundation.in"
+          <div
             className="flex items-center gap-2 text-sm text-[#09569a] hover:underline"
           >
             <Mail className="w-4 h-4" />
             contact@rootsfoundation.in
-          </a>
+          </div>
         </div>
       </div>
     </footer>

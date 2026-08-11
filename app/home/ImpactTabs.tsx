@@ -23,7 +23,7 @@ const tabs: TabData[] = [
     tabTitle: 'Agriculture and Environment',
     title: 'Agriculture and Environment',
     description:
-      'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
+      'We support farming communities through climate-smart agriculture, crop residue management, farm mechanisation, and sustainable practices that improve soil health, conserve resources, and strengthen rural livelihoods.',
     statValue: '10,00,000 +',
     statLabel: 'Farmers trained in good practices',
     image: '/home/agri.png',
@@ -35,7 +35,7 @@ const tabs: TabData[] = [
     tabTitle: 'Sports and Physical Literacy',
     title: 'Sports and Physical Literacy',
     description:
-      'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
+      'We create access to sports, fitness, coaching, and mentorship, helping children and youth build discipline, teamwork, leadership, and the confidence to progress on and beyond the field.',
     statValue: '85,000 +',
     statLabel: 'Children and youth engaged in sports and physical literacy programs',
     image: '/home/sports.png',
@@ -47,7 +47,7 @@ const tabs: TabData[] = [
     tabTitle: 'Education and Career Readiness',
     title: 'Education and Career Readiness',
     description:
-      'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
+      'We work with children and youth through education, life skills, digital learning, and holistic development, helping them build confidence, curiosity, and readiness for the future.',
     statValue: '60,000 +',
     statLabel: 'Children and youth in schools with access to learning support and life skills',
     image: '/home/edu.jpg',
@@ -59,10 +59,10 @@ const tabs: TabData[] = [
     tabTitle: 'Skill and Community Development',
     title: 'Skill and Community Development',
     description:
-      'We work with farmers and rural communities to design and implement sustainable agricultural practices that address local challenges. Our initiatives focus on improving productivity, managing natural resources, and supporting climate aware solutions that ensure long term resilience.',
+      'We support women and youth with market-linked skills, vocational training, and production-based learning that open pathways to employment, enterprise, and financial independence.We work with communities to improve access to healthcare, education support, public infrastructure, mobility, and shared spaces that strengthen everyday life and long-term local capacity.',
     statValue: '75,000 +',
     statLabel: 'Youth and women upskilled in market aligned vocations',
-    image: '/home/skills.jpg',
+    image: '/home/skills.png',
     color: 'var(--roots-skilled)',
     href: '/impact/skills',
   },
@@ -121,7 +121,7 @@ export default function ImpactTabs() {
               <div className="flex flex-col justify-between h-full">
                 <h3
                   style={{ color: activeTab.color }}
-                  className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 transition-colors duration-500"
+                  className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight mb-6 transition-colors duration-500"
                 >
                   {activeTab.title}
                 </h3>
@@ -129,11 +129,11 @@ export default function ImpactTabs() {
                 <div>
                   <p
                     style={{ color: activeTab.color }}
-                    className="text-2xl sm:text-3xl md:text-4xl font-black mb-1 transition-colors duration-500"
+                    className="text-2xl sm:text-3xl md:text-6xl font-black mb-1 transition-colors duration-500"
                   >
                     {activeTab.statValue}
                   </p>
-                  <p className="text-xs sm:text-sm font-medium text-[var(--roots-text)]">
+                  <p className="text-xs sm:text-lg font-light text-[var(--roots-text)]">
                     {activeTab.statLabel}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function ImpactTabs() {
 
               {/* Right column: description + image + read more */}
               <div className="flex flex-col">
-                <p className="text-[var(--roots-text)] text-sm leading-relaxed mb-4">
+                <p className="text-[var(--roots-text)] text-sm font-light leading-relaxed mb-4">
                   {activeTab.description}
                 </p>
 

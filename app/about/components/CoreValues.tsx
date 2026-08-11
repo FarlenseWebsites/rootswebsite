@@ -60,7 +60,7 @@ export default function CoreValues() {
       </div>
 
       {/* Grid Layout (Default stretch ensures vertical dividers are equal height) */}
-      <div className="grid grid-cols-1 bg-white md:grid-cols-2 lg:grid-cols-4 p-10">
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 p-10">
         {values.map((item, index) => (
           <div
             key={index}

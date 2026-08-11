@@ -4,7 +4,7 @@ export default function VerticalFilmSection() {
   return (
     <section className="py-15 px-10 max-w-7xl mx-auto">
       <div className="mb-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2a2a2a] tracking-tight">
+        <h2 className="text-3xl sm:text-4xl font-bold text-roots-text tracking-tight">
           Vertical Film
         </h2>
       </div>

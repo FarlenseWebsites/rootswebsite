@@ -1,15 +1,40 @@
-import React from 'react';
+'use client';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 
 export default function CaseStories() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="w-full max-w-7xl py-15 px-10 mx-auto">
-      <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
-        Case Stories
-      </h2>
+      <div className="flex items-center justify-between mb-2">
+        <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
+          Case Story
+        </h2>
+        <div className="flex items-center gap-2 text-roots-text/80">
+          <button onClick={scrollLeft} className="p-2 bg-white hover:bg-gray-100 rounded-full border border-gray-200 shadow-sm transition-colors" aria-label="Scroll left">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+          <button onClick={scrollRight} className="p-2 bg-white hover:bg-gray-100 rounded-full border border-gray-200 shadow-sm transition-colors" aria-label="Scroll right">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </div>
+      </div>
 
       {/* Scrollable container */}
-      <div className="overflow-x-auto  mt-15 w-full">
+      <div ref={scrollContainerRef} className="overflow-x-auto mt-15 w-full hide-scrollbar">
         
         {/* 
           1. 'max-w-none' prevents the image from shrinking to fit the screen.

@@ -21,7 +21,7 @@ const stories: StoryItem[] = [
     image: '/home/sunita.png',
     textColorClass: 'text-roots-skilled',
     borderClass: 'border-roots-skilled',
-    url: '/case-studies/skilled-entrepreneur',
+    url: '/impact/skills#case-story',
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const stories: StoryItem[] = [
     image: '/home/fields.png',
     textColorClass: 'text-roots-agriculture',
     borderClass: 'border-roots-agriculture',
-    url: '/case-studies/agriculture',
+    url: '/impact/agriculture#case-story',
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const stories: StoryItem[] = [
     image: '/home/ajay.png',
     textColorClass: 'text-roots-sports',
     borderClass: 'border-roots-sports',
-    url: '/case-studies/sports',
+    url: '/impact/sports#case-story',
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ const stories: StoryItem[] = [
     image: '/home/rekha.png',
     textColorClass: 'text-roots-education',
     borderClass: 'border-roots-education',
-    url: '/case-studies/education',
+    url: '/impact/education#case-story',
   },
 ]
 

@@ -7,10 +7,10 @@ import Autoplay from 'embla-carousel-autoplay'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const slides = [
-  '/home/agribanner1.png',
-  '/home/sportsbanner1.png',
-  '/home/edubanner1.png',
-  '/home/skillsbanner1.png',
+  '/home/agribanner.png',
+  '/home/sportsbanner.png',
+  '/home/edubanner.png',
+  '/home/skillsbanner.png',
 ]
 
 export default function HeroBanner() {

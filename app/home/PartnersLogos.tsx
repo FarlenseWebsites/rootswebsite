@@ -7,12 +7,12 @@ const logoFiles = [
   'cl6.svg', 'cl7.svg', 'cl8.svg', 'cl9.svg', 'cl10.svg',
   'cl11.svg', 'cl12.svg', 'cl13.svg', 'cl14.svg', 'cl15.svg',
   'cl16.svg', 'cl17.svg', 'cl18.svg', 'cl19.svg', 'cl20.svg',
-  'cl21.svg','cl22.svg','cl23.svg'
+  'cl21.svg'
 ]
 
 // Row 1 has 11 logos, Row 2 has 10 logos
-const row1Files = logoFiles.slice(0, 12)
-const row2Files = logoFiles.slice(12, 23)
+const row1Files = logoFiles.slice(0, 11)
+const row2Files = logoFiles.slice(12, 21)
 
 // Map to paths
 const row1Paths = row1Files.map(file => `/companylogos/${file}`)
@@ -46,7 +46,7 @@ export default function PartnersLogos() {
       
       <div className="max-w-7xl mx-auto mb-8 px-10 py-10 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">
-          Partnerships
+          Our Partners
         </h2>
       </div>
 

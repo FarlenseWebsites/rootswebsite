@@ -58,7 +58,7 @@ export default function PartnerCards() {
                   {card.title}
                 </h3>
 
-                <p className="mt-2 text-[11px] sm:text-xs font-light uppercase tracking-[0.2em] text-roots-text">
+                <p className="mt-2 text-[13px] sm:text-md font-light  tracking-[0.2em] text-roots-text">
                   {card.subtitle}
                 </p>
 

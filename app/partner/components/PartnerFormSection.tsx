@@ -129,25 +129,16 @@ export default function PartnerFormSection() {
             <label className="block text-sm font-semibold text-roots-text mb-2">
               Partnership Type
             </label>
-            <div className="relative flex items-center gap-3 px-4 py-3.5 rounded bg-[#F8F2EB] border border-transparent focus-within:bg-white focus-within:border-roots-primary/30 focus-within:shadow-sm transition-all duration-200">
+            <div className="flex items-center gap-3 px-4 py-3.5 rounded bg-[#F8F2EB] border border-transparent focus-within:bg-white focus-within:border-roots-primary/30 focus-within:shadow-sm transition-all duration-200">
               <Handshake className="w-5 h-5 text-roots-primary shrink-0" />
-              <select
+              <input
+                type="text"
                 required
                 value={formData.partnershipType}
                 onChange={(e) => setFormData({ ...formData, partnershipType: e.target.value })}
-                className={`bg-transparent border-none outline-none w-full text-sm appearance-none cursor-pointer pr-8 ${
-                  formData.partnershipType === '' ? 'text-[#979797]' : 'text-roots-text'
-                }`}
-              >
-                <option value="" disabled className="text-roots-text bg-white">choose your partnership type</option>
-                <option value="corporate" className="text-roots-text bg-white">Corporate CSR Partnership</option>
-                <option value="grant" className="text-roots-text bg-white">Grant Funding</option>
-                <option value="execution" className="text-roots-text bg-white">Execution Partner</option>
-                <option value="other" className="text-roots-text bg-white">Other Partnership</option>
-              </select>
-              <ChevronDown className={`absolute right-4 w-4 h-4 pointer-events-none transition-colors duration-200 ${
-                formData.partnershipType === '' ? 'text-[#979797]' : 'text-roots-text/60'
-              }`} />
+                placeholder="Enter types of partnership"
+                className="bg-transparent border-none outline-none w-full text-sm text-roots-text placeholder-[#979797]"
+              />
             </div>
           </div>
         </div>
