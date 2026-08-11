@@ -4,13 +4,13 @@ import Image from 'next/image'
 
 export default function SDGSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-10">
+    <section className="max-w-7xl mx-auto px-6 py-10 font-poppins">
       <div className="ml-4">
-        <h2 className="text-3xl md:text-4xl font-medium text-roots-text leading-tight">
+        <h2 className="text-3xl md:text-4xl font-medium text-roots-text">
           We work across SDGs
         </h2>
 
-        <p className="mt-6 text-[#555] text-lg leading-8 max-w-sm">
+        <p className="mt-6 text-lg leading-8 text-roots-text font-light">
           We are committed to the UN SDG 2030 mission and continue to expand
           our impact footprint.
         </p>

@@ -16,7 +16,7 @@ import Sustainablegoals from './components/sustainablegoals'
 
 export default function AboutPage() {
   return (
-    <div className="bg-roots-beige min-h-screen text-[#4A4749] pb-16 ">
+    <div className="bg-roots-beige min-h-screen text-roots-text pb-16 ">
       {/* 1. Hero Introduction */}
       <HeroSection />
 
@@ -26,15 +26,16 @@ export default function AboutPage() {
       {/* 3. How We Work Timeline */}
       <HowWeWork />
 
-
       {/* 5. Strategic Focus Cards connected to Center Node */}
       <StrategicFocus />
+
+      <SharedCommitmentSection />
 
       {/* 6. Why Co-Funding Matters Columns */}
       <CoFundingSection />
 
       {/* 7. Shared Commitment Section */}
-      <SharedCommitmentSection />
+      
 
       {/* 7. Our Core Values Masonry Collage */}
       <CoreValues />

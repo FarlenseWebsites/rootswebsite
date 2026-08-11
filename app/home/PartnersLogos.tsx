@@ -24,7 +24,7 @@ const marqueeRow2 = [...row2Paths, ...row2Paths]
 
 export default function PartnersLogos() {
   return (
-    <section className="py-10 overflow-hidden mt-10">
+    <section className="py-15">
       <style>{`
         @keyframes scroll-left {
           0% { transform: translateX(0); }
@@ -44,7 +44,7 @@ export default function PartnersLogos() {
         }
       `}</style>
       
-      <div className="max-w-7xl mx-auto mb-8 px-6 text-center">
+      <div className="max-w-7xl mx-auto mb-8 px-10 py-10 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">
           Partnerships
         </h2>

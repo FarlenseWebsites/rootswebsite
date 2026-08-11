@@ -11,7 +11,7 @@ export default function HeroSection() {
         {/* Left Column: Headings & First Two Paragraphs */}
         <div className="space-y-10">
           <div className="space-y-3">
-            <h1 className="text-5xl font-bold tracking-tight text-gray-800">
+            <h1 className="text-5xl font-bold tracking-tight text-roots-text">
               About Us
             </h1>
             <h2 className="text-lg text-gray-500 font-light">
@@ -19,7 +19,7 @@ export default function HeroSection() {
             </h2>
           </div>
 
-          <div className="space-y-6 text-[#4A4749]/85 font-normal leading-relaxed text-base md:pr-8">
+          <div className="space-y-6 text-roots-text font-regular leading-relaxed text-base md:pr-8">
             <p>
               Roots Foundation is a social impact organisation working at the
               grassroots to create sustainable, locally relevant solutions.
@@ -44,7 +44,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Section: Full Width Paragraph */}
-      <div className="mt-12 text-[#4A4749]/85 font-normal leading-relaxed text-base">
+      <div className="mt-12 text-roots-text font-regular leading-relaxed text-base">
         <p>
           Our work begins with local realities. We collaborate with communities, 
           partners, and public institutions to strengthen capacities, improve access, 

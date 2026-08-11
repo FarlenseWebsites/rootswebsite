@@ -16,39 +16,39 @@ interface StoryItem {
 const stories: StoryItem[] = [
   {
     id: 1,
+    title: 'Skilled Hands, Empowered Lives:',
+    subtitle: "Sunita's Rise as an Entrepreneur",
+    image: '/home/sunita.png',
+    textColorClass: 'text-roots-skilled',
+    borderClass: 'border-roots-skilled',
+    url: '/case-studies/skilled-entrepreneur',
+  },
+  {
+    id: 2,
     title: 'From Abandoned Fields to Thriving Farms:',
     subtitle: 'Sustainable Agriculture Success',
-    image: '/storychange/img1.jpg',
+    image: '/home/fields.png',
     textColorClass: 'text-roots-agriculture',
     borderClass: 'border-roots-agriculture',
     url: '/case-studies/agriculture',
   },
   {
-    id: 2,
+    id: 3,
     title: 'The power of sports:',
     subtitle: 'How Ajay Found His Calling',
-    image: '/storychange/img2.jpg',
+    image: '/home/ajay.png',
     textColorClass: 'text-roots-sports',
     borderClass: 'border-roots-sports',
     url: '/case-studies/sports',
   },
   {
-    id: 3,
+    id: 4,
     title: 'From Fields to Classrooms:',
     subtitle: "Rekha's Journey to Education",
-    image: '/storychange/img3.jpg',
+    image: '/home/rekha.png',
     textColorClass: 'text-roots-education',
     borderClass: 'border-roots-education',
     url: '/case-studies/education',
-  },
-  {
-    id: 5,
-    title: 'Skilled Hands, Empowered Lives:',
-    subtitle: "Sunita's Rise as an Entrepreneur",
-    image: '/storychange/img5.jpg',
-    textColorClass: 'text-roots-skilled',
-    borderClass: 'border-roots-skilled',
-    url: '/case-studies/skilled-entrepreneur',
   },
 ]
 
@@ -56,11 +56,11 @@ export default function StoriesOfChange() {
   return (
     <section className="bg-roots-beige py-15 w-full">
       {/* Container to enforce max-width and center alignment with padding for smaller screens */}
-      <div className="max-w-7xl mx-auto p-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold text-roots-primary mb-2">
+      <div className="max-w-7xl mx-auto px-10 text-center">
+        <h2 className="text-3xl md:text-5xl font-semibold text-roots-primary mb-2">
           Stories of Change
         </h2>
-        <p className="text-roots-text/80 font-light mb-10 text-sm sm:text-base">
+        <p className="text-roots-text font-light mb-10 md:text-lg text-md">
           Real people, real experiences, real change
         </p>
 
@@ -78,7 +78,8 @@ export default function StoriesOfChange() {
                   src={story.image}
                   alt={story.title}
                   fill
-                  className="object-cover"
+                  // Added grayscale, transition, and group-hover:grayscale-0 here
+                  className="object-cover grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
                 {/* Kept a light gradient only so the white text remains legible over bright images */}

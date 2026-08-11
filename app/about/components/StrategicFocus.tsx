@@ -7,14 +7,14 @@ export default function StrategicFocus() {
   return (
     <section className=" px-10 py-15 max-w-7xl mx-auto">
       {/* Heading */}
-      <div className="text-left max-w-3xl mb-14">
-        <h2 className="text-3xl font-bold tracking-tight text-roots-text mb-4">
+      <div className="text-center max-w-7xl pb-10 mx-auto mb-15">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-5 ">
           Our Strategic Focus
         </h2>
 
-        <p className="text-base text-roots-text leading-relaxed">
+        <p className="text-md font-regular text-roots-text leading-relaxed">
           We work from strategy to last-mile delivery, combining local
-          <br className="hidden sm:block" />
+          <br/>
           knowledge, strong partnerships, and accountable implementation.
         </p>
       </div>

@@ -73,9 +73,9 @@ export default function ImpactTabs() {
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0]
 
   return (
-    <section className="py-15  max-w-7xl mx-auto">
-      <div className="text-center p-10">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-[var(--roots-text)] mb-8">
+    <section className="py-15 px-10 max-w-7xl mx-auto">
+      <div className="text-center ">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-roots-text mb-8">
          
            Engineering real change,
          

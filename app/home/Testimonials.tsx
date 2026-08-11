@@ -49,33 +49,25 @@ export default function Testimonials() {
   const currentTestimonial = testimonialData[currentIndex]
 
   return (
-    <section className="bg-[#faf1ec] py-15 px-6">
-      {/* 
-        FIX 1: Changed parent wrapper to max-w-6xl mx-auto. 
-        Now the heading and the box share the exact same left edge, 
-        and the mx-auto creates an identical gap on the right and left of the screen. 
-      */}
+    <section className="bg-[#faf1ec] py-15">
+      
       <div className="max-w-7xl mx-auto p-10">
         
         {/* Heading */}
         <div className="mb-10">
-          <p className="text-2xl font-medium text-roots-text mb-2">
+          <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-2">
             Testimonials
           </p>
-          <h2 className="text-sm font-light text-roots-text">
+          <h2 className="text-lg font-light text-roots-text">
             What our partners and communities say about us
           </h2>
         </div>
 
-        {/* 
-          FIX 2: Replaced Grid with Flex. 
-          w-full ensures it stretches exactly to the edges of the 6xl container.
-        */}
+       
         <div 
           key={currentTestimonial.id}
           className="flex flex-col md:flex-row w-full gap-6 md:gap-8 items-stretch animate-[fadeIn_0.5s_ease-in-out]"
         >
-          {/* Athlete Profile Column (Takes up 1/3 width on desktop) */}
           <div className="relative w-full md:w-4/12 h-72 sm:h-96 md:h-auto overflow-hidden shrink-0">
             <Image
               src={currentTestimonial.image}
@@ -85,7 +77,6 @@ export default function Testimonials() {
             />
           </div>
 
-          {/* Testimonial Quote Column (Takes up 2/3 width on desktop) */}
           <div className="w-full md:w-8/12 bg-[#FEF9F1] flex flex-col justify-between text-left p-6 md:p-10 transition-opacity duration-500">
             <p className="text-base sm:text-lg text-roots-text leading-relaxed mb-8 min-h-[320px] md:min-h-[220px]">
               {currentTestimonial.quote}
@@ -102,7 +93,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex justify-center mt-8 gap-2">
           {testimonialData.map((_, index) => (
             <button

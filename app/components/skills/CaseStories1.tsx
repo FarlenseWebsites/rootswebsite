@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function CaseStories() {
   return (
-    <section className="w-full max-w-7xl mx-auto p-10">
+    <section className="w-full max-w-7xl mx-auto py-15 px-10">
       <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
         Case Stories
       </h2>

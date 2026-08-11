@@ -7,6 +7,8 @@ import ProgramsSection from '../../components/sports/ProgramsSection'
 import VerticalFilmSection from '../../components/sports/VerticalFilmSection'
 import Details from '../../components/sports/details'
 import Development from '../../components/sports/development'
+import CaseStories from '../../components/sports/CaseStories'
+
 export default function sportsImpactPage() {
   return (
     <div className="bg-[#FEF9F1] min-h-screen text-left">
@@ -22,6 +24,7 @@ export default function sportsImpactPage() {
 
       {/* 4. VERTICAL FILM SECTION */}
 
+      <CaseStories />
       <Development />
       <VerticalFilmSection />
     </div>

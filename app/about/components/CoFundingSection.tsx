@@ -28,10 +28,10 @@ const items = [
 
 export default function CoFundingSection() {
   return (
-    <section className="max-w-7xl mx-auto px-10 py-20">
+    <section className="max-w-7xl mx-auto px-10 py-15">
      
       {/* Zig-Zag Sections */}
-      <div className="space-y-20">
+      <div className="space-y-20 pt-10">
         {items.map((item, index) => (
           <div
             key={index}

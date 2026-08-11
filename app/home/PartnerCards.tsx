@@ -38,7 +38,7 @@ const cards: PartnerCardItem[] = [
 
 export default function PartnerCards() {
   return (
-    <section className="bg-[#09569A] py-10 px-6">
+    <section className="bg-[#09569A] py-15 px-8">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className=" text-white text-2xl sm:text-3xl md:text-4xl font-regular  mb-12">
           Partner with us to co-create measurable impact

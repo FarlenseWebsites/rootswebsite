@@ -63,7 +63,7 @@ export default function SectionSwitcher({
       )}
 
       {/* Main Switcher Box */}
-      <div className="p-6 sm:p-8">
+      <div className=" ">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
           {/* LEFT SIDEBAR: Program Selector List */}

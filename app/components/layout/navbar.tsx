@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown} from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 
 const impactSubLinks = [
   {
@@ -83,7 +83,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-roots-beige sticky top-0 z-50 shadow-sm border-b border-gray-200/20">
-      <div className="max-w-7xl mx-auto px-10 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-10 h-25 flex items-center justify-between">
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logos/rootslogo.png"
@@ -115,10 +115,10 @@ const Navbar = () => {
                   <div className="flex items-center gap-1 cursor-pointer">
                     <Link
                       href={link.href}
-                      className={`text-sm transition-colors flex items-center gap-1.5 ${
+                      className={`text-md transition-colors flex items-center gap-1.5 ${
                         isActive
-                          ? 'text-roots-primary font-semibold'
-                          : 'text-roots-text font-medium hover:text-roots-primary'
+                          ? 'text-roots-primary font-bold'
+                          : 'text-roots-text font-light hover:text-roots-primary'
                       }`}
                     >
                       {link.label}
@@ -143,10 +143,10 @@ const Navbar = () => {
                           <Link
                             key={sub.href}
                             href={sub.href}
-                            className={`flex items-center gap-3 px-4 py-2.5 text-sm font-medium transition-colors ${
+                            className={`flex items-center gap-3 px-4 py-2.5 text-md transition-colors ${
                               isSubActive
-                                ? 'bg-gray-50 font-semibold text-roots-primary'
-                                : 'hover:bg-gray-50/80 text-roots-text hover:text-roots-primary'
+                                ? 'bg-gray-50 font-bold text-roots-primary'
+                                : 'font-light hover:bg-gray-50/80 text-roots-text hover:text-roots-primary'
                             }`}
                           >
                             <span className="truncate">{sub.label}</span>
@@ -163,10 +163,10 @@ const Navbar = () => {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`text-sm transition-colors ${
+                  className={`text-md transition-colors ${
                     isActive
-                      ? 'text-roots-primary font-semibold'
-                      : 'text-roots-text font-medium hover:text-roots-primary'
+                      ? 'text-roots-primary font-bold'
+                      : 'text-roots-text font-light hover:text-roots-primary'
                   }`}
                 >
                   {link.label}
@@ -179,7 +179,7 @@ const Navbar = () => {
         {/* Desktop CTA */}
         <Link
           href="/partner"
-          className="hidden md:inline-flex items-center px-5 py-2.5 bg-roots-primary text-white text-sm font-semibold rounded hover:opacity-90 transition-opacity"
+          className="hidden md:inline-flex items-center px-5 py-2.5 bg-roots-primary text-white text-md font-bold rounded hover:opacity-90 transition-opacity"
         >
           Partner With Us
         </Link>
@@ -208,7 +208,7 @@ const Navbar = () => {
                         className={`text-base transition-colors ${
                           pathname.startsWith(link.href)
                             ? 'text-roots-primary font-bold border-l-4 border-roots-primary pl-3'
-                            : 'text-roots-text font-medium hover:text-roots-primary pl-4'
+                            : 'text-roots-text font-light hover:text-roots-primary pl-4'
                         }`}
                       >
                         {link.label}
@@ -233,10 +233,10 @@ const Navbar = () => {
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              className={`flex items-center gap-2.5 py-1.5 text-sm transition-colors ${
+                              className={`flex items-center gap-2.5 py-1.5 text-base transition-colors ${
                                 pathname === sub.href
                                   ? 'text-roots-primary font-bold'
-                                  : 'text-roots-text/80 hover:text-roots-primary'
+                                  : 'text-roots-text/80 font-light hover:text-roots-primary'
                               }`}
                             >
                               <span>{sub.label}</span>
@@ -257,7 +257,7 @@ const Navbar = () => {
                     className={`text-base block py-1.5 transition-colors ${
                       isActive
                         ? 'text-roots-primary font-bold border-l-4 border-roots-primary pl-3'
-                        : 'text-roots-text font-medium hover:text-roots-primary pl-4'
+                        : 'text-roots-text font-light hover:text-roots-primary pl-4'
                     }`}
                   >
                     {link.label}
@@ -268,7 +268,7 @@ const Navbar = () => {
           </ul>
           <Link
             href="/partner"
-            className="inline-flex w-full items-center justify-center py-3 bg-roots-primary text-white text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity shadow-md"
+            className="inline-flex w-full items-center justify-center py-3 bg-roots-primary text-white text-base font-light  hover:opacity-90 transition-opacity "
           >
             Partner With Us
           </Link>
@@ -279,5 +279,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-

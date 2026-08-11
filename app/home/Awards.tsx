@@ -9,51 +9,55 @@ interface AwardItem {
   title: string
   subtitle: string
   color: string
+  image: string // 1. Added image property to the interface
 }
 
 const awards: AwardItem[] = [
   {
     id: 1,
-    year: '2021',
-    title: 'Best NGO Award',
+    year: '2024',
+    title: 'World CSR Day',
     subtitle: 'INDIA',
-    color: '#09569a',
-     // primary blue
+    color: '#09569a', // primary blue
+    image: '/award/1.svg', // 2. Added image path
   },
   {
     id: 2,
-    title: 'Global Award',
-    year: '2022',
+    title: 'The CSRUniverse',
+    year: '2024',
     subtitle: 'INDIA',
     color: '#75bc20', // agriculture green
+    image: '/award/2.svg', // Replace with actual paths if different
   },
   {
     id: 3,
-    title: 'CSR Award',
+    title: 'BCC&I Social Conclave',
     year: '2024',
     subtitle: 'INDIA',
     color: '#febc20', // education gold
+    image: '/award/3.svg',
   },
   {
     id: 4,
-    title: 'NGO of the Year Award',
-    year: '2025',
+    title: 'CSR Sportslab',
+    year: '2026',
     subtitle: 'INDIA',
     color: '#dc3b83', // skilled pink
+    image: '/award/4.svg',
   },
 ]
 
 export default function Awards() {
   return (
-    <section className="bg-roots-beige py-10">
-      <div className="max-w-7xl mx-auto text-center">
-        <div className="flex items-center justify-center gap-2 mb-10 ">
-          <h2 className="text-2xl sm:text-3xl md:text-3xl font-regular text-roots-text">
+    <section className="bg-roots-beige py-15 w-full">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+        
+        <div className="flex items-center justify-center gap-2 mb-25">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">
             Awards & Recognitions
           </h2>
         </div>
        
-
         {/* Awards Columns Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {awards.map((award) => (
@@ -61,13 +65,11 @@ export default function Awards() {
               {/* Laurel Wreath Year Indicator */}
               <div className="relative w-28 h-28 flex items-center justify-center mb-5">
                 <Image 
-                  src="/award/AwardBadge.svg"
-                  alt="AwardBadge"
+                  src={award.image} // 3. Updated src to pull from the array
+                  alt={`${award.title} Badge`} // Updated alt tag for better accessibility
                   fill
-                  className='object-contain'
-                  />
-               
-                
+                  className="object-contain"
+                />
               </div>
 
               {/* Award Details Text */}
@@ -81,6 +83,7 @@ export default function Awards() {
             </div>
           ))}
         </div>
+        
       </div>
     </section>
   )

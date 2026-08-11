@@ -3,13 +3,13 @@ import Image from 'next/image';
 
 export default function CaseStories() {
   return (
-    <section className="w-full max-w-7xl p-10">
+    <section className="w-full max-w-7xl mx-auto py-15 px-10">
       <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
         Case Stories
       </h2>
 
       {/* Scrollable container */}
-      <div className="overflow-x-auto hide-scrollbar mt-15 w-full">
+      <div className="overflow-x-auto  mt-15 w-full">
         
         {/* 
           1. 'max-w-none' prevents the image from shrinking to fit the screen.
@@ -17,11 +17,11 @@ export default function CaseStories() {
           3. 'h-auto' keeps the proportions correct as it scales.
         */}
         <Image
-          src="/education/casestories/1.svg"
+          src="/sports/casestories/1.svg"
           alt="Case Story Journey"
           width={2400} 
           height={500} 
-          className="max-w-none w-1000 h-auto object-contain"
+          className="max-w-none w-500 h-auto object-contain"
           priority
         />
         

@@ -25,8 +25,8 @@ const items: TimelineItem[] = [
 export default function HowWeWork() {
   return (
     <section className="py-15 w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-medium tracking-tight text-roots-text mb-12 text-center">
+      <div className="max-w-7xl mx-auto p-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-10 text-center">
           How We Work
         </h2>
       </div>
@@ -53,15 +53,15 @@ export default function HowWeWork() {
                   {/* Circle (bg-white perfectly hides the line passing underneath) */}
                   <div className="relative mb-6">
                     <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-[0_0_0_4px_theme(colors.roots-primary)]">
-                      <div className="w-3 h-3 rounded-full bg-roots-primary" />
+                      
                     </div>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-2">
+                  <h3 className="text-2xl font-bold mb-2">
                     {item.title}
                   </h3>
 
-                  <p className="text-white/80 text-sm leading-relaxed">
+                  <p className="text-white/80 text-md leading-relaxed">
                     {item.subtitle}
                   </p>
                 </div>
