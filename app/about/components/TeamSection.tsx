@@ -15,34 +15,34 @@ const founders: TeamMember[] = [
     name: 'Ritwik Bahuguna',
     role: 'Founder and General Secretary',
     image: '/teams/ritwik.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/ritwikbahuguna/',
   },
   {
     name: 'Ridhima Bahuguna',
     role: 'Founder and President',
     image: '/teams/ridhima.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/ridhima-bahuguna-5839481b/',
   },
 ]
 
 const advisors: TeamMember[] = [
   {
     name: 'A.P Sinha',
-    role: '(One line description)',
+    role: '',
     image: '/teams/apsinha.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/a-p-sinha-81a9533/',
   },
   {
     name: 'Nidhi Nautiyal',
-    role: '(One line description)',
+    role: '',
     image: '/teams/nidhi.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: ' https://www.linkedin.com/in/nidhi-nautiyal-10979214/',
   },
   {
     name: 'Ankit Bhatia',
-    role: '(One line description)',
+    role: '',
     image: '/teams/ankit.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/ankitbhatiaab/',
   },
 ]
 
@@ -51,25 +51,25 @@ const verticalLeads: TeamMember[] = [
     name: 'Trapti Moonat',
     role: 'Head – Partnerships and Business Development',
     image: '/teams/trapti.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/traptimoonat/ ',
   },
   {
     name: 'Vikas Gupta',
     role: 'Vertical Lead – Agriculture',
     image: '/teams/vikas.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/vikasgupta24/',
   },
   {
     name: 'Anirudh Singare',
     role: 'Senior Program Manager – Sports',
     image: '/teams/anirudh.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/anirudhsingare/',
   },
   {
     name: 'Sonia Singh',
     role: 'Program Manager – Education and Community Development',
     image: '/teams/sonia.png',
-    linkedin: 'https://linkedin.com',
+    linkedin: 'https://www.linkedin.com/in/sonia-singh-b13a75167/',
   },
 ]
 
