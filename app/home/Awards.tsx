@@ -15,15 +15,15 @@ interface AwardItem {
 const awards: AwardItem[] = [
   {
     id: 1,
-    year: '2024',
-    title: 'World CSR Day',
+    year: '2023',
+    title: 'Best Non-Profit in grassroots Sports Development of the Year ',
     subtitle: 'INDIA',
     color: '#09569a', // primary blue
     image: '/award/1.svg', // 2. Added image path
   },
   {
     id: 2,
-    title: 'The CSRUniverse',
+    title: 'The CSR Universe, Social Impact Conference & Award ',
     year: '2024',
     subtitle: 'INDIA',
     color: '#75bc20', // agriculture green
@@ -31,7 +31,7 @@ const awards: AwardItem[] = [
   },
   {
     id: 3,
-    title: 'BCC&I Social Conclave',
+    title: 'World CSR Day, North India Leadership Awards',
     year: '2024',
     subtitle: 'INDIA',
     color: '#febc20', // education gold
@@ -39,7 +39,7 @@ const awards: AwardItem[] = [
   },
   {
     id: 4,
-    title: 'CSR Sportslab',
+    title: 'CSR Times National CSR & ESG Award',
     year: '2026',
     subtitle: 'INDIA',
     color: '#dc3b83', // skilled pink
@@ -73,13 +73,11 @@ export default function Awards() {
               </div>
 
               {/* Award Details Text */}
-              <p className="text-xs sm:text-sm font-roots-text tracking-tight">{award.year}</p>
+              <p className="text-xs sm:text-sm font-bold font-roots-text tracking-tight">{award.year}</p>
               <h3 className="text-base sm:text-lg font-semibold font-roots-text mb-1">
                 {award.title}
               </h3>
-              <p className="text-xs sm:text-sm text-[#4A4749]/80 font-medium">
-                {award.subtitle}
-              </p>
+              
             </div>
           ))}
         </div>

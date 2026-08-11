@@ -7,12 +7,12 @@ const logoFiles = [
   'cl6.svg', 'cl7.svg', 'cl8.svg', 'cl9.svg', 'cl10.svg',
   'cl11.svg', 'cl12.svg', 'cl13.svg', 'cl14.svg', 'cl15.svg',
   'cl16.svg', 'cl17.svg', 'cl18.svg', 'cl19.svg', 'cl20.svg',
-  'cl21.svg'
+  
 ]
 
-// Row 1 has 11 logos, Row 2 has 10 logos
-const row1Files = logoFiles.slice(0, 11)
-const row2Files = logoFiles.slice(12, 21)
+// Row 1 has 10 logos, Row 2 has 10 logos
+const row1Files = logoFiles.slice(0, 10)
+const row2Files = logoFiles.slice(10, 20)
 
 // Map to paths
 const row1Paths = row1Files.map(file => `/companylogos/${file}`)

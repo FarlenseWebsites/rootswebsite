@@ -16,8 +16,8 @@ interface StoryItem {
 const stories: StoryItem[] = [
   {
     id: 1,
-    title: 'Skilled Hands, Empowered Lives:',
-    subtitle: "Sunita's Rise as an Entrepreneur",
+    title: 'Stitching a Brighter Future',
+    subtitle: "Skill and Community Development",
     image: '/home/sunita.png',
     textColorClass: 'text-roots-skilled',
     borderClass: 'border-roots-skilled',
@@ -25,8 +25,8 @@ const stories: StoryItem[] = [
   },
   {
     id: 2,
-    title: 'From Abandoned Fields to Thriving Farms:',
-    subtitle: 'Sustainable Agriculture Success',
+    title: 'From Conventional Farming to Climate-Smart Practice',
+    subtitle: 'Agriculture and Environment',
     image: '/home/fields.png',
     textColorClass: 'text-roots-agriculture',
     borderClass: 'border-roots-agriculture',
@@ -34,8 +34,8 @@ const stories: StoryItem[] = [
   },
   {
     id: 3,
-    title: 'The power of sports:',
-    subtitle: 'How Ajay Found His Calling',
+    title: 'From Barefoot Runs to the National Track',
+    subtitle: 'Sports and Physical Literacy',
     image: '/home/ajay.png',
     textColorClass: 'text-roots-sports',
     borderClass: 'border-roots-sports',
@@ -44,11 +44,20 @@ const stories: StoryItem[] = [
   {
     id: 4,
     title: 'From Fields to Classrooms:',
-    subtitle: "Rekha's Journey to Education",
+    subtitle: "Education and Career Readiness",
     image: '/home/rekha.png',
     textColorClass: 'text-roots-education',
     borderClass: 'border-roots-education',
     url: '/impact/education#case-story',
+  },
+  {
+    id: 5,
+    title: 'Community Development Project, Devanahalli',
+    subtitle: "Skills and Community Development",
+    image: '/home/skill2.png',
+    textColorClass: 'text-roots-skilled',
+    borderClass: 'text-roots-skilled',
+    url: '/impact/skills#case-story2',
   },
 ]
 
@@ -65,7 +74,7 @@ export default function StoriesOfChange() {
         </p>
 
         {/* Fully responsive Grid instead of scrollable flex container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {stories.map((story) => (
             <a
               key={story.id}
