@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default function StrategicFocus() {
   return (
-    <section className=" px-10 py-15 max-w-7xl mx-auto">
+    <section className=" px-2 md:px-10 py-15 max-w-7xl mx-auto">
       {/* Heading */}
       <div className="text-center max-w-7xl pb-10 mx-auto mb-15">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-5 ">

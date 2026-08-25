@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function VerticalFilmSection2() {
   return (
-    <section className="py-20 px-6 sm:px-10 max-w-7xl mx-auto">
+    <section className="py-20 px-2 md:px-10 max-w-7xl mx-auto">
       <div className="mb-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-roots-text tracking-tight">
           Vertical Film

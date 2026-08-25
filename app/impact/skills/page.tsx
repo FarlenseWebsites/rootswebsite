@@ -32,7 +32,7 @@ export default function skillsImpactPage() {
 
       <CaseStories1 />
       
-      <VerticalFilmSection2 />
+      {/* <VerticalFilmSection2 /> */}
 
       {/* 4. HERO SECTION 2*/}
       <HeroSection2 />
@@ -48,7 +48,7 @@ export default function skillsImpactPage() {
       <CaseStories2 />
 
       {/* 4. VERTICAL FILM SECTION */}
-      <VerticalFilmSection />
+      {/* <VerticalFilmSection /> */}
     </div>
   )
 }

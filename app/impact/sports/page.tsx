@@ -26,7 +26,7 @@ export default function sportsImpactPage() {
 
       <CaseStories />
       <Development />
-      <VerticalFilmSection />
+      {/* <VerticalFilmSection /> */}
     </div>
   )
 }

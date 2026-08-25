@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function HeroSection() {
   return (
-    <section className="pt-10 pb-12 px-10 max-w-7xl mx-auto">
+    <section className="pt-10 pb-12 px-2 md:px-10 max-w-7xl mx-auto">
       {/* Top Section: Text and Image */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         

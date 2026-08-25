@@ -25,7 +25,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-roots-footer-gray">
-      <div className="max-w-7xl mx-auto px-10 py-10">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 py-10">
         
         {/* Logo Section - Placed outside the grid so nothing sits horizontally next to it */}
         <div className="mb-10">
@@ -45,7 +45,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div>
               <p className="text-sm text-[#4A4749] mb-3 leading-snug">
-                Sign up to receive newsletter
+                Sign up to receive updates from Roots Foundation.
               </p>
               <div className="flex border border-[#09569a] rounded overflow-hidden">
                 <input
@@ -56,7 +56,7 @@ export default function Footer() {
                   className="flex-1 px-3 py-2 text-sm text-[#4A4749] bg-white outline-none placeholder-gray-400"
                 />
                 <button className="px-4 py-2 bg-[#09569a] text-white text-sm font-medium hover:opacity-90 transition-opacity">
-                  Submit
+                  Subscribe
                 </button>
               </div>
               <p className="text-xs text-[#4A4749] mt-3 leading-relaxed">
@@ -93,7 +93,7 @@ export default function Footer() {
 
           {/* Column 3 – Impact Verticals */}
           <div className="flex flex-col">
-            <h3 className="text-sm font-bold text-[#1a1a1a] mb-5">Impact Verticals</h3>
+            <h3 className="text-sm font-bold text-[#1a1a1a] mb-5">Our Work</h3>
             <ul className="flex flex-col gap-3">
               {impactVerticals.map((item) => (
                 <li key={item.href}>
@@ -156,12 +156,13 @@ export default function Footer() {
             </a>
           </div>
 
-          <div
+          <a
+            href="mailto:contact@rootsfoundation.in"
             className="flex items-center gap-2 text-sm text-[#09569a] hover:underline"
           >
             <Mail className="w-4 h-4" />
             contact@rootsfoundation.in
-          </div>
+          </a>
         </div>
       </div>
     </footer>

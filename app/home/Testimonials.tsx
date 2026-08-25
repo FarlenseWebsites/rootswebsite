@@ -58,9 +58,7 @@ export default function Testimonials() {
           <p className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-2">
             Testimonials
           </p>
-          <h2 className="text-lg font-light text-roots-text">
-            What our partners and communities say about us
-          </h2>
+        
         </div>
 
        

@@ -16,31 +16,31 @@ const newsletters: NewsletterItem[] = [
     id: 1,
     title: 'Newsletter Issue 1',
     image: '/newsletter/1.png',
-    pdfUrl: '/newsletter/1.pdf',
+    pdfUrl: 'https://mailchi.mp/rootsfoundation.in/roots-newsletter-by-roots-foundation-april-2024-edition-13871069',
   },
   {
     id: 2,
     title: 'Newsletter Issue 2',
     image: '/newsletter/2.png',
-    pdfUrl: '/newsletter/2.pdf',
+    pdfUrl: 'https://mailchi.mp/rootsfoundation.in/roots-newsletter-by-roots-foundation-april-2024-edition-13753504',
   },
   {
     id: 3,
     title: 'Newsletter Issue 3',
     image: '/newsletter/3.png',
-    pdfUrl: '/newsletter/3.pdf',
+    pdfUrl: 'https://rootsfoundation.in/wp-content/uploads/2024/08/FINAL-Eng-NL-Sportslab.pdf',
   },
   {
     id: 4,
     title: 'Newsletter Issue 4',
     image: '/newsletter/4.png',
-    pdfUrl: '/newsletter/4.pdf',
+    pdfUrl: 'https://mailchi.mp/rootsfoundation.in/roots-newsletter-by-roots-foundation-april-2024-edition-13744295',
   },
   {
     id: 5,
     title: 'Newsletter Issue 5',
     image: '/newsletter/5.png',
-    pdfUrl: '/newsletter/5.pdf',
+    pdfUrl: 'https://mailchi.mp/53a0e466182e/roots-newsletter-by-roots-foundation-december-2023-edition?e=ebee9c3d5e',
   },
 ]
 
@@ -60,7 +60,7 @@ export default function NewslettersSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto py-15 px-10 text-roots-text">
+    <section className="max-w-7xl mx-auto py-15 px-2 md:px-10 text-roots-text">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">

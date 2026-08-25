@@ -24,51 +24,57 @@ const galleryImages: GalleryImage[] = [
 ]
 
 export default function GallerySection() {
-  // Custom flex-basis values to perfectly match the 4-3-4 grid shown in the screenshot.
-  // The percentages are kept slightly under 100% per row to account for the gap space, 
-  // and flex-grow (the '1' in 1_1_X%) stretches them flush to the edges.
-  const layoutClasses = [
-    // Row 1 (4 images)
-    'md:flex-[1_1_20%]', 
-    'md:flex-[1_1_35%]', 
-    'md:flex-[1_1_15%]', 
-    'md:flex-[1_1_20%]', 
-    // Row 2 (3 images)
-    'md:flex-[1_1_40%]', 
-    'md:flex-[1_1_20%]', 
-    'md:flex-[1_1_30%]', 
-    // Row 3 (4 images)
-    'md:flex-[1_1_20%]', 
-    'md:flex-[1_1_20%]', 
-    'md:flex-[1_1_20%]', 
-    'md:flex-[1_1_30%]', 
+  // A 12-column grid system is the industry standard.
+  // We define how many columns each image spans on mobile (out of 2 cols) 
+  // and desktop (out of 12 cols).
+  const gridSpans = [
+    // Row 1 (4 images - desktop)
+    'col-span-2 md:col-span-3', // Mobile: Full width | Desktop: 3/12
+    'col-span-1 md:col-span-4', // Mobile: Half width | Desktop: 4/12
+    'col-span-1 md:col-span-2', // Mobile: Half width | Desktop: 2/12
+    'col-span-2 md:col-span-3', // Mobile: Full width | Desktop: 3/12
+    
+    // Row 2 (3 images - desktop)
+    'col-span-1 md:col-span-5', // Mobile: Half width | Desktop: 5/12
+    'col-span-1 md:col-span-3', // Mobile: Half width | Desktop: 3/12
+    'col-span-2 md:col-span-4', // Mobile: Full width | Desktop: 4/12
+    
+    // Row 3 (4 images - desktop)
+    'col-span-1 md:col-span-3', // Mobile: Half width | Desktop: 3/12
+    'col-span-1 md:col-span-3', // Mobile: Half width | Desktop: 3/12
+    'col-span-1 md:col-span-3', // Mobile: Half width | Desktop: 3/12
+    'col-span-1 md:col-span-3', // Mobile: Half width | Desktop: 3/12
   ]
 
   return (
-    <section className="py-16 px-10 max-w-7xl mx-auto">
-      <div className="mb-8 text-left">
+    <section className="py-12 md:py-16 px-2 md:px-10 max-w-7xl mx-auto">
+      <div className="mb-6 md:mb-8 text-left">
         <h2 className="text-3xl md:text-4xl font-medium text-roots-text">Gallery</h2>
         <p className="text-lg text-roots-text font-light mt-2">
           Visual glimpse of our ground operations and impact.
         </p>
       </div>
 
-      {/* Flexbox Layout Matching Screenshot */}
-      <div className="flex flex-wrap gap-4">
+      {/* 
+        GRID CONTAINER:
+        Mobile: 2 columns
+        Desktop: 12 columns 
+      */}
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-1 md:gap-2 auto-rows-[200px] md:auto-rows-[280px]">
         {galleryImages.map((image, index) => {
-          const flexClass = layoutClasses[index]
+          // Fallback to a standard 1-col/3-col span if the array ever grows beyond 11 items
+          const spanClass = gridSpans[index] || 'col-span-1 md:col-span-3'
 
           return (
             <div
               key={image.id}
-              // Base class spans full width on mobile, uses custom width on desktop (md:)
-              className={`relative h-64 md:h-72 flex-[1_1_100%] w-full ${flexClass}`}
+              className={`relative w-full h-full  overflow-hidden group ${spanClass}`}
             >
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

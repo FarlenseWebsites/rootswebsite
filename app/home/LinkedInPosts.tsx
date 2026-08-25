@@ -66,11 +66,9 @@ export default function LinkedInPosts() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-2 sm:mb-4">
-              LinkedIn Posts
+              Updates
             </h2>
-            <p className="text-base sm:text-lg font-light text-roots-text">
-              Live updates and insights from our work on the ground
-            </p>
+           
           </div>
 
           {/* Navigation buttons */}

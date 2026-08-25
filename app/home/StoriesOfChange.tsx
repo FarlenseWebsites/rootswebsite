@@ -25,7 +25,7 @@ const stories: StoryItem[] = [
   },
   {
     id: 2,
-    title: 'From Conventional Farming to Climate-Smart Practice',
+    title: 'The Farmer Who Changed His Field',
     subtitle: 'Agriculture and Environment',
     image: '/home/fields.png',
     textColorClass: 'text-roots-agriculture',
@@ -43,7 +43,7 @@ const stories: StoryItem[] = [
   },
   {
     id: 4,
-    title: 'From Fields to Classrooms:',
+    title: 'A Bicycle Budget',
     subtitle: "Education and Career Readiness",
     image: '/home/rekha.png',
     textColorClass: 'text-roots-education',
@@ -52,7 +52,7 @@ const stories: StoryItem[] = [
   },
   {
     id: 5,
-    title: 'Community Development Project, Devanahalli',
+    title: 'Care That Begins Close to Home',
     subtitle: "Skills and Community Development",
     image: '/home/skill2.png',
     textColorClass: 'text-roots-skilled',
@@ -65,7 +65,7 @@ export default function StoriesOfChange() {
   return (
     <section className="bg-roots-beige py-15 w-full">
       {/* Container to enforce max-width and center alignment with padding for smaller screens */}
-      <div className="max-w-7xl mx-auto px-10 text-center">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 text-center">
         <h2 className="text-3xl md:text-5xl font-semibold text-roots-primary mb-2">
           Stories of Change
         </h2>
@@ -109,7 +109,7 @@ export default function StoriesOfChange() {
                   <span
                     className={`text-xs font-medium underline underline-offset-4 decoration-1 group-hover:decoration-2 ${story.textColorClass}`}
                   >
-                    Read Case Study
+                    Read
                   </span>
                   {/* Subtle arrow animation on hover to indicate clickability */}
                   <span className={`text-xs font-bold ${story.textColorClass} group-hover:translate-x-1 transition-transform`}>

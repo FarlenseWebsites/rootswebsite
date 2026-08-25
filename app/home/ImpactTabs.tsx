@@ -73,13 +73,11 @@ export default function ImpactTabs() {
   const activeTab = tabs.find((t) => t.id === activeTabId) || tabs[0]
 
   return (
-    <section className="py-15 px-10 max-w-7xl mx-auto">
+    <section className="py-15 px-2 md:px-10 max-w-7xl mx-auto">
       <div className="text-center ">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-regular text-roots-text mb-8">
          
-           Engineering real change,
-         
-          rooted in measurable impact.
+          Working with communities to build change that lasts.
         </h2>
 
         {/* Tab Buttons */}

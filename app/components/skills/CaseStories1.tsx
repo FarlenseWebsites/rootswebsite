@@ -18,7 +18,7 @@ export default function CaseStories() {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto py-15 px-10" id="case-story">
+    <section className="w-full max-w-7xl mx-auto py-15 px-2 md:px-10" id="case-story">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-3xl sm:text-4xl font-bold text-root-text tracking-tight">
           Case Story

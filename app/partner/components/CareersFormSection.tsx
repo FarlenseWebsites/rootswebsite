@@ -31,7 +31,7 @@ export default function CareersFormSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-10 py-12 ">
+    <section className="max-w-7xl mx-auto px-2 md:px-10 py-12 ">
       <div className="mb-10 text-left">
         <h2 className="text-4xl font-bold tracking-tight text-roots-text mb-2">
           Apply for a Position

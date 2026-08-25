@@ -112,7 +112,7 @@ export default function TeamSection() {
   )
 
   return (
-    <section className="max-w-7xl mx-auto px-10 py-5 sm:py-1 md:py-10">
+    <section className="max-w-7xl mx-auto px-2 md:px-10 py-5 sm:py-1 md:py-10">
       <h2 className="text-4xl font-medium text-roots-text mb-2">
         Team
       </h2>

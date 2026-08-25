@@ -51,7 +51,7 @@ export default function CoreValues() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-6 md:px-10 py-15 ">
+    <section className="max-w-7xl mx-auto px-2 md:px-10 py-15 ">
       {/* Heading */}
       <div className="mb-16">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#4a4a4a] text-center">

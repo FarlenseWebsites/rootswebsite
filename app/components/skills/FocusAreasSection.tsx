@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function FocusAreasSection() {
   return (
-    <section className="py-20 px-6 sm:px-10 max-w-7xl mx-auto">
+    <section className="py-20 px-2 md:px-10 max-w-7xl mx-auto">
       <div className="text-center mb-14">
         <h2 className="text-2xl sm:text-3xl font-bold text-roots-text uppercase tracking-widest">
           OUR FOCUS AREAS

@@ -48,7 +48,7 @@ export default function ReportsSection() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto py-15 px-10">
+    <section className="max-w-7xl mx-auto py-15 px-2 md:px-10">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">
@@ -111,7 +111,7 @@ export default function ReportsSection() {
                   src={report.image}
                   alt={report.title}
                   fill
-                  className="object-fit"
+                  className="object-fit" 
                   sizes="260px"
                 />
               </div>

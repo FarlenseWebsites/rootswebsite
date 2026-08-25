@@ -33,7 +33,7 @@ export default function FootprintMap() {
     <section className="relative py-10 overflow-hidden bg-roots-beige">
       <div className="absolute left-0 right-0 top-[65%] h-22 bg-roots-primary z-0" />
 
-      <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 items-start relative z-10">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 items-start relative z-10">
         <div className="lg:col-span-1">
           <h2 className="inline-block text-3xl font-medium text-roots-text leading-tight m-0">
             Our Presence

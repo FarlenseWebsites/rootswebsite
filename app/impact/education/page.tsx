@@ -25,7 +25,7 @@ export default function EducationImpactPage() {
       <CaseStories />
 
       {/* 4. VERTICAL FILM SECTION */}
-      <VerticalFilmSection />
+      {/* <VerticalFilmSection /> */}
     </div>
   )
 }

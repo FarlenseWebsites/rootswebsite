@@ -8,19 +8,19 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const impactSubLinks = [
   {
-    label: 'Agriculture and Enviroment',
+    label: 'Agriculture & Environment ',
     href: '/impact/agriculture',
   },
   {
-    label: 'Sports and Physical Literacy',
+    label: 'Sports & Physical Literacy ',
     href: '/impact/sports',
   },
   {
-    label: 'Education and Career Readiness',
+    label: 'Education & Career Readiness ',
     href: '/impact/education',
   },
   {
-    label: 'Skills and Community Development',
+    label: 'Skilling & Community Development',
     href: '/impact/skills',
   },
 ]
@@ -51,7 +51,7 @@ const newsSubLinks = [
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
-  { label: 'Impact Verticals', href: '/impact/agriculture', hasDropdown: true, dropdownType: 'impact' },
+  { label: 'Our Work', href: '/impact/agriculture', hasDropdown: true, dropdownType: 'impact' },
   { label: 'Governance', href: '/governance' },
   { label: 'News and Insights', href: '/news' },
 ]

@@ -44,7 +44,7 @@ export default function PartnersLogos() {
         }
       `}</style>
       
-      <div className="max-w-7xl mx-auto mb-8 px-10 py-10 text-center">
+      <div className="max-w-7xl mx-auto mb-8 px-2 md:px-10 py-10 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">
           Our Partners
         </h2>
