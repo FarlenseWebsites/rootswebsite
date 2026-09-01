@@ -59,7 +59,7 @@ export default function LinkedInPosts() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto py-15 px-10 md:px-10 text-roots-text">
+    <section className="max-w-7xl mx-auto py-15 px-2 md:px-10 text-roots-text">
       <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex items-center justify-between mb-6">

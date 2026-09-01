@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function SDGSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-10 font-poppins">
+    <section className="max-w-7xl mx-auto px-2 md:px-10 py-10 font-poppins">
       <div className="ml-4">
         <h2 className="text-3xl md:text-4xl font-medium text-roots-text">
           We work across SDGs

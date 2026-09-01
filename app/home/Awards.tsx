@@ -50,7 +50,7 @@ const awards: AwardItem[] = [
 export default function Awards() {
   return (
     <section className="bg-roots-beige py-15 w-full">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 text-center">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 py-10 text-center">
         
         <div className="flex items-center justify-center gap-2 mb-25">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-regular text-roots-text">

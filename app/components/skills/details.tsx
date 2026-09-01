@@ -45,7 +45,7 @@ const SkillingImpactSection = () => {
   const gridItems = skillingData.filter(item => item.type === 'card');
 
   return (
-    <section className="p-10  w-full max-w-7xl mx-auto">
+    <section className="px-2 md:px-10 py-10 w-full max-w-7xl mx-auto">
       <div className=" flex flex-col gap-6">
         
         {/* TOP BANNER */}

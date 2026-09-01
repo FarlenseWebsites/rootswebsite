@@ -129,7 +129,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-2 md:px-10 py-10 flex flex-col md:flex-row items-center justify-between gap-4\">
           <p className="text-sm text-[#4A4749]">
             Copyright @ Roots Foundation 2026. All Rights Reserved
           </p>

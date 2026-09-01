@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Development() {
   return (
-    <section className="p-10  max-w-7xl mx-auto">
+    <section className="px-2 md:px-10 py-10 max-w-7xl mx-auto">
       
 
      <Image

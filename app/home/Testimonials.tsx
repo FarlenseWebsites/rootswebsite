@@ -51,7 +51,7 @@ export default function Testimonials() {
   return (
     <section className="bg-[#faf1ec] py-15">
       
-      <div className="max-w-7xl mx-auto p-10">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 py-10">
         
         {/* Heading */}
         <div className="mb-10">

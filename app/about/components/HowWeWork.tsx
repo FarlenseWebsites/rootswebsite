@@ -25,7 +25,7 @@ const items: TimelineItem[] = [
 export default function HowWeWork() {
   return (
     <section className="py-15 w-full">
-      <div className="max-w-7xl mx-auto p-10">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 py-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-roots-text mb-10 text-center">
           How We Work
         </h2>

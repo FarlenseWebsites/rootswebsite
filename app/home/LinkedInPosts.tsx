@@ -60,8 +60,8 @@ export default function LinkedInPosts() {
   }
 
   return (
-    <section className="max-w-7xl mx-auto py-12 md:py-16">
-      <div className="w-full px-6 md:px-10">
+    <section className="max-w-7xl mx-auto px-2 md:px-10 py-10 md:py-16">
+      <div className="w-full">
         {/* Heading + Navigation */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>

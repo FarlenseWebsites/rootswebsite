@@ -3,7 +3,7 @@
 export default function SharedCommitmentSection() {
   return (
     <section className="bg-roots-primary text-white py-15">
-      <div className="max-w-7xl mx-auto  p-10">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           {/* Left */}
           <div>

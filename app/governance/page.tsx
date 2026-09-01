@@ -109,7 +109,7 @@ const legendItems = [
 
 export default function GovernancePage() {
   return (
-    <div className="bg-roots-beige min-h-screen mx-auto p-10">
+    <div className="bg-roots-beige min-h-screen mx-auto px-2 md:px-10 py-10">
       {/* 1. Page Header */}
       <section className=" max-w-7xl mx-auto text-left pb-5 md:pb-10">
         <div className="max-w-4xl">

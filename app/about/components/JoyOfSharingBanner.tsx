@@ -20,7 +20,7 @@ export default function JoyOfSharingBanner() {
       <div className="absolute inset-0 bg-black/10 z-10" />
 
       {/* Content Container */}
-      <div className="relative z-20 max-w-7xl mx-auto p-10 w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start justify-start text-white">
+      <div className="relative z-20 max-w-7xl mx-auto px-2 md:px-10 py-10 w-full grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start justify-start text-white">
         
         {/* Left text */}
         <div>

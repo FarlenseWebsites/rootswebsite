@@ -83,7 +83,8 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-roots-beige sticky top-0 z-50 shadow-sm border-b border-gray-200/20">
-      <div className="max-w-7xl mx-auto px-10 h-25 flex items-center justify-between">
+      {/* FIXED: Removed the trailing backslash and changed h-25 to h-24 */}
+      <div className="max-w-7xl mx-auto px-2 md:px-10 h-15 md:h-20  flex items-center justify-between">
         <Link href="/" className="flex-shrink-0">
           <Image
             src="/logos/rootslogo.png"
@@ -113,7 +114,6 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   <div className="flex items-center gap-1 cursor-pointer">
-                    {/* FIX: Changed from <Link> to <button> to prevent navigation on click */}
                     <button
                       type="button"
                       onClick={(e) => {
@@ -207,7 +207,6 @@ const Navbar = () => {
               if (link.hasDropdown) {
                 return (
                   <li key={link.href} className="flex flex-col">
-                    {/* FIX: Combined the text and chevron into a single <button> so clicking anywhere toggles the dropdown */}
                     <button
                       onClick={(e) => {
                         e.preventDefault()

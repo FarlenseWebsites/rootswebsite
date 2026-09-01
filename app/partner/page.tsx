@@ -7,7 +7,7 @@ export default function WorkWithUsPage() {
   return (
     <div className="bg-[#FEF9F1] min-h-screen pb-20 text-roots-text">
       {/* 1. Page Header */}
-      <section className="pt-5 md:pt-14 pb-20 px-4 sm:px-6 max-w-7xl mx-auto">
+      <section className="pt-5 md:pt-14 pb-20 px-2 md:px-10 max-w-7xl mx-auto\">
         <div className="text-center">
           <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold tracking-tight text-roots-text mb-2">
             Work With Us

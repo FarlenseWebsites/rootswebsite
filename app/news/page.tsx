@@ -10,7 +10,7 @@ export default function NewsPage() {
   return (
     <div className="bg-roots-beige max-w-7xl  mx-auto text-roots-text">
       {/* 1. Header Section */}
-      <section className="max-w-7xl mx-auto py-10 px-10 md:px-10 text-roots-text ">
+      <section className="max-w-7xl mx-auto py-10 px-2 md:px-10 text-roots-text ">
         <h1
          
           className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-roots-text mb-3"

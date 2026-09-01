@@ -37,14 +37,14 @@ const cards: PartnerCardItem[] = [
 
 export default function PartnerCards() {
   return (
-    <section className="bg-[#09569A] py-15 px-8">
+    <section className="bg-[#09569A] px-2 md:px-10 py-10">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className=" text-white text-2xl sm:text-3xl md:text-4xl font-regular  mb-12">
           Partner with us to co-create measurable, lasting impact
         </h2>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-2 md:px-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {cards.map((card) => (
             <div
               key={card.id}
