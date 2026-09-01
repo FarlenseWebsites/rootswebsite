@@ -74,7 +74,7 @@ export default function StoriesOfChange() {
         </p>
 
         {/* Fully responsive Grid instead of scrollable flex container */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {stories.map((story) => (
             <a
               key={story.id}
@@ -94,7 +94,7 @@ export default function StoriesOfChange() {
                 {/* Kept a light gradient only so the white text remains legible over bright images */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 
-                <h3 className="absolute top-3 left-3 right-3 text-white font-bold text-[15px] leading-snug drop-shadow-md">
+                <h3 className="absolute bottom-3 left-3 right-3 text-white font-bold text-[15px] leading-snug drop-shadow-md">
                   {story.title}
                 </h3>
               </div>
