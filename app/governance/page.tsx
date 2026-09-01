@@ -6,7 +6,6 @@ import Image from 'next/image'
 // Import custom chart components
 import DonutChart from './components/DonutChart'
 import LineChart from './components/LineChart'
-import StackedBarChart from './components/StackedBarChart'
 
 interface FrameworkItem {
   title: string
@@ -110,11 +109,11 @@ const legendItems = [
 
 export default function GovernancePage() {
   return (
-    <div className="bg-roots-beige min-h-screen mx-auto  p-10">
+    <div className="bg-roots-beige min-h-screen mx-auto p-10">
       {/* 1. Page Header */}
-      <section className="pt-12 sm:pt-16 pb-6 px-4 sm:px-6 max-w-7xl mx-auto text-left">
+      <section className=" max-w-7xl mx-auto text-left pb-5 md:pb-10">
         <div className="max-w-4xl">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#1a1a1a] mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-roots-text mb-3">
             Governance
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-[#4A4749]/80 font-light leading-relaxed">
@@ -124,7 +123,7 @@ export default function GovernancePage() {
       </section>
 
       {/* 2. Frameworks Grid Section */}
-      <section className="p-10  max-w-7xl mx-auto">
+      <section className="  max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {frameworks.map((item, index) => (
             <div
@@ -154,7 +153,7 @@ export default function GovernancePage() {
       </section>
 
       {/* 3. Financials Section */}
-      <section className="p-10  max-w-7xl mx-auto space-y-8 sm:space-y-12">
+      <section className=" py-5 md:py-10   max-w-7xl mx-auto space-y-8 sm:space-y-12">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold text-roots-text mb-2">
             Financial Snapshot

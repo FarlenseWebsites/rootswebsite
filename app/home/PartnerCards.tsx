@@ -13,18 +13,19 @@ interface PartnerCardItem {
 const cards: PartnerCardItem[] = [
   {
     id: 1,
-    title: 'The Catalyst',
-    subtitle: 'Leverage All Stakeholders',
-    description:
-      'We bring together corporates, institutions, communities, and local systems to build aligned partnerships that can deliver meaningful, measurable change.',
-  },
-  {
-    id: 2,
     title: 'The Launchpad',
     subtitle: 'Insights to Impact',
     description:
       'We help translate community needs and development priorities into ready-to-implement programmes with a clear strategy, structure, and execution plan.',
   },
+  {
+    id: 2,
+    title: 'The Catalyst',
+    subtitle: 'Leverage All Stakeholders',
+    description:
+      'We bring together corporates, institutions, communities, and local systems to build aligned partnerships that can deliver meaningful, measurable change.',
+  },
+  
   {
     id: 3,
     title: 'The Anchor',

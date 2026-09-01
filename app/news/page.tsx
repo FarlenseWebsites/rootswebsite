@@ -8,12 +8,12 @@ import GallerySection from './gallery'
 
 export default function NewsPage() {
   return (
-    <div className="bg-roots-beige max-w-7xl  mx-auto text-roots-text py-15">
+    <div className="bg-roots-beige max-w-7xl  mx-auto text-roots-text">
       {/* 1. Header Section */}
-      <section className="max-w-7xl p-10 sm:p-2 md:p-10 ">
+      <section className="max-w-7xl mx-auto py-10 px-10 md:px-10 text-roots-text ">
         <h1
          
-          className="text-3xl sm:text-4xl font-bold text-roots-text mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-roots-text mb-3"
         >
           News and Insights
         </h1>
@@ -21,7 +21,7 @@ export default function NewsPage() {
           
           className="text-lg sm:text-xl text-roots-text font-light "
         >
-          Capturing Impact Through Updates and Perspectives
+          Updates, perspectives, and stories from across our work.
         </p>
        
       </section>

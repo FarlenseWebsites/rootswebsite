@@ -53,7 +53,7 @@ const stories: StoryItem[] = [
   {
     id: 5,
     title: 'Care That Begins Close to Home',
-    subtitle: "Skills and Community Development",
+    subtitle: "Skilling and Community Development",
     image: '/home/skill2.png',
     textColorClass: 'text-roots-skilled',
     borderClass: 'text-roots-skilled',

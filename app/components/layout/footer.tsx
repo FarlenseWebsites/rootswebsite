@@ -27,7 +27,7 @@ export default function Footer() {
     <footer className="bg-roots-footer-gray">
       <div className="max-w-7xl mx-auto px-2 md:px-10 py-10">
         
-        {/* Logo Section - Placed outside the grid so nothing sits horizontally next to it */}
+        {/* Logo Section */}
         <div className="mb-10">
           <Link href="/" className="inline-block">
             <Image
@@ -47,18 +47,21 @@ export default function Footer() {
               <p className="text-sm text-[#4A4749] mb-3 leading-snug">
                 Sign up to receive updates from Roots Foundation.
               </p>
+              
+              {/* min-w-0 on input and shrink-0 on button prevents layout breaking on small screens */}
               <div className="flex border border-[#09569a] rounded overflow-hidden">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter Your Mail"
-                  className="flex-1 px-3 py-2 text-sm text-[#4A4749] bg-white outline-none placeholder-gray-400"
+                  className="flex-1 min-w-0 px-3 py-2 text-sm text-[#4A4749] bg-white outline-none placeholder-gray-400"
                 />
-                <button className="px-4 py-2 bg-[#09569a] text-white text-sm font-medium hover:opacity-90 transition-opacity">
+                <button className="shrink-0 px-4 py-2 bg-roots-primary text-white text-sm font-medium hover:opacity-90 transition-opacity">
                   Subscribe
                 </button>
               </div>
+              
               <p className="text-xs text-[#4A4749] mt-3 leading-relaxed">
                 By subscribing, you agree to our Privacy Policy and consent to receive updates from us.
               </p>
@@ -77,7 +80,7 @@ export default function Footer() {
           {/* Column 2 – Quick Links */}
           <div className="flex flex-col">
             <h3 className="text-sm font-bold text-[#1a1a1a] mb-5">Quick Links</h3>
-            <ul className="flex flex-col gap-3">
+            <ul className="grid grid-cols-2 md:flex md:flex-col gap-x-4 gap-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -116,7 +119,7 @@ export default function Footer() {
             </p>
             <Link
               href="/partner"
-              className="inline-flex items-center justify-center w-full px-5 py-3 bg-[#09569a] text-white text-sm font-medium  hover:opacity-90 transition-opacity"
+              className="inline-flex items-center justify-center w-full px-5 py-3 bg-[#09569a] text-white text-sm font-medium hover:opacity-90 transition-opacity"
             >
               Partner With Us
             </Link>

@@ -56,8 +56,8 @@ const tabs: TabData[] = [
   },
   {
     id: 'skills',
-    tabTitle: 'Skill and Community Development',
-    title: 'Skill and Community Development',
+    tabTitle: 'Skilling and Community Development',
+    title: 'Skilling and Community Development',
     description:
       'We support women and youth with market-linked skills, vocational training, and production-based learning that open pathways to employment, enterprise, and financial independence.We work with communities to improve access to healthcare, education support, public infrastructure, mobility, and shared spaces that strengthen everyday life and long-term local capacity.',
     statValue: '75,000 +',
