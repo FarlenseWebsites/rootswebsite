@@ -97,7 +97,7 @@ export default function NewslettersSection() {
         {/* Horizontal Slider - Thumbnail Cards */}
         <div
           ref={newslettersRef}
-          className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="flex gap-6 overflow-x-hidden md:overflow-x-auto lg:overflow-x-auto pb-6 scroll-smooth snap-x scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
         >
           {newsletters.map((newsletter) => (
             <a
