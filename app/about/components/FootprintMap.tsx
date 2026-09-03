@@ -57,9 +57,9 @@ export default function FootprintMap() {
         </div>
 
         <div className="lg:col-span-2">
-          <div className="relative w-full aspect-square md:aspect-[4/3] lg:aspect-[5/4]">
+          <div className="relative w-full aspect-square  md:aspect-[4/3] lg:aspect-[5/4]">
             <Image
-              src="/about/map.svg"
+              src="/about/map.png"
               alt="Map of India showing our presence across sectors"
               fill
               priority
