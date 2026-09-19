@@ -29,7 +29,6 @@ export default function AboutPage() {
       {/* 5. Strategic Focus Cards connected to Center Node */}
       <StrategicFocus />
 
-      <SharedCommitmentSection />
 
       {/* 6. Why Co-Funding Matters Columns */}
       <CoFundingSection />

@@ -24,7 +24,7 @@ const tabs: TabData[] = [
     title: 'Agriculture and Environment',
     description:
       'We support farming communities through climate-smart agriculture, crop residue management, farm mechanisation, and sustainable practices that improve soil health, conserve resources, and strengthen rural livelihoods.',
-    statValue: '10,00,000 +',
+    statValue: '2,00,000 +',
     statLabel: 'Farmers trained in good practices',
     image: '/home/agri.png',
     color: 'var(--roots-agriculture)',
@@ -60,7 +60,7 @@ const tabs: TabData[] = [
     title: 'Skilling and Community Development',
     description:
       'We support women and youth with market-linked skills, vocational training, and production-based learning that open pathways to employment, enterprise, and financial independence.We work with communities to improve access to healthcare, education support, public infrastructure, mobility, and shared spaces that strengthen everyday life and long-term local capacity.',
-    statValue: '75,000 +',
+    statValue: '10,000 +',
     statLabel: 'Youth and women upskilled in market aligned vocations',
     image: '/home/skills.png',
     color: 'var(--roots-skilled)',

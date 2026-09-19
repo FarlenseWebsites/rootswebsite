@@ -13,24 +13,17 @@ interface AwardItem {
 }
 
 const awards: AwardItem[] = [
+ 
   {
     id: 1,
-    year: '2023',
-    title: 'Best Non-Profit in grassroots Sports Development of the Year ',
+    title: 'CSR Times National CSR & ESG Award',
+    year: '2026',
     subtitle: 'INDIA',
-    color: '#09569a', // primary blue
-    image: '/award/1.svg', // 2. Added image path
+    color: '#dc3b83', // skilled pink
+    image: '/award/4.svg',
   },
-  {
+   {
     id: 2,
-    title: 'The CSR Universe, Social Impact Conference & Award ',
-    year: '2024',
-    subtitle: 'INDIA',
-    color: '#75bc20', // agriculture green
-    image: '/award/2.svg', // Replace with actual paths if different
-  },
-  {
-    id: 3,
     title: 'World CSR Day, North India Leadership Awards',
     year: '2024',
     subtitle: 'INDIA',
@@ -38,12 +31,20 @@ const awards: AwardItem[] = [
     image: '/award/3.svg',
   },
   {
-    id: 4,
-    title: 'CSR Times National CSR & ESG Award',
-    year: '2026',
+    id: 3,
+    title: 'The CSR Universe, Social Impact Conference & Award ',
+    year: '2024',
     subtitle: 'INDIA',
-    color: '#dc3b83', // skilled pink
-    image: '/award/4.svg',
+    color: '#75bc20', // agriculture green
+    image: '/award/2.svg', // Replace with actual paths if different
+  },
+   {
+    id: 4,
+    year: '2023',
+    title: 'Best Non-Profit in grassroots Sports Development of the Year ',
+    subtitle: 'INDIA',
+    color: '#09569a', // primary blue
+    image: '/award/1.svg', // 2. Added image path
   },
 ]
 

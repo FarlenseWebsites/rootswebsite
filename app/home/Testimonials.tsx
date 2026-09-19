@@ -26,12 +26,12 @@ const testimonialData = [
     name: 'Pradeep Sahu',
     designation: 'Indian Cricketer and Cricket Coach'
   },
-  {
+   {
     id: 4,
-    image: '/home/lokesh.png', 
-    quote: 'Utkarsh: Centre of Excellence for Sports, a joint initiative by the District Administration, Khunti, and Roots Foundation, is truly a unique program. It aims to provide world-class training to young athletes in the region. Despite being a relatively new initiative, the Roots Foundation has delivered exceptional results in a short time. Their dedicated coaching and holistic approach have enabled students to participate in prestigious tournaments like the Nehru Cup. The commitment of the coaches and the quality of training provided is commendable. With programs like this, I am confident these young athletes will not only excel in sports but also bring immense pride to Khunti district in the years ahead.',
-    name: 'Shri. Lokesh Mishra',
-    designation: 'Deputy Commissioner, Khunti'
+    image: '/home/pardeep.png', 
+    quote: '',
+    name: 'Pradeep Sahu',
+    designation: 'Indian Cricketer and Cricket Coach'
   }
 ]
 

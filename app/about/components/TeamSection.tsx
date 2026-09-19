@@ -86,7 +86,7 @@ export default function TeamSection() {
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover"
+              className="object-fit"
             />
           </div>
 
@@ -94,7 +94,7 @@ export default function TeamSection() {
             {member.name}
           </h4>
 
-          <p className="mt-2 text-xs text-roots-primary leading-6 max-w-[220px]">
+          <p className="mt-2 text-xs text-roots-primary leading-6 max-w-[180px]">
             {member.role}
           </p>
 

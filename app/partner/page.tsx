@@ -1,13 +1,84 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 export default function WorkWithUsPage() {
+  const [partnerForm, setPartnerForm] = useState({
+    organizationName: '',
+    contactPerson: '',
+    email: '',
+    phone: '',
+    partnershipType: '',
+    message: ''
+  });
+  const [partnerStatus, setPartnerStatus] = useState({ loading: false, message: '', error: false });
+
+  const [joinForm, setJoinForm] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    interestArea: '',
+    location: '',
+    resumeLink: '',
+    message: ''
+  });
+  const [joinStatus, setJoinStatus] = useState({ loading: false, message: '', error: false });
+
+  const handlePartnerChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setPartnerForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleJoinChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setJoinForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handlePartnerSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPartnerStatus({ loading: true, message: '', error: false });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'partner', ...partnerForm })
+      });
+      if (res.ok) {
+        setPartnerStatus({ loading: false, message: 'Enquiry submitted successfully!', error: false });
+        setPartnerForm({ organizationName: '', contactPerson: '', email: '', phone: '', partnershipType: '', message: '' });
+      } else {
+        setPartnerStatus({ loading: false, message: 'Failed to submit. Please try again.', error: true });
+      }
+    } catch (error) {
+      setPartnerStatus({ loading: false, message: 'An error occurred. Please try again later.', error: true });
+    }
+  };
+
+  const handleJoinSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setJoinStatus({ loading: true, message: '', error: false });
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formType: 'join', ...joinForm })
+      });
+      if (res.ok) {
+        setJoinStatus({ loading: false, message: 'Application submitted successfully!', error: false });
+        setJoinForm({ fullName: '', email: '', phone: '', interestArea: '', location: '', resumeLink: '', message: '' });
+      } else {
+        setJoinStatus({ loading: false, message: 'Failed to submit. Please try again.', error: true });
+      }
+    } catch (error) {
+      setJoinStatus({ loading: false, message: 'An error occurred. Please try again later.', error: true });
+    }
+  };
+
   return (
     <div className="bg-[#FEF9F1] min-h-screen pb-20 text-roots-text">
       {/* 1. Page Header */}
-      <section className="pt-5 md:pt-14 pb-20 px-2 md:px-10 max-w-7xl mx-auto\">
+      <section className="pt-5 md:pt-14 pb-20 px-2 md:px-10 max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold tracking-tight text-roots-text mb-2">
             Work With Us
@@ -27,7 +98,7 @@ export default function WorkWithUsPage() {
             {/* Icon */}
             <div className="w-24 h-24 bg-[#09569a] rounded-full flex items-center justify-center mb-6 shrink-0 overflow-hidden">
               <Image
-                src="/about/partner.svg" // Update this path to your actual image
+                src="/about/partner.svg"
                 alt="Partner With Us Icon"
                 width={48}
                 height={48}
@@ -41,19 +112,25 @@ export default function WorkWithUsPage() {
             </p>
             <h3 className="text-lg font-bold mb-6">Partnership Enquiry form</h3>
             
-            <form className="w-full space-y-4 text-left font-light">
-              <input type="text" placeholder="Organisation Name" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
-              <input type="text" placeholder="Contact Person" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
-              <input type="email" placeholder="Email Address" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
-              <input type="tel" placeholder="Phone Number" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+            <form onSubmit={handlePartnerSubmit} className="w-full space-y-4 text-left font-light">
+              <input required name="organizationName" value={partnerForm.organizationName} onChange={handlePartnerChange} type="text" placeholder="Organisation Name" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+              <input required name="contactPerson" value={partnerForm.contactPerson} onChange={handlePartnerChange} type="text" placeholder="Contact Person" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+              <input required name="email" value={partnerForm.email} onChange={handlePartnerChange} type="email" placeholder="Email Address" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+              <input required name="phone" value={partnerForm.phone} onChange={handlePartnerChange} type="tel" placeholder="Phone Number" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
               
-              <input type="text" placeholder="Types of Partnership" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
+              <input required name="partnershipType" value={partnerForm.partnershipType} onChange={handlePartnerChange} type="text" placeholder="Types of Partnership" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
 
-              <textarea placeholder="Tell us about your organisation and how you'd like to collaborate" rows={5} className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 resize-none"></textarea>
+              <textarea required name="message" value={partnerForm.message} onChange={handlePartnerChange} placeholder="Tell us about your organisation and how you'd like to collaborate" rows={5} className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 resize-none"></textarea>
+              
+              {partnerStatus.message && (
+                <div className={`text-sm ${partnerStatus.error ? 'text-red-500' : 'text-green-600'}`}>
+                  {partnerStatus.message}
+                </div>
+              )}
               
               <div className="pt-2">
-                <button type="button" className="w-full bg-[#09569a] text-white py-4 rounded-md font-medium hover:bg-[#074682] transition-colors text-lg">
-                  Submit Enquiry
+                <button disabled={partnerStatus.loading} type="submit" className="w-full bg-[#09569a] text-white py-4 rounded-md font-medium hover:bg-[#074682] transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+                  {partnerStatus.loading ? 'Submitting...' : 'Submit Enquiry'}
                 </button>
               </div>
             </form>
@@ -64,7 +141,7 @@ export default function WorkWithUsPage() {
             {/* Icon */}
             <div className="w-24 h-24 bg-[#09569a] rounded-full flex items-center justify-center mb-6 shrink-0 overflow-hidden">
               <Image
-                src="/about/join.png" // Update this path to your actual image
+                src="/about/join.png"
                 alt="Join Our Team Icon"
                 width={56}
                 height={56}
@@ -78,18 +155,22 @@ export default function WorkWithUsPage() {
             </p>
             <h3 className="text-lg font-bold mb-6">Application form</h3>
             
-            <form className="w-full space-y-4 text-left font-light">
-              <input type="text" placeholder="Full Name" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
-              <input type="email" placeholder="Email Address" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
-              <input type="tel" placeholder="Phone Number" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+            <form onSubmit={handleJoinSubmit} className="w-full space-y-4 text-left font-light">
+              <input required name="fullName" value={joinForm.fullName} onChange={handleJoinChange} type="text" placeholder="Full Name" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+              <input required name="email" value={joinForm.email} onChange={handleJoinChange} type="email" placeholder="Email Address" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
+              <input required name="phone" value={joinForm.phone} onChange={handleJoinChange} type="tel" placeholder="Phone Number" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60" />
               
-              <input type="text" placeholder="Area of Interest" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
+              <input required name="interestArea" value={joinForm.interestArea} onChange={handleJoinChange} type="text" placeholder="Area of Interest" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
 
-              <input type="text" placeholder="Current Location" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
+              <input required name="location" value={joinForm.location} onChange={handleJoinChange} type="text" placeholder="Current Location" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
 
-            {/* Drive Link Input */}
+              {/* Drive Link Input */}
               <div className="relative w-full">
                 <input 
+                  required
+                  name="resumeLink"
+                  value={joinForm.resumeLink}
+                  onChange={handleJoinChange}
                   type="url" 
                   placeholder="Resume Link (Google Drive / Cloud Link)" 
                   className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] text-roots-text placeholder-roots-text/60 pr-12" 
@@ -101,11 +182,17 @@ export default function WorkWithUsPage() {
                 </div>
               </div>
 
-              <textarea placeholder="Tell us about yourself and why you want to work with us" rows={5} className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 resize-none"></textarea>
+              <textarea required name="message" value={joinForm.message} onChange={handleJoinChange} placeholder="Tell us about yourself and why you want to work with us" rows={5} className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 resize-none"></textarea>
+              
+              {joinStatus.message && (
+                <div className={`text-sm ${joinStatus.error ? 'text-red-500' : 'text-green-600'}`}>
+                  {joinStatus.message}
+                </div>
+              )}
               
               <div className="pt-2">
-                <button type="button" className="w-full bg-[#09569a] text-white py-4 rounded-md font-medium hover:bg-[#074682] transition-colors text-lg">
-                  Submit Application
+                <button disabled={joinStatus.loading} type="submit" className="w-full bg-[#09569a] text-white py-4 rounded-md font-medium hover:bg-[#074682] transition-colors text-lg disabled:opacity-70 disabled:cursor-not-allowed">
+                  {joinStatus.loading ? 'Submitting...' : 'Submit Application'}
                 </button>
               </div>
             </form>

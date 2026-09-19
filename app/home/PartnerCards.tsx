@@ -40,7 +40,7 @@ export default function PartnerCards() {
     <section className="bg-[#09569A] px-2 md:px-10 py-10">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className=" text-white text-2xl sm:text-3xl md:text-4xl font-regular  mb-12">
-          Partner with us to co-create measurable, lasting impact
+          Partner with us to co-create measurable and lasting impact
         </h2>
 
         {/* Cards Grid */}

@@ -7,7 +7,7 @@ export default function SDGSection() {
     <section className="max-w-7xl mx-auto px-2 md:px-10 py-10 font-poppins">
       <div className="ml-4">
         <h2 className="text-3xl md:text-4xl font-medium text-roots-text">
-          We work across SDGs
+          We work across Sustainable Development Goals
         </h2>
 
         <p className="mt-6 text-lg leading-8 text-roots-text font-light">

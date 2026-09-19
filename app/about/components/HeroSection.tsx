@@ -21,14 +21,21 @@ export default function HeroSection() {
 
           <div className="space-y-6 text-roots-text font-regular leading-relaxed text-base md:pr-8">
             <p>
-              Roots Foundation is a social impact organisation working at the
-              grassroots to create sustainable, locally relevant solutions.
+             Roots Foundation is a social impact organisation working at the
+              grassroots to create sustainable, locally relevant solutions that
+              respond to the needs of communities. Since 2012, we have
+              designed and delivered programmes across sustainable
+              agriculture, education, sports, healthcare, skill development,
+              and community development. Our work begins with an
+              understanding of local realities. We collaborate closely with
+              communities, partners, and public institutions to strengthen
+              capacities, improve access to opportunities and services, and
+              build systems that can sustain beyond the life of a project.
+              Through long-term, measurable interventions, we work to
+              create greater opportunities, strengthen local ownership, and
+              contribute to lasting, meaningful change. 
             </p>
-            <p>
-              Since 2012, we have designed and delivered programmes across
-              sustainable agriculture, education, sports, healthcare, skill
-              development, and community development.
-            </p>
+           
           </div>
         </div>
 
@@ -45,13 +52,7 @@ export default function HeroSection() {
 
       {/* Bottom Section: Full Width Paragraph */}
       <div className="mt-12 text-roots-text font-regular leading-relaxed text-base">
-        <p>
-          Our work begins with local realities. We collaborate with communities, 
-          partners, and public institutions to strengthen capacities, improve access, 
-          and build systems that can continue beyond the life of a project. Through 
-          long-term, measurable interventions, we help create greater opportunity, 
-          stronger local ownership, and lasting change.
-        </p>
+    
       </div>
     </section>
   )

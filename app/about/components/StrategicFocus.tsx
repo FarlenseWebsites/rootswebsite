@@ -86,7 +86,7 @@ export default function StrategicFocus() {
       <div className="hidden sm:grid sm:grid-cols-3 items-center">
         {/* Row 1 */}
 
-        <div className="border-2 border-[#09569a] p-5 h-full">
+        <div className="border-2 border-[#09569a] p-5 h-full text-center">
           <h3 className="text-[#09569a] font-semibold mb-2">
             Community-Centric Approach
           </h3>
@@ -104,8 +104,8 @@ export default function StrategicFocus() {
             height={90}
             className="object-contain"
           />
-        </div>
-        <div className="border-2 border-[#09569a] p-5 h-full">
+        </div> 
+        <div className="border-2 border-[#09569a] p-5 h-full text-center">
           <h3 className="text-[#09569a] font-semibold mb-2">
             Scalability with Integrity
           </h3>
@@ -129,7 +129,7 @@ export default function StrategicFocus() {
             className="object-contain"
           />
         </div>
-         <div className="border-2 border-[#09569a] p-5 h-full">
+         <div className="border-2 border-[#09569a] p-5 h-full text-center">
           <h3 className="text-[#09569a] font-semibold mb-2">
             Partnership-Driven Impact
           </h3>

@@ -33,12 +33,33 @@ export default function JoyOfSharingBanner() {
         {/* Right content */}
         <div>
           <p className="text-roots-beige font-light text-sm sm:text-base md:text-lg leading-relaxed">
-            The joy of sharing goes beyond traditional implementation of programs.
-            We actively co-funding projects when required to ensure change happens.
-            This unique approach reflects our deep commitment and ownership mindset, 
-            ensuring that every initiative we undertake is not just executed but sustained with accountability.      
+           Joy of Sharing - Our commitment goes
+            beyond the traditional implementation
+            of programmes. Wherever needed, we
+            actively co-fund projects to help ensure
+            that critical interventions are delivered
+            effectively and that meaningful change
+            reaches the communities we serve. This
+            approach reflects our strong sense of
+            ownership and accountability. We
+            believe that our role does not end with
+            implementation; it extends to taking
+            responsibility for the outcomes,
+            strengthening what works, and helping
+            ensure that the impact created is
+            sustained over time.     
           </p>
+           <div className="mt-8">
+              <h3 className="text-6xl font-bold leading-none">
+                100<span className="ml-1">+</span>
+              </h3>
+
+              <p className="mt-2 text-lg text-white/90">
+                Projects supported through collaboration
+              </p>
+            </div>
         </div>
+        
         
       </div>
     </section>
