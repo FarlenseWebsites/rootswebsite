@@ -27,7 +27,7 @@ export default function FocusAreasSection() {
                   ): (
             <div
               key={i}
-              className="bg-[#FEF9F1] text-center border border-roots-education p-8 flex flex-col justify-between min-h-[220px]"
+              className="bg-[#FEF9F1] text-center border border-roots-education p-8 flex flex-col justify-center items-center min-h-[220px]"
             >
               <div>
                 <h3 className="text-lg font-bold text-roots-text mb-3">

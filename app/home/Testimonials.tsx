@@ -28,10 +28,10 @@ const testimonialData = [
   },
    {
     id: 4,
-    image: '/home/pardeep.png', 
-    quote: '',
-    name: 'Pradeep Sahu',
-    designation: 'Indian Cricketer and Cricket Coach'
+    image: '/home/Deboshree.png', 
+    quote: 'What I find particularly meaningful about Project Unnati is its focus on taking skill development beyond training. The real opportunity lies in helping women turn skills into a source of livelihood, confidence and greater financial independence. The work brings together practical training, industry exposure and pathways to employment and entrepreneurship. This makes the project especially relevant for women who already have skills or an interest in stitching and embroidery, but need the right support and opportunities to turn those abilities into sustainable livelihoods. At Acuity Analytics, we believe that creating meaningful opportunities is an important part of building more inclusive communities. Project Unnati reflects that vision by investing in skills that can translate into real economic opportunities and greater self-reliance. It has been encouraging to see this vision take shape through the women and young people who are learning, creating and building new possibilities for themselves and their families.',
+    name: 'Deboshree Mazumdar',
+    designation: 'Assistant Director- Corporate Sustainability |ESG| Diversity & Inclusion'
   }
 ]
 

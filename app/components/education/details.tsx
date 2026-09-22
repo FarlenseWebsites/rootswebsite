@@ -2,7 +2,7 @@ export const educationData = [
   {
     id: 1,
     imgSrc: "/education/icons/1.svg", // Update with your actual folder path
-    title: "3,200+ students",
+    title: "9,300+ students",
     text: "targeted through adolescent life skills and employability programmes",
     type: "banner"
   },
@@ -16,7 +16,7 @@ export const educationData = [
   {
     id: 3,
     imgSrc: "/education/icons/3.svg",
-    title: "22 schools",
+    title: "26 schools",
     text: "Supported across low-income private and government school ecosystems",
     type: "card"
   },
@@ -51,7 +51,7 @@ const EducationImpactSection = () => {
         
         {/* TOP BANNER */}
         {bannerItem && (
-          <div className="bg-white flex flex-col md:flex-row items-center p-6 md:p-8 shadow-sm">
+          <div className="bg-white flex flex-col md:flex-row justify-center items-center p-6 md:p-8 shadow-sm">
             <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
               <img 
                 src={bannerItem.imgSrc} 

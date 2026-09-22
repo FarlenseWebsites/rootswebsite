@@ -221,31 +221,7 @@ export const sportsprograms: ProgramItem[] = [
     ]
   },
 
-  {
-    id: "veer-champions-league",
-    name: "Veer Champion League (VCL)",
-    title: "Veer Champions League (VCL)",
-    description: [
-      "An incentive-linked sports initiative for school students in Haryana.",
-      "The programme uses football and kabaddi to encourage attendance, school retention, confidence, and physical development among students.",
-      "Alongside regular matches, it includes rewards linked to attendance and grades, as well as life-skills and financial literacy sessions.",
-      "VCL has already reached over 170 students and is being expanded to support more than 1,000 students across Classes 7 and 8."
-    ],
-    tags: [
-      "State: Haryana",
-      "170+ Students Reached",
-      "Scaling to 1,000+ Students"
-    ],
-    images: [
-      { src: "/sports/vcl/1.png", alt: "Prize winners", caption: "Students receiving awards" },
-      { src: "/sports/vcl/2.png", alt: "Kabaddi coaching", caption: "Kabaddi coaching session" },
-      { src: "/sports/vcl/3.png", alt: "Football team", caption: "Football participants after training" },
-      { src: "/sports/vcl/4.png", alt: "Kabaddi match", caption: "Competitive kabaddi match" },
-      { src: "/sports/vcl/5.png", alt: "Football practice", caption: "Football drills for school students" },
-      { src: "/sports/vcl/6.png", alt: "Team activity", caption: "Students participating in team-building exercises" },
-      { src: "/sports/vcl/7.png", alt: "Kabaddi tournament", caption: "Grassroots kabaddi competition" }
-    ]
-  },
+ 
 
   {
     id: "utkarsh",

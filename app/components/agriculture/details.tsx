@@ -51,8 +51,8 @@ const AgricultureImpactSection = () => {
         
         {/* TOP BANNER */}
         {bannerItem && (
-          <div className="bg-white flex flex-col md:flex-row items-center p-6 md:p-8 shadow-sm">
-            <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8">
+          <div className="bg-white flex flex-col md:flex-row justify-center items-center p-6 md:p-8 shadow-sm">
+            <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-8 ">
               <img 
                 src={bannerItem.imgSrc} 
                 alt="Banner Icon" 

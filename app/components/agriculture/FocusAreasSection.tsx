@@ -28,7 +28,7 @@ export default function FocusAreasSection() {
             <div
               key={i}
               // Added h-full to ensure the text box stretches to fill the grid row exactly like the image
-              className="bg-[#FEF9F1] text-center border border-[#7aa547] p-8 flex flex-col justify-between h-full min-h-[220px]"
+              className="bg-[#FEF9F1] text-center border border-[#7aa547] p-8 flex flex-col justify-center items-center h-full min-h-[220px]"
             >
               <div>
                 <h3 className="text-lg font-bold text-roots-text mb-3">

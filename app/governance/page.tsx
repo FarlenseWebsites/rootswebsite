@@ -190,10 +190,10 @@ export default function GovernancePage() {
         </div>
 
         {/* Unified Legend */}
-        <div className="pt-2">
-          <div className="flex flex-wrap justify-center sm:justify-start gap-x-4 sm:gap-x-6 gap-y-3 text-xs sm:text-sm font-semibold">
+        <div className="pt-2 ">
+          <div className="flex flex-wrap  justify-between gap-x-4 sm:gap-x-6 gap-y-3 text-xs sm:text-sm font-semibold">
             {legendItems.map((item, idx) => (
-              <div key={idx} className="flex items-center gap-2 text-[#4A4749]">
+              <div key={idx} className="flex items-center gap-2 text-roots-text">
                 <span
                   className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 rounded-sm"
                   style={{ backgroundColor: item.color }}

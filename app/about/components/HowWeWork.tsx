@@ -18,7 +18,7 @@ const items: TimelineItem[] = [
   },
   {
     title: 'The Anchor',
-    subtitle: 'Own the project (Multiplier Effect)',
+    subtitle: 'Own the project \n(Multiplier Effect)',
   },
 ]
 
@@ -61,7 +61,7 @@ export default function HowWeWork() {
                     {item.title}
                   </h3>
 
-                  <p className="text-white/80 text-md leading-relaxed">
+                  <p className="text-white/80 text-md leading-relaxed whitespace-pre-line">
                     {item.subtitle}
                   </p>
                 </div>

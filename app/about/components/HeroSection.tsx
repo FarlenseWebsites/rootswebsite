@@ -27,11 +27,11 @@ export default function HeroSection() {
               designed and delivered programmes across sustainable
               agriculture, education, sports, healthcare, skill development,
               and community development. Our work begins with an
-              understanding of local realities. We collaborate closely with
+              understanding of local realities.<br/><br/> We collaborate closely with
               communities, partners, and public institutions to strengthen
               capacities, improve access to opportunities and services, and
               build systems that can sustain beyond the life of a project.
-              Through long-term, measurable interventions, we work to
+              <br/><br/>Through long-term, measurable interventions, we work to
               create greater opportunities, strengthen local ownership, and
               contribute to lasting, meaningful change. 
             </p>

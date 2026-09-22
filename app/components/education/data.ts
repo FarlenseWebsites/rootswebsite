@@ -138,5 +138,29 @@ export const SkillsPrograms: ProgramItem[] = [
       { src: '/education/utkarsh/6.png', alt: 'Community education', caption: 'Classroom engagement activities' },
       { src: '/education/utkarsh/7.png', alt: 'Teacher session', caption: 'Teacher facilitating learning' }
     ]
+  },
+
+  {
+    id: 'project-Stellantis',
+    name: 'Stellantis',
+    title: 'STELLANTIS',
+    description: [
+      'The School Transformation Project with Special Focus on Empowering the Girl Child aims to bridge foundational learning gaps and expand equitable access to STEM education for 2,500–3,000 underserved students aged 8–15 years, particularly girls and children from tribal communities. The project strengthens functional literacy, numeracy, English, mathematics, critical thinking and STEM engagement through three integrated interventions:',
+      '1. Innovative Learning Centres (ILCs): Three ILCs equipped with smart TVs and interactive learning content are strengthening functional English, mathematics, foundational literacy and numeracy, supported by dedicated local-language trainers.',
+      '2. STEM Labs: STEM Labs are being established across 10 schools, combining permanent and portable models to enable hands-on experimentation, problem-solving and critical thinking. Portable labs will subsequently be rotated to additional schools, expanding STEM exposure to 2,200+ students across school clusters.',
+      '3. Infrastructure Upgradation: School infrastructure is being strengthened through toilet construction, renovation and essential facility improvements across 4–8 primary schools, with a focus on improving sanitation, hygiene and girls’ school retention.'
+    ],
+    tags: [
+      'Karnataka'
+    ],
+    images: [
+      { src: '/education/Stellantis/img1.png', alt: 'Hands-on learning', caption: 'Interactive classroom activity' },
+      { src: '/education/Stellantis/img2.png', alt: 'School programme', caption: 'Student presentation session' },
+      { src: '/education/Stellantis/img3.png', alt: 'Digital classroom', caption: 'Technology-enabled learning' },
+      { src: '/education/Stellantis/img4.png', alt: 'Reading activity', caption: 'Strengthening foundational literacy' },
+      { src: '/education/Stellantis/img5.png', alt: 'Classroom learning', caption: 'Students participating in lessons' },
+      { src: '/education/Stellantis/img6.png', alt: 'Community education', caption: 'Classroom engagement activities' },
+      { src: '/education/Stellantis/img7.png', alt: 'Teacher session', caption: 'Teacher facilitating learning' }
+    ]
   }
 ];
