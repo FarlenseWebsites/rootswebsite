@@ -76,33 +76,32 @@ export default function WorkWithUsPage() {
   };
 
   return (
-    <div className="bg-[#FEF9F1] min-h-screen pb-20 text-roots-text">
+    <div className="bg-[#FEF9F1] min-h-screen pb-20 text-roots-text flex flex-col items-center">
+      
       {/* 1. Page Header */}
-      <section className="pt-5 md:pt-14 pb-20 px-2 md:px-10 max-w-7xl mx-auto">
-        <div className="text-center">
-          <h1 className="text-3xl sm:text-3xl md:text-4xl font-bold tracking-tight text-roots-text mb-2">
-            Work With Us
-          </h1>
-          <p className="text-xl md:text-xl font-light leading-relaxed text-roots-text">
-            Collaborate with Roots Foundation to build programmes,<br/> partnerships, and teams that strengthen impact at the grassroots.
-          </p>
-        </div>
+      <section className="pt-10 md:pt-14 pb-16 px-10 w-full max-w-[1400px] flex flex-col items-center text-center mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-roots-text mb-4 w-full">
+          Work With Us
+        </h1>
+        <p className="text-lg md:text-xl font-light leading-relaxed text-roots-text max-w-3xl w-full">
+          Collaborate with Roots Foundation to build programmes, partnerships, and teams that strengthen impact at the grassroots.
+        </p>
       </section>
 
       {/* 2. Forms Section */}
-      <section className="px-4 sm:px-6 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+      <section className="px-10 w-full max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 w-full">
           
           {/* Partner With Us Card */}
-          <div className="border border-roots-text/30 p-8 sm:p-12 flex flex-col items-center text-center">
+          <div className="border border-roots-text/30 p-8 sm:p-12 flex flex-col items-center text-center w-full">
             {/* Icon */}
-            <div className="w-24 h-24 bg-[#09569a] rounded-full flex items-center justify-center mb-6 shrink-0 overflow-hidden">
+            <div className="w-24 h-24 bg-roots-primary rounded-full flex items-center justify-center mx-auto mb-6 shrink-0 overflow-hidden">
               <Image
-                src="/about/partner.svg"
+                src="/about/partner.png"
                 alt="Partner With Us Icon"
-                width={48}
-                height={48}
-                className="object-contain w-12 h-12"
+                width={56}
+                height={56}
+                className="object-contain w-14 h-14"
               />
             </div>
             
@@ -137,9 +136,9 @@ export default function WorkWithUsPage() {
           </div>
 
           {/* Join Our Team Card */}
-          <div className="border border-roots-text/30 p-8 sm:p-12 flex flex-col items-center text-center">
+          <div className="border border-roots-text/30 p-8 sm:p-12 flex flex-col items-center text-center w-full">
             {/* Icon */}
-            <div className="w-24 h-24 bg-[#09569a] rounded-full flex items-center justify-center mb-6 shrink-0 overflow-hidden">
+            <div className="w-24 h-24 bg-[#09569a] rounded-full flex items-center justify-center mx-auto mb-6 shrink-0 overflow-hidden">
               <Image
                 src="/about/join.png"
                 alt="Join Our Team Icon"
