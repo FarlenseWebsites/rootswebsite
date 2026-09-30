@@ -1,0 +1,3 @@
+export const production = {"SMTP_HOST":"smtp.gmail.com","SMTP_PORT":"587","SMTP_SECURE":"false","SMTP_USER":"vinit00053@gmail.com","SMTP_PASS":"peqx zvgx frkj xvyp","SMTP_FROM":"vinit00053@gmail.com","SMTP_TO":"vinit00053@gmail.com"};
+export const development = {"SMTP_HOST":"smtp.gmail.com","SMTP_PORT":"587","SMTP_SECURE":"false","SMTP_USER":"vinit00053@gmail.com","SMTP_PASS":"peqx zvgx frkj xvyp","SMTP_FROM":"vinit00053@gmail.com","SMTP_TO":"vinit00053@gmail.com"};
+export const test = {"SMTP_HOST":"smtp.gmail.com","SMTP_PORT":"587","SMTP_SECURE":"false","SMTP_USER":"vinit00053@gmail.com","SMTP_PASS":"peqx zvgx frkj xvyp","SMTP_FROM":"vinit00053@gmail.com","SMTP_TO":"vinit00053@gmail.com"};
