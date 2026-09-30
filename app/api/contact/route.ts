@@ -1,6 +1,5 @@
 
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
 // ============================================
@@ -77,25 +76,7 @@ function getSafeUrl(value: string): string | null {
 }
 
 // ============================================
-// 4. SMTP TRANSPORTER
-// ============================================
-
-const smtpPort = Number(process.env.SMTP_PORT) || 587;
-
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || 'smtp.gmail.com',
-  port: smtpPort,
-  secure:
-    process.env.SMTP_SECURE === 'true' ||
-    smtpPort === 465,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
-
-// ============================================
-// 5. POST API ROUTE
+// 4. POST API ROUTE
 // ============================================
 
 export async function POST(request: Request) {
@@ -125,14 +106,14 @@ export async function POST(request: Request) {
     const data: FormData = result.data;
 
     // ----------------------------------------
-    // Common email configuration
+    // Check Resend API key
     // ----------------------------------------
 
-    const from = process.env.SMTP_FROM || process.env.SMTP_USER;
-    const to = process.env.SMTP_TO || process.env.SMTP_USER;
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const toEmail = process.env.CONTACT_EMAIL ;
 
-    if (!from || !to || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.error('SMTP environment variables are missing');
+    if (!resendApiKey) {
+      console.error('RESEND_API_KEY environment variable is missing');
 
       return NextResponse.json(
         { error: 'Email service is not configured' },
@@ -141,12 +122,11 @@ export async function POST(request: Request) {
     }
 
     let subject = '';
-    let text = '';
     let html = '';
     let replyTo = '';
 
     // ========================================
-    // 6. PARTNER FORM
+    // 5. PARTNER FORM
     // ========================================
 
     if (data.formType === 'partner') {
@@ -160,17 +140,6 @@ export async function POST(request: Request) {
       subject = `New Partnership Enquiry from ${data.organizationName}`;
 
       replyTo = data.email;
-
-      text = `
-New Partnership Enquiry
-
-Organization Name: ${data.organizationName}
-Contact Person: ${data.contactPerson}
-Email: ${data.email}
-Phone: ${data.phone}
-Types of Partnership: ${data.partnershipType}
-Message: ${data.message}
-      `.trim();
 
       html = `
 <!DOCTYPE html>
@@ -215,7 +184,7 @@ Message: ${data.message}
     }
 
     // ========================================
-    // 7. JOIN FORM
+    // 6. JOIN FORM
     // ========================================
 
     else if (data.formType === 'join') {
@@ -231,18 +200,6 @@ Message: ${data.message}
       subject = `New Team Application from ${data.fullName}`;
 
       replyTo = data.email;
-
-      text = `
-New Team Application
-
-Full Name: ${data.fullName}
-Email: ${data.email}
-Phone: ${data.phone}
-Area of Interest: ${data.interestArea}
-Current Location: ${data.location}
-Resume Link: ${data.resumeLink}
-Message: ${data.message}
-      `.trim();
 
       html = `
 <!DOCTYPE html>
@@ -296,22 +253,36 @@ Message: ${data.message}
     }
 
     // ========================================
-    // 8. SEND EMAIL
+    // 7. SEND EMAIL VIA RESEND API
     // ========================================
 
-    const mailOptions = {
-      from,
-      to,
-      replyTo,
-      subject,
-      text,
-      html,
-    };
+    const resendResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Roots Foundation <onboarding@resend.dev>',
+        to: [toEmail],
+        reply_to: replyTo,
+        subject,
+        html,
+      }),
+    });
 
-    await transporter.sendMail(mailOptions);
+    if (!resendResponse.ok) {
+      const errorData = await resendResponse.json();
+      console.error('Resend API error:', errorData);
+
+      return NextResponse.json(
+        { error: 'Failed to send email' },
+        { status: 500 }
+      );
+    }
 
     // ========================================
-    // 9. SUCCESS RESPONSE
+    // 8. SUCCESS RESPONSE
     // ========================================
 
     return NextResponse.json(
