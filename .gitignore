@@ -43,3 +43,6 @@ pnpm-debug.log*
 
 # Misc
 *.pem
+# OpenNext / Cloudflare build output
+.open-next/
+.wrangler/
