@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative aspect-[21/11] flex  overflow-hidden w-full">
+    <section id="skilling" className="relative aspect-[21/11] flex overflow-hidden w-full scroll-mt-15 md:scroll-mt-20">
       
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">

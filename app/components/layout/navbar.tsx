@@ -13,11 +13,11 @@ const impactSubLinks = [
   },
    {
     label: 'Community Development',
-    href: '/impact/skills',
+    href: '/impact/skills#community',
   },
   {
     label: 'Skilling',
-    href: '/impact/skills',
+    href: '/impact/skills#skilling',
   },
    {
     label: 'Education & Career Readiness ',
@@ -68,6 +68,31 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<'impact' | null>(null)
   const [mobileImpactOpen, setMobileImpactOpen] = useState(false)
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const [hash, setHash] = useState('')
+
+  // Track URL hash (usePathname ignores it) so only the clicked section link highlights
+  useEffect(() => {
+    const sync = () => setHash(window.location.hash)
+    sync()
+    window.addEventListener('hashchange', sync)
+    return () => window.removeEventListener('hashchange', sync)
+  }, [pathname])
+
+  const isSubLinkActive = (href: string) => {
+    const [path, subHash] = href.split('#')
+    if (pathname !== path) return false
+    if (!subHash) return true
+    // No hash yet: page opens at the first section (Skilling)
+    return hash ? hash === `#${subHash}` : subHash === 'skilling'
+  }
+
+  const handleSubLinkClick = (href: string) => {
+    const subHash = href.split('#')[1]
+    setHash(subHash ? `#${subHash}` : '')
+    setIsOpen(false)
+    setActiveDropdown(null)
+    setMobileImpactOpen(false)
+  }
 
   // Auto-close menu when route changes
   useEffect(() => {
@@ -149,11 +174,12 @@ const Navbar = () => {
                       onMouseLeave={handleMouseLeave}
                     >
                       {impactSubLinks.map((sub) => {
-                        const isSubActive = pathname === sub.href
+                        const isSubActive = isSubLinkActive(sub.href)
                         return (
                           <Link
                             key={sub.href}
                             href={sub.href}
+                            onClick={() => handleSubLinkClick(sub.href)}
                             className={`flex items-center gap-3 px-4 py-2.5 text-md transition-colors ${
                               isSubActive
                                 ? 'bg-black/5 font-bold text-roots-primary'
@@ -246,8 +272,9 @@ const Navbar = () => {
                             <Link
                               key={sub.href}
                               href={sub.href}
+                              onClick={() => handleSubLinkClick(sub.href)}
                               className={`flex items-center gap-2.5 py-1.5 text-base transition-colors ${
-                                pathname === sub.href
+                                isSubLinkActive(sub.href)
                                   ? 'text-roots-primary font-bold'
                                   : 'text-roots-text/80 font-light hover:text-roots-primary'
                               }`}
