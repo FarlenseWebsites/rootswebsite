@@ -81,10 +81,6 @@ function getSafeUrl(value: string): string | null {
 
 export async function POST(request: Request) {
   try {
-    // ----------------------------------------
-    // Parse request body
-    // ----------------------------------------
-
     const body: unknown = await request.json();
 
     // ----------------------------------------

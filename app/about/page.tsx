@@ -13,6 +13,7 @@ import FootprintMap from './components/FootprintMap'
 import TeamSection from './components/TeamSection'
 import SharedCommitmentSection from './components/sharedcommitment'
 import Sustainablegoals from './components/sustainablegoals'
+import PoshSection from './components/PoshSection'
 
 export default function AboutPage() {
   return (
@@ -47,6 +48,9 @@ export default function AboutPage() {
 
       {/* 9. Trustees, Advisory Board, and Project Leads */}
       <TeamSection />
+
+      {/* 10. POSH: Internal Complaints Committee */}
+      <PoshSection />
     </div>
   )
 }

@@ -11,18 +11,24 @@ const impactSubLinks = [
     label: 'Agriculture & Environment ',
     href: '/impact/agriculture',
   },
-  {
-    label: 'Sports & Physical Literacy ',
-    href: '/impact/sports',
+   {
+    label: 'Community Development',
+    href: '/impact/skills',
   },
   {
+    label: 'Skilling',
+    href: '/impact/skills',
+  },
+   {
     label: 'Education & Career Readiness ',
     href: '/impact/education',
   },
   {
-    label: 'Skilling & Community Development',
-    href: '/impact/skills',
+    label: 'Sports & Physical Literacy ',
+    href: '/impact/sports',
   },
+ 
+
 ]
 
 const newsSubLinks = [

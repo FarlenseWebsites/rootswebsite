@@ -160,15 +160,37 @@ export default function SectionSwitcher({
               {activeItem.images.map((img, idx) => (
                 <div
                   key={idx}
-                  className="group relative h-28 sm:h-32 overflow-hidden"
+                  className="group relative h-28 sm:h-32 hover:z-30"
                 >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 14vw"
-                  />
+                  {/* Thumbnail */}
+                  <div className="relative h-full w-full overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 14vw"
+                    />
+                  </div>
+
+                  {/* Hover preview, pops up above the thumbnail */}
+                  <div
+                    className={`pointer-events-none absolute bottom-full mb-3 hidden md:block w-80 h-52 overflow-hidden shadow-2xl ring-4 ring-white opacity-0 translate-y-2 scale-95 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 ${
+                      idx === 0
+                        ? "left-0 origin-bottom-left"
+                        : idx === activeItem.images.length - 1
+                        ? "right-0 origin-bottom-right"
+                        : "left-1/2 -translate-x-1/2 origin-bottom"
+                    }`}
+                  >
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover"
+                      sizes="320px"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

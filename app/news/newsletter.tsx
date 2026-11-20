@@ -42,6 +42,12 @@ const newsletters: NewsletterItem[] = [
     image: '/newsletter/5.png',
     pdfUrl: 'https://mailchi.mp/53a0e466182e/roots-newsletter-by-roots-foundation-december-2023-edition?e=ebee9c3d5e',
   },
+  {
+    id: 6,
+    title: 'Newsletter Issue 6',
+    image: '/newsletter/6.png',
+    pdfUrl: '/newsletter/6.pdf',
+  },
 ]
 
 export default function NewslettersSection() {

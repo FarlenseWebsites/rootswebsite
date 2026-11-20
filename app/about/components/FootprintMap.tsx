@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 
 const SECTORS = [
@@ -29,12 +29,26 @@ const LocationIcon = ({ color }: { color: string }) => (
 )
 
 export default function FootprintMap() {
+  // Touch devices have no hover, so tapping toggles the zoom around the tapped point
+  const [tapZoom, setTapZoom] = useState(false)
+  const [origin, setOrigin] = useState('center')
+
+  const handleTap = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!window.matchMedia('(hover: none)').matches) return
+    if (tapZoom) return setTapZoom(false)
+    const rect = e.currentTarget.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    setOrigin(`${x}% ${y}%`)
+    setTapZoom(true)
+  }
+
   return (
     <section className="relative py-10 overflow-hidden bg-roots-beige">
       <div className="absolute left-0 right-0 top-[65%] h-22 bg-roots-primary z-0" />
 
-      <div className="max-w-7xl mx-auto px-2 md:px-10 grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-0 items-start relative z-10">
-        <div className="lg:col-span-1">
+      <div className="max-w-7xl mx-auto px-2 md:px-10 grid grid-cols-1 lg:grid-cols-4 gap-10 lg:gap-6 items-start relative z-10">
+        <div className="lg:col-span-1 lg:pt-4">
           <h2 className="inline-block text-3xl font-medium text-roots-text leading-tight m-0">
             Our Presence
           </h2>
@@ -56,14 +70,22 @@ export default function FootprintMap() {
           </div>
         </div>
 
-        <div className="lg:col-span-2">
-          <div className="relative w-full aspect-square  md:aspect-[4/3] lg:aspect-[5/4]">
+        <div className="lg:col-span-3">
+          <div
+            onClick={handleTap}
+            style={{ transformOrigin: origin }}
+            className={`relative w-full transition-transform duration-500 ease-out hover:scale-125 cursor-zoom-in ${
+              tapZoom ? 'scale-150' : ''
+            }`}
+          >
             <Image
               src="/about/map.png"
               alt="Map of India showing our presence across sectors"
-              fill
+              width={1069}
+              height={769}
               priority
-              className="object-contain object-top drop-shadow-xl"
+              sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 75vw, 900px"
+              className="w-full h-auto drop-shadow-xl"
             />
           </div>
         </div>

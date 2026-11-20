@@ -9,7 +9,7 @@ const testimonialData = [
     id: 1,
     image: '/home/sania.png',
     quote: 'I would like to extend my heartfelt gratitude to Roots Foundation and Hyundai for initiating the Sports Lab program. This initiative demonstrates a keen understanding of the needs of sports persons, providing them with essential resources such as this fitness centre in Hisar. By addressing these needs, they ensure that athletes can focus solely on their sports without any hindrances.',
-    name: 'Sania Nehwal',
+    name: 'Saina Nehwal',
     designation: 'Indian Badminton Player and Olympic Medalist'
   },
   {
