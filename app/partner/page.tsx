@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 
 export default function WorkWithUsPage() {
@@ -20,9 +20,10 @@ export default function WorkWithUsPage() {
     phone: '',
     interestArea: '',
     location: '',
-    resumeLink: '',
     message: ''
   });
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const resumeInputRef = useRef<HTMLInputElement>(null);
   const [joinStatus, setJoinStatus] = useState({ loading: false, message: '', error: false });
 
   const handlePartnerChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -34,6 +35,34 @@ export default function WorkWithUsPage() {
     const { name, value } = e.target;
     setJoinForm(prev => ({ ...prev, [name]: value }));
   };
+
+  const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+
+  const handleResumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] ?? null;
+    if (file && (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf'))) {
+      setJoinStatus({ loading: false, message: 'Please upload a PDF file.', error: true });
+      e.target.value = '';
+      setResumeFile(null);
+      return;
+    }
+    if (file && file.size > MAX_RESUME_BYTES) {
+      setJoinStatus({ loading: false, message: 'Resume must be 5 MB or smaller.', error: true });
+      e.target.value = '';
+      setResumeFile(null);
+      return;
+    }
+    setJoinStatus({ loading: false, message: '', error: false });
+    setResumeFile(file);
+  };
+
+  const fileToBase64 = (file: File) =>
+    new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result).split(',')[1] ?? '');
+      reader.onerror = () => reject(reader.error);
+      reader.readAsDataURL(file);
+    });
 
   const handlePartnerSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,16 +86,28 @@ export default function WorkWithUsPage() {
 
   const handleJoinSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!resumeFile) {
+      setJoinStatus({ loading: false, message: 'Please attach your resume (PDF).', error: true });
+      return;
+    }
     setJoinStatus({ loading: true, message: '', error: false });
     try {
+      const resumeFileData = await fileToBase64(resumeFile);
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formType: 'join', ...joinForm })
+        body: JSON.stringify({
+          formType: 'join',
+          ...joinForm,
+          resumeFileName: resumeFile.name,
+          resumeFileData,
+        })
       });
       if (res.ok) {
         setJoinStatus({ loading: false, message: 'Application submitted successfully!', error: false });
-        setJoinForm({ fullName: '', email: '', phone: '', interestArea: '', location: '', resumeLink: '', message: '' });
+        setJoinForm({ fullName: '', email: '', phone: '', interestArea: '', location: '', message: '' });
+        setResumeFile(null);
+        if (resumeInputRef.current) resumeInputRef.current.value = '';
       } else {
         setJoinStatus({ loading: false, message: 'Failed to submit. Please try again.', error: true });
       }
@@ -163,23 +204,26 @@ export default function WorkWithUsPage() {
 
               <input required name="location" value={joinForm.location} onChange={handleJoinChange} type="text" placeholder="Current Location" className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 text-roots-text" />
 
-              {/* Drive Link Input */}
-              <div className="relative w-full">
-                <input 
+              {/* Resume PDF Upload */}
+              <label className="relative flex items-center w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md cursor-pointer focus-within:border-[#09569a] pr-12">
+                <input
+                  ref={resumeInputRef}
                   required
-                  name="resumeLink"
-                  value={joinForm.resumeLink}
-                  onChange={handleJoinChange}
-                  type="url" 
-                  placeholder="Resume Link (Google Drive / Cloud Link)" 
-                  className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] text-roots-text placeholder-roots-text/60 pr-12" 
+                  name="resumeFile"
+                  type="file"
+                  accept="application/pdf,.pdf"
+                  onChange={handleResumeChange}
+                  className="sr-only"
                 />
-                <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                <span className={`truncate ${resumeFile ? 'text-roots-text' : 'text-roots-text/60'}`}>
+                  {resumeFile ? resumeFile.name : 'Upload Resume (PDF, max 5 MB)'}
+                </span>
+                <span className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
                   <svg className="w-5 h-5 text-roots-text/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M12 4v12m0-12l-4 4m4-4l4 4" />
                   </svg>
-                </div>
-              </div>
+                </span>
+              </label>
 
               <textarea required name="message" value={joinForm.message} onChange={handleJoinChange} placeholder="Tell us about yourself and why you want to work with us" rows={5} className="w-full p-4 bg-[#F8F2EB] border border-roots-text/30 rounded-md focus:outline-none focus:border-[#09569a] placeholder-roots-text/60 resize-none"></textarea>
               

@@ -29,11 +29,18 @@ const joinSchema = z.object({
   phone: z.string().trim().min(5).max(30),
   interestArea: z.string().trim().min(1).max(100),
   location: z.string().trim().min(1).max(200),
-  resumeLink: z
+  resumeFileName: z
     .string()
     .trim()
-    .url('Invalid resume URL')
-    .max(2048),
+    .min(1)
+    .max(200)
+    .regex(/\.pdf$/i, 'Resume must be a PDF'),
+  // base64 of a PDF up to 5 MB (~6.7M chars once encoded)
+  resumeFileData: z
+    .string()
+    .min(1)
+    .max(7_000_000)
+    .regex(/^[A-Za-z0-9+/]+={0,2}$/, 'Invalid file data'),
   message: z.string().trim().min(1).max(5000),
 });
 
@@ -58,21 +65,27 @@ function escapeHtml(value: unknown): string {
 }
 
 // ============================================
-// 3. SAFE URL VALIDATION
+// 3. RESUME PDF VALIDATION
 // ============================================
 
-function getSafeUrl(value: string): string | null {
+const MAX_RESUME_BYTES = 5 * 1024 * 1024;
+
+function isValidPdf(base64: string): boolean {
+  const padding = base64.endsWith('==') ? 2 : base64.endsWith('=') ? 1 : 0;
+  const byteLength = (base64.length * 3) / 4 - padding;
+  if (byteLength > MAX_RESUME_BYTES) return false;
+
   try {
-    const url = new URL(value);
-
-    if (!['http:', 'https:'].includes(url.protocol)) {
-      return null;
-    }
-
-    return escapeHtml(url.toString());
+    // Every PDF starts with "%PDF-"
+    return atob(base64.slice(0, 8)).startsWith('%PDF-');
   } catch {
-    return null;
+    return false;
   }
+}
+
+function safeFileName(name: string): string {
+  const base = name.replace(/[^\w.\- ]+/g, '_').slice(0, 150);
+  return base.toLowerCase().endsWith('.pdf') ? base : `${base}.pdf`;
 }
 
 // ============================================
@@ -101,6 +114,13 @@ export async function POST(request: Request) {
 
     const data: FormData = result.data;
 
+    if (data.formType === 'join' && !isValidPdf(data.resumeFileData)) {
+      return NextResponse.json(
+        { error: 'Resume must be a valid PDF of 5 MB or less' },
+        { status: 400 }
+      );
+    }
+
     // ----------------------------------------
     // Check Resend API key
     // ----------------------------------------
@@ -120,6 +140,7 @@ export async function POST(request: Request) {
     let subject = '';
     let html = '';
     let replyTo = '';
+    let attachments: { filename: string; content: string }[] | undefined;
 
     // ========================================
     // 5. PARTNER FORM
@@ -191,7 +212,8 @@ export async function POST(request: Request) {
       const location = escapeHtml(data.location);
       const message = escapeHtml(data.message);
 
-      const safeResumeUrl = getSafeUrl(data.resumeLink);
+      const resumeName = safeFileName(data.resumeFileName);
+      attachments = [{ filename: resumeName, content: data.resumeFileData }];
 
       subject = `New Team Application from ${data.fullName}`;
 
@@ -233,12 +255,8 @@ export async function POST(request: Request) {
   </p>
 
   <p>
-    <strong>Resume Link:</strong>
-    ${
-      safeResumeUrl
-        ? `<a href="${safeResumeUrl}" target="_blank" rel="noopener noreferrer">View Resume</a>`
-        : 'Invalid or missing URL'
-    }
+    <strong>Resume:</strong>
+    Attached (${escapeHtml(resumeName)})
   </p>
 
   <p><strong>Message:</strong></p>
@@ -264,6 +282,7 @@ export async function POST(request: Request) {
         reply_to: replyTo,
         subject,
         html,
+        ...(attachments && { attachments }),
       }),
     });
 
