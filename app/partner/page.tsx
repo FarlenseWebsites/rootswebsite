@@ -107,7 +107,7 @@ export default function WorkWithUsPage() {
             
             <h2 className="text-3xl font-bold mb-4">Partner With Us</h2>
             <p className="mb-8 max-w-sm text-lg font-light leading-relaxed">
-              For CSR partners, institutions, government bodies, funders, collaborators and Volunteer with Us.
+              For CSR partners, institutions, government bodies, funders, collaborators and Volunteers.
             </p>
             <h3 className="text-lg font-bold mb-6">Partnership Enquiry form</h3>
             
